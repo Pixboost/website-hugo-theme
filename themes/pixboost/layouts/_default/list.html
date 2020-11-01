@@ -1,3 +1,11 @@
 {{ define "main" }}
-<h1>This is list!&</h1>
+<h1> {{ .Title }} </h1>
+
+<ul>
+    {{ range .Pages }}
+        <li>
+            <a href="{{.Permalink}}">{{.Title}}</a>
+        </li>
+    {{ end }}
+</ul>
 {{ end }}
