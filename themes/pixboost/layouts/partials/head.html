@@ -8,7 +8,14 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto|Coustard&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/common.css"/>
+
+    {{$style :=  printf "css/%s-%s.css" .Type .Kind | resources.Get}}
+    {{if $style}}
+    <link rel="stylesheet" href="{{$style.RelPermalink}}"/>
+    {{end}}
+
+
 
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
