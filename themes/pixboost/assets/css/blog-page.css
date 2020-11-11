@@ -1,0 +1,31 @@
+.single-page {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.single-page {
+    padding: 10px;
+}
+
+.single-page img {
+    width: 100%;
+    height: auto;
+}
+
+.single-page table {
+    width: 100%;
+}
+
+.single-page table thead th {
+    border-top: 1px solid var(--light-grey-color);
+    vertical-align: bottom;
+    border-bottom: 2px solid var(--light-grey-color);
+    padding: .75rem;
+}
+
+.single-page table td, .single-page table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid var(--light-grey-color);
+}
+

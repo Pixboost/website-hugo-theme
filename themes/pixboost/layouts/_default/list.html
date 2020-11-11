@@ -1,12 +1,24 @@
 {{ define "main" }}
 <div class="list-page">
     <h1> {{ .Title }} </h1>
-    <h2>{{ .Type }}-{{.Kind}}</h2>
 
     <ul>
         {{ range .Pages }}
             <li>
-                <a href="{{.Permalink}}">{{.Title}}</a>
+                <a class="title" href="{{.RelPermalink}}">{{.Title}}</a>
+                {{if .Params.image}}
+                {{$image := printf "content/%s/%s" .File.Dir .Params.image | imageConfig}}
+                {{$imageExt := path.Ext .Params.image}}
+                {{$imageAlt := strings.TrimSuffix $imageExt .Params.image | humanize }}
+                <img src="/{{.File.Dir}}{{.Params.image}}"
+                     width="{{$image.Width}}" height="{{$image.Height}}"
+                     alt="{{$imageAlt}}"
+                />
+                {{end}}
+
+                <p>
+                    {{.Summary}}
+                </p>
             </li>
         {{ end }}
     </ul>

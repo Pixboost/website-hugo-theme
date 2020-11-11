@@ -1,0 +1,20 @@
+.list-page {
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
+}
+
+.list-page ul {
+    list-style: none;
+    padding: 0;
+}
+
+.list-page li img {
+    width: 100%;
+    height: auto;
+}
+
+.list-page li a.title {
+    /* Use .h2 */
+    font-size: 1.7em;
+}

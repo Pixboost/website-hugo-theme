@@ -6,8 +6,6 @@ image: rally-car.jpg
 draft: false
 ---
 
-## Introduction
-
 Images have come to dominate the Internet. Most of today’s websites are comprised of 50 to 80 percent images. 
 Here at Pixboost, our mission is to optimize images, 
 making them as small as possible so that we can serve them to our users as fast as possible. 
