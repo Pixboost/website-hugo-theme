@@ -4,7 +4,14 @@
 
     {{if .Params.image}}
     {{$image := printf "content/%s/%s" .File.Dir .Params.image | imageConfig}}
-    <img src="{{.Params.image}}" class="hero-image" width="{{$image.Width}}" height="{{$image.Height}}"/>
+    {{$imageExt := path.Ext .Params.image}}
+    {{$imageAlt := strings.TrimSuffix $imageExt .Params.image | humanize }}
+
+    <img src="{{.Params.image}}"
+         class="hero-image"
+         width="{{$image.Width}}" height="{{$image.Height}}"
+         alt="{{$imageAlt}}"
+    />
     {{end}}
 
     {{ .Content }}

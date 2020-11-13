@@ -6,19 +6,22 @@
         {{ range .Pages }}
             <li>
                 <a class="title" href="{{.RelPermalink}}">{{.Title}}</a>
-                {{if .Params.image}}
-                {{$image := printf "content/%s/%s" .File.Dir .Params.image | imageConfig}}
-                {{$imageExt := path.Ext .Params.image}}
-                {{$imageAlt := strings.TrimSuffix $imageExt .Params.image | humanize }}
-                <img src="/{{.File.Dir}}{{.Params.image}}"
-                     width="{{$image.Width}}" height="{{$image.Height}}"
-                     alt="{{$imageAlt}}"
-                />
-                {{end}}
 
-                <p>
-                    {{.Summary}}
-                </p>
+                <div class="article-image-and-summary">
+                    {{if .Params.image}}
+                    {{$image := printf "content/%s/%s" .File.Dir .Params.image | imageConfig}}
+                    {{$imageExt := path.Ext .Params.image}}
+                    {{$imageAlt := strings.TrimSuffix $imageExt .Params.image | humanize }}
+                    <img src="/{{.File.Dir}}{{.Params.image}}"
+                         width="{{$image.Width}}" height="{{$image.Height}}"
+                         alt="{{$imageAlt}}"
+                    />
+                    {{end}}
+
+                    <p>
+                        {{.Summary}}
+                    </p>
+                </div>
             </li>
         {{ end }}
     </ul>

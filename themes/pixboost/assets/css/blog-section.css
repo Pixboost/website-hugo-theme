@@ -18,3 +18,20 @@
     /* Use .h2 */
     font-size: 1.7em;
 }
+
+.article-image-and-summary {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .article-image-and-summary {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .list-page li img {
+        width: 200px;
+        margin-right: 20px;
+    }
+}
