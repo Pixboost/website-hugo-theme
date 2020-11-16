@@ -1,14 +1,15 @@
 language: minimal
 
 stages:
-  - script
+  - install
+  - build
   - name: deploy
     if: branch = main
 
-script:
-  - make build
 before_install:
   - openssl aes-256-cbc -K $encrypted_509a3f763e85_key -iv $encrypted_509a3f763e85_iv -in pixboost-76a3865bd50e.json.enc -out ./pixboost-76a3865bd50e.json -d
+script:
+  - make build
 before_deploy:
   - mkdir site/dist
   - mkdir site/dist/css
