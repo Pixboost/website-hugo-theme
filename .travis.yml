@@ -10,6 +10,7 @@ before_deploy:
   - cp site/public/css/blog-page.css site/dist/css/
   - cp site/public/css/blog-section.css site/dist/css/
 deploy:
+  if: branch = main
   provider: gcs
   key_file: ./pixboost-76a3865bd50e.json
   bucket: pixboost-www
