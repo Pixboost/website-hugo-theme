@@ -12,9 +12,23 @@
                     {{$image := printf "content/%s/%s" .File.Dir .Params.image | imageConfig}}
                     {{$imageExt := path.Ext .Params.image}}
                     {{$imageAlt := strings.TrimSuffix $imageExt .Params.image | humanize }}
-                    <img src="/{{.File.Dir}}{{.Params.image}}"
-                         width="{{$image.Width}}" height="{{$image.Height}}"
-                         alt="{{$imageAlt}}"
+                    <img
+                        srcset="
+                            https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=200&auth=MzY2MjQ4NzQ2Mw__ 200w,
+                            https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=400&auth=MzY2MjQ4NzQ2Mw__ 400w,
+                            https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=500&auth=MzY2MjQ4NzQ2Mw__ 500w,
+                            https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=1000&auth=MzY2MjQ4NzQ2Mw__ 1000w,
+                            https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=768&auth=MzY2MjQ4NzQ2Mw__ 768w,
+                            https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=1536&auth=MzY2MjQ4NzQ2Mw__ 1536w,
+
+                        "
+                        sizes="
+                            (min-width: 768px) 200px,
+                            100vw
+                        "
+                        src="https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=1000&auth=MzY2MjQ4NzQ2Mw__"
+                        alt="{{$imageAlt}}"
+                        width="{{$image.Width}}" height="{{$image.Height}}"
                     />
                     {{end}}
 
