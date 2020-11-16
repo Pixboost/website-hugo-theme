@@ -14,7 +14,7 @@ deploy:
   key_file: ./pixboost-76a3865bd50e.json
   bucket: pixboost-www
   local_dir: site/dist/
-  acl: public_read
+  acl: public-read
   cleanup: false
   edge: true
   on:
