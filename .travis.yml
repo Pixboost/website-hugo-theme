@@ -7,6 +7,7 @@ before_deploy:
   - mkdir site/dist
   - mkdir site/dist/css
   - cp -r site/public/blog site/dist
+  - cp -r site/public/img site/dist
   - cp site/public/css/blog-page.css site/dist/css/
   - cp site/public/css/blog-section.css site/dist/css/
 deploy:
