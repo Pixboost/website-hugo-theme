@@ -8,3 +8,7 @@ dev:
 .PHONY: cli
 cli:
 	$(RUN) --entrypoint=/bin/sh $(IMAGE)
+
+.PHONE: build
+build:
+	$(RUN) -w /src/site $(IMAGE)

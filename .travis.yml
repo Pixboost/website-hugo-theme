@@ -1,0 +1,19 @@
+language: minimal
+script:
+  - make build
+before_install:
+  - openssl aes-256-cbc -K $encrypted_509a3f763e85_key -iv $encrypted_509a3f763e85_iv -in pixboost-76a3865bd50e.json.enc -out ./pixboost-76a3865bd50e.json -d
+before_deploy:
+  - mkdir site/dist
+  - mkdir site/dist/css
+  - cp -r site/public/blog site/dist
+  - cp site/public/css/blog-page.css site/dist/css/
+  - cp site/public/css/blog-section.css site/dist/css/
+deploy:
+  provider: gcs
+  key_file: ./pixboost-76a3865bd50e.json
+  bucket: pixboost-www
+  local_dir: site/dist/
+  acl: public_read
+  cleanup: false
+  edge: true
