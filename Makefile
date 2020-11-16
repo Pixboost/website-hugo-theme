@@ -1,4 +1,4 @@
-RUN = docker run --rm -it -v $(shell pwd):/src
+RUN = docker run --rm -v $(shell pwd):/src
 IMAGE = klakegg/hugo:0.77.0
 
 .PHONY: dev
@@ -7,7 +7,7 @@ dev:
 
 .PHONY: cli
 cli:
-	$(RUN) --entrypoint=/bin/sh $(IMAGE)
+	$(RUN) --entrypoint=/bin/sh -it $(IMAGE)
 
 .PHONE: build
 build:
