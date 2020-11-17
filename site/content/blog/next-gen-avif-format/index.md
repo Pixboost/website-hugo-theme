@@ -46,7 +46,8 @@ So from these numbers, we can suggest the following best practices with respect 
 * Use PNG or JPEG
 
 Let's take a look at one specific example. Here's the source image:
-![Fast red car](supercar.jpeg)
+
+{{< pixboost image="supercar.jpeg" alt="Fast red car" >}}
 
 | Format | Size  |
 |:------:|:-----:|
