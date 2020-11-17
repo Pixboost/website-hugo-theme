@@ -12,3 +12,17 @@ jobs:
         uses: actions/checkout@v2
       - name: Build
         run: make build
+      - name: Prepare Deployment Artifact
+        run: |
+          mkdir site/dist
+          mkdir site/dist/css
+          cp -r site/public/blog site/dist
+          cp -r site/public/img site/dist
+          cp site/public/css/blog-page.css site/dist/css/
+          cp site/public/css/blog-section.css site/dist/css/
+      - name: Deploy
+        uses: google-github-actions/upload-cloud-storage@main
+        with:
+          credentials: ${{ secrets.gcp_credentials }}
+          path: site/dist
+          destination: pixboost-www/blog-github-actions
