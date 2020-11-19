@@ -1,6 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    {{- partial "head.html" . -}}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{.Title}}</title>
+        <meta name="description" content="{{.Description}}">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {{- block "meta" . }}{{- end }}
+
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto|Coustard&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="/css/common.css"/>
+
+        {{$style :=  printf "css/%s-%s.css" .Type .Kind | resources.Get}}
+        {{if $style}}
+        <link rel="stylesheet" href="{{$style.RelPermalink}}"/>
+        {{end}}
+
+
+
+        <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+
+        <script id="pb-script" data-api-key="MzY2MjQ4NzQ2Mw__" data-autoload=""
+                src="https://pixboost.com/libs/pixboost.bundle.min.js" async=""></script>
+
+        <!-- Google Events. Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104255542-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+
+            gtag('config', 'UA-104255542-2');
+            gtag('config', 'AW-968330479');
+        </script>
+        <!-- End Google Events -->
+    </head>
     <body>
         {{- partial "header.html" . -}}
         <div id="content">

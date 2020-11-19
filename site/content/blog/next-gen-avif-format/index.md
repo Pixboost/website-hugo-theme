@@ -1,7 +1,7 @@
 ---
 title: "Load Your Images Faster with the Next-Gen AVIF Format"
 date: 2020-11-08T03:53:08Z
-description: "TODO"
+description: "AVIF is a new image format for the Web that have wide browsers adoption with better compression than WebP. Read how you could use it today!"
 image: rally-car.jpg
 draft: false
 ---
