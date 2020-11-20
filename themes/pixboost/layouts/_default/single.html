@@ -4,10 +4,13 @@
 <meta name="twitter:creator" content="@otherpunk" />
 <meta property="og:url" content="https://pixboost.com{{.RelPermalink}}index.html" />
 <meta property="og:title" content="{{ .Title }}" />
+<meta property="twitter:title" content="{{ .Title }}" />
 <meta property="og:description" content="{{ .Description }}" />
+<meta property="twitter:description" content="{{ .Description }}" />
 
 {{if .Params.image}}
 <meta property="og:image" content="https://pixboost.com/{{.File.Dir}}{{.Params.image}}" />
+<meta property="twitter:image" content="https://pixboost.com/{{.File.Dir}}{{.Params.image}}" />
 {{ end }}
 
 <script type="application/ld+json">
