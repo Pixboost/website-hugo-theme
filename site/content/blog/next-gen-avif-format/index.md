@@ -87,6 +87,8 @@ Or if you use an image CDN (like Pixboost), it’s as simple as one line:
 
 But if you aren’t using an image CDN, you would need to convert your source image into an AVIF, so let’s have a look at the tools you could use for that.
 
+{{< signup >}}
+
 ## Tools that support AVIF encoding
 
 As I write this article in November 2020, it’s still early days for AVIF, so there aren’t currently a lot of options for using it. 
@@ -120,6 +122,8 @@ Note that we currently have two limitations with respect to AVIF files:
 
 * Source images cannot be larger than 1024x1024 pixels, which is related to memory consumption. We are working on a solution for this and will have it fixed soon.
 * Transparent source images aren’t supported at the moment. This was a limitation of ImageMagick, which is used by Pixboost on the backend. ImageMagick actually already [merged our pull request](https://github.com/ImageMagick/ImageMagick/pull/2487) related to the issue, though, so we just need to update to the new version on our side. This will be done in the coming weeks.
+
+{{< signup >}}
 
 ## Conclusion
 

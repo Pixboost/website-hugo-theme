@@ -29,3 +29,6 @@
     border-top: 1px solid var(--light-grey-color);
 }
 
+.btn-panel {
+    text-align: center;
+}
