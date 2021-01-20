@@ -1,6 +1,7 @@
 ---
 title: "Load Your Images Faster with the Next-Gen AVIF Format"
 date: 2020-11-08T03:53:08Z
+lastmod: 2021-01-20T04:31:08Z
 description: "AVIF is a new image format for the Web that have wide browsers adoption with better compression than WebP. Read how you could use it today!"
 image: rally-car.jpg
 draft: false
@@ -120,8 +121,8 @@ From this moment on, your image will be served in the optimal format!
 
 Note that we currently have two limitations with respect to AVIF files:
 
-* Source images cannot be larger than 1024x1024 pixels, which is related to memory consumption. We are working on a solution for this and will have it fixed soon.
-* Transparent source images aren’t supported at the moment. This was a limitation of ImageMagick, which is used by Pixboost on the backend. ImageMagick actually already [merged our pull request](https://github.com/ImageMagick/ImageMagick/pull/2487) related to the issue, though, so we just need to update to the new version on our side. This will be done in the coming weeks.
+* ~~Source images cannot be larger than 1024x1024 pixels, which is related to memory consumption. We are working on a solution for this and will have it fixed soon.~~ We are happy to announce that this been fixed in early January! We still have limitation on target dimensions of the optimised image, but it shouldn't affect our users in most of the cases.
+* ~~Transparent source images aren’t supported at the moment. This was a limitation of ImageMagick, which is used by Pixboost on the backend. ImageMagick actually already [merged our pull request](https://github.com/ImageMagick/ImageMagick/pull/2487) related to the issue, though, so we just need to update to the new version on our side. This will be done in the coming weeks.~~ With [additional contribution](https://github.com/ImageMagick/ImageMagick/pull/3116) to ImageMagick for supporting lossless compression to AVIF we released this feature on 20th of January. Now transparent PNGs are also optimised using AVIF format!
 
 {{< signup >}}
 
