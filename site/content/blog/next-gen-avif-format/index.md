@@ -48,7 +48,7 @@ So from these numbers, we can suggest the following best practices with respect 
 
 Let's take a look at one specific example. Here's the source image:
 
-{{< pixboost image="supercar.jpeg" alt="Fast red car" >}}
+{{< full-width-image image="supercar.jpeg" alt="Fast red car" >}}
 
 | Format | Size  |
 |:------:|:-----:|
