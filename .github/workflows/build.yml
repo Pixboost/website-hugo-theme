@@ -18,8 +18,10 @@ jobs:
           mkdir site/dist/css
           cp -r site/public/blog site/dist
           cp -r site/public/img site/dist
+          cp site/public/index.html site/dist/
           cp site/public/css/blog-page.css site/dist/css/
-          cp site/public/css/blog-section.css site/dist/css/
+          cp site/public/css/blog-page.css site/dist/css/
+          cp site/public/css/page-home.css site/dist/css/
       - name: Deploy CSS
         uses: google-github-actions/upload-cloud-storage@main
         with:
