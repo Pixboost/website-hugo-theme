@@ -38,3 +38,9 @@ jobs:
           credentials: ${{ secrets.gcp_credentials }}
           path: site/dist/blog
           destination: pixboost-www
+      - name: Deploy homepage
+        uses: google-github-actions/upload-cloud-storage@main
+        with:
+          credentials: ${{ secrets.gcp_credentials }}
+          path: site/dist/index.html
+          destination: pixboost-www

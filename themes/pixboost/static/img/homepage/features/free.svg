@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f29a33;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        font-size: 90px;
+        fill: #fefefe;
+        text-anchor: middle;
+        font-family: "Microsoft New Tai Lue";
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <path id="Многоугольник_1" data-name="Многоугольник 1" class="cls-1" d="M150,0l33.75,24.043L225,20.1l17.207,37.7L279.9,75l-3.947,41.25L300,150l-24.043,33.75L279.9,225l-37.7,17.207L225,279.9l-41.25-3.947L150,300l-33.75-24.043L75,279.9l-17.207-37.7L20.1,225l3.947-41.25L0,150l24.043-33.75L20.1,75l37.7-17.207L75,20.1l41.25,3.947Z"/>
+  <text id="FREE" class="cls-2" x="148" y="182"><tspan x="148">FREE</tspan></text>
+</svg>
