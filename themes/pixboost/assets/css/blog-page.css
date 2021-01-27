@@ -7,9 +7,15 @@
     padding: 10px;
 }
 
-.single-page img {
+.single-page img.full-width,
+.single-page .full-width img
+{
     width: 100%;
     height: auto;
+}
+
+.single-page .center {
+    text-align: center;
 }
 
 .single-page table {

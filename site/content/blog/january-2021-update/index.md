@@ -26,9 +26,9 @@ You can check the resulting image format in Chrome Web Developer tools by openin
 
 Nowadays, animated GIFs are more often getting replaced by video, which's the right choice from the web performance point of view. However, if you still use them or have them on existing pages, you can optimise or resize them the same way you do it with JPEG or PNG images. Consider, the example below:
 
-{{< simple-image image="vacuuming.gif" alt="Vacuuming">}}
+{{< simple-image image="vacuuming.gif" alt="Team work">}}
 
-The original GIF size is 757Kb, and optimised version is just **300Kb** which is **48%** smaller than original!
+The original GIF size is 757Kb, and optimised version is just **256Kb** which is **67%** smaller than original!
 
 ## Pixboost React Improvements
 
