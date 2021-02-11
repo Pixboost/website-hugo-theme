@@ -1,0 +1,48 @@
+name: Build
+
+on: push
+
+jobs:
+  buildAndDeploy:
+    name: Build
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build
+        run: make build
+      - name: Prepare Deployment Artifact
+        run: |
+          mkdir site/dist
+          mkdir site/dist/css
+          cp -r site/public/blog site/dist
+          cp -r site/public/img site/dist
+          cp site/public/index.html site/dist/
+          cp site/public/css/blog-page.css site/dist/css/
+          cp site/public/css/blog-page.css site/dist/css/
+          cp site/public/css/page-home.css site/dist/css/
+      - name: Deploy CSS
+        uses: google-github-actions/upload-cloud-storage@main
+        with:
+          credentials: ${{ secrets.gcp_credentials }}
+          path: site/dist/css
+          destination: pixboost-www
+      - name: Deploy img
+        uses: google-github-actions/upload-cloud-storage@main
+        with:
+          credentials: ${{ secrets.gcp_credentials }}
+          path: site/dist/img
+          destination: pixboost-www
+      - name: Deploy blog
+        uses: google-github-actions/upload-cloud-storage@main
+        with:
+          credentials: ${{ secrets.gcp_credentials }}
+          path: site/dist/blog
+          destination: pixboost-www
+      - name: Deploy homepage
+        uses: google-github-actions/upload-cloud-storage@main
+        with:
+          credentials: ${{ secrets.gcp_credentials }}
+          path: site/dist/index.html
+          destination: pixboost-www

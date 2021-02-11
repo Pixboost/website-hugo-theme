@@ -1,0 +1,38 @@
+.list-page {
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
+}
+
+.list-page ul {
+    list-style: none;
+    padding: 0;
+}
+
+.list-page li img {
+    width: 100%;
+    height: auto;
+}
+
+.list-page li a.title {
+    /* Use .h2 */
+    font-size: 1.7em;
+}
+
+.article-image-and-summary {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .article-image-and-summary {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .list-page li img {
+        width: 200px;
+        min-width: 200px;
+        margin-right: 20px;
+    }
+}
