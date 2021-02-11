@@ -511,7 +511,7 @@ input:invalid {
     box-shadow: 2px 2px 2px var(--dark-grey-color);
 }
 
-@media all and (max-width: 35em) {
+@media all and (max-width: 560px) {
     .sm-hidden {
         display: none !important;
     }
