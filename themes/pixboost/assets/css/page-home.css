@@ -292,7 +292,7 @@
     }
 }
 
-@media all and (max-width: 35em) {
+@media all and (max-width: 560px) {
     .hero {
         height: 400px;
         flex-direction: column;
