@@ -1,0 +1,453 @@
+/* HERO ABOUT */
+
+.hero-about {
+    background-size: cover;
+    padding: 80px 0;
+    background-image: url("https://pixboost.com/api/2/img/https://pixboost.com/img/about/hero.jpg/fit?size=1700x600&auth=MzY2MjQ4NzQ2Mw__");
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-about .hero-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: auto;
+    justify-content: center;
+    background-color: #00000080;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.hero-about .hero-content .header {
+    color: white;
+    padding: 40px;
+}
+
+.hero-about .hero-content .header .title {
+    font-size: 46px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.hero-about .summary {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+}
+
+.hero-about .summary ul li {
+    list-style: none;
+    line-height: 150%;
+    display: inline;
+    margin-right: 30px;
+}
+
+.hero-about .summary ul{
+    margin-right: 0px;
+    padding: 0px;
+}
+
+.hero-about .summary ul li:before {
+    content: '✓';
+    color: red;
+    font-size: 36px;
+    font-weight: bold;
+    margin-right: 0px;
+}
+
+.hero-about .hero-about-signup-button {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    padding-top: 60px;
+}
+
+/* HERO ABOUT */
+
+/* ABOUT PAGE */
+.image-scaling{
+    max-width: 1000px;
+    margin: auto;
+}
+
+.image-scaling-features {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+
+.image-scaling-features .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.image-scaling-features .column .card {
+    width: 300px;
+}
+
+.image-scaling-features .column .card .text{
+    margin-bottom: 15px;
+}
+
+.image-scaling-features .column .card .title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-height: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image-scaling-features .column .card .image img{
+    text-align: center;
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.gray-formats-bg {
+    background-color: rgb(248, 245, 245);
+}
+
+.gray-formats-bg .formats-header {
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.gray-formats-bg .nextgen-formats {
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+    padding-bottom: 60px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.gray-formats-bg .nextgen-formats .card {
+    width: 300px;
+}
+
+.gray-formats-bg .nextgen-formats .photo img{
+    width: 300px;
+}
+
+.gray-formats-bg .nextgen-formats .card .header{
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.gray-formats-bg .nextgen-formats .card .link{
+    margin-top: 20px;
+}
+
+.gray-formats-bg .nextgen-formats .card .text{
+    min-height: 150px;
+}
+
+.white-lazyloading-bg {
+    background-color: white;
+}
+
+.white-lazyloading-bg .lazyloading-header {
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.white-lazyloading-bg .lazyloading-content {
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+    padding-bottom: 30px;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+.white-lazyloading-bg .lazyloading-content .photo img{
+    width: 300px;
+    height: 200px;
+}
+
+.white-lazyloading-bg .lazyloading-content .card{
+    margin-right: 60px;
+}
+
+.white-lazyloading-bg .lazyloading-content .card .header{
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.white-lazyloading-bg .lazyloading-content .card .link{
+    margin-top: 20px;
+}
+
+.about-phrase-block {
+    background-color: var(--light-grey-color);
+    display: flex;
+    justify-content: space-around;
+    min-height: 80px;
+}
+
+.about-phrase-block .about-phrase-container {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: var(--dark-grey-color);
+    flex-direction: row;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.about-phrase-block .about-phrase-container .about-phrase {
+    margin: auto;
+}
+
+.about-phrase-block .about-phrase-container .about-button {
+    margin: auto;
+}
+
+.cdn-bg {
+    background-color: rgb(248, 245, 245);
+}
+
+.cdn-bg .cdn-header {
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.cdn-bg .cdn-container {
+    margin: auto;
+    flex-direction: row;
+    max-width: 1000px;
+    display: flex;
+    padding-bottom: 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cdn-bg .cdn-container .card {
+    max-width: 600px;
+}
+
+.cdn-bg .cdn-container .card .header {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.cdn-bg .cdn-container .card .text {
+    margin-right: 60px;
+    margin-bottom: 20px;
+}
+
+.enterprise-block {
+    background-color: white;
+    padding-bottom: 20px;
+}
+
+.enterprise-block .enterprise-header {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.enterprise-block .enterprise-content {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.enterprise-block .enterprise-content .column {
+    width: 300px;
+}
+
+.enterprise-block .enterprise-content .column .card .sub-header{
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.enterprise-block .enterprise-content .column .card .text{
+    margin-bottom: 15px;
+    min-height: 100px;
+}
+
+.enterprise-block .enterprise-content .column .card .image{
+    margin-bottom: 15px;
+}
+
+.os-block {
+    background-color:  rgb(248, 245, 245);
+}
+
+.os-block .os-header{
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.os-block .os-content {
+    margin: auto;
+    flex-direction: row;
+    max-width: 1000px;
+    display: flex;
+    padding-bottom: 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.os-block .os-content .card {
+    max-width: 600px;
+}
+
+.os-block .os-content .card .header {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.os-block .os-content .card .text {
+    margin-bottom: 20px;
+}
+.gray-testimonial-bg .btn-panel {
+    margin: auto;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 30px;
+}
+
+/*ABOUT PAGE*/
+
+.gray-testimonial-bg-about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media all and (max-width: 35em) {
+    .hero-about {
+        background-image: url("https://pixboost.com/api/2/img/https://pixboost.com/img/about/hero.jpg/fit?size=600x400&auth=MzY2MjQ4NzQ2Mw__");
+        height: auto;
+    }
+
+    .hero-about .hero-content {
+        border-radius: 0;
+    }
+
+    .hero-about .hero-about-signup-button {
+        margin-top: 0;
+        padding-top: 15px;
+    }
+
+    .image-scaling-header h2 {
+        text-align: center;
+    }
+
+    .image-scaling-features {
+        flex-direction: column;
+        padding-left: 20px;
+    }
+
+    .gray-formats-bg .nextgen-formats {
+        flex-direction: column;
+        padding-left: 20px;
+    }
+
+    .gray-formats-bg h2 {
+        text-align: center;
+    }
+
+    .white-lazyloading-bg .lazyloading-content {
+        flex-direction: column-reverse;
+        padding-left: 20px;
+    }
+
+    .lazyloading-header h2 {
+        text-align: center;
+    }
+
+    .cdn-bg .cdn-container {
+        flex-direction: column;
+        padding-left: 20px;
+        align-items: start;
+    }
+
+    .cdn-header h2 {
+        text-align: center;
+    }
+
+    .about-phrase-block {
+        padding: 20px 0;
+    }
+
+    .about-phrase-block .about-phrase-container {
+        flex-direction: column;
+    }
+
+    .enterprise-block .enterprise-content {
+        flex-direction: column;
+        padding-left: 20px;
+    }
+
+    .enterprise-header h2 {
+        text-align: center;
+    }
+
+    .os-block .os-content {
+        flex-direction: column;
+        padding-left: 20px;
+        align-items: start;
+    }
+
+    .os-block .os-header h2 {
+        text-align: center;
+    }
+
+    .url-block .url-block-url {
+        font-size: 16px;
+        overflow-x: scroll;
+        border: 0;
+        border-radius: 0;
+    }
+
+    .out-of-the-box .bg {
+        padding-left: 0;
+        border-radius: 0;
+    }
+
+    .summary {
+        display: none;
+    }
+
+    .image-scaling-features .column .card .title {
+        min-height: 2em;
+    }
+}

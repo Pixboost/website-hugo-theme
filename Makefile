@@ -3,7 +3,7 @@ IMAGE = klakegg/hugo:0.77.0
 
 .PHONY: dev
 dev:
-	$(RUN) -p "1313:1313" -w /src/site $(IMAGE) server -D -v --log --disableFastRender
+	$(RUN) -p "1313:1313" -w /src/site $(IMAGE) server -D -v --verboseLog --log --disableFastRender
 
 .PHONY: cli
 cli:
