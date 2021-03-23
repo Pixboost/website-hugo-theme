@@ -27,7 +27,7 @@
 @media (min-width: 768px) {
     .article-image-and-summary {
         flex-direction: row;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .list-page li img {
