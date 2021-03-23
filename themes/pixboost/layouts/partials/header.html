@@ -8,7 +8,7 @@
     </div>
     <div class="spacer"></div>
     <div class="menu">
-        <a href="/about.html" class="sm-hidden" onclick="window.trackLink('About','about')">About</a>
+        <a href="/about.html" class="sm-hidden {{ if eq .Type "about" }}selected{{end}}" onclick="window.trackLink('About','about')">About</a>
         <a href="/prices.html" class="sm-hidden" onclick="window.trackLink('Prices','prices')">Prices</a>
         <a href="/performance-newsletter.html" class="sm-hidden" onclick="window.trackLink('Newsletter','newsletter')">Newsletter</a>
         <a href="https://help.pixboost.com" class="sm-hidden" target="_blank"
