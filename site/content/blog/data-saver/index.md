@@ -3,7 +3,7 @@ title: 'Using "Save-Data" header with an Image CDN to improve UX'
 date: 2021-02-17T20:45:01Z
 description: "Learn how modern web technologies helps you to load the website faster for users on slow networks"
 image: crying-phone.jpg
-draft: true
+draft: false
 ---
 
 We are happy to announce that we added support of "Save-Data" client hint in Pixboost and to celebrate we decided to write
