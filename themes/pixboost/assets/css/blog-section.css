@@ -2,6 +2,7 @@
     max-width: 1000px;
     margin: auto;
     padding: 10px;
+    font-size: 1.2em;
 }
 
 .list-page ul {
@@ -31,8 +32,9 @@
     }
 
     .list-page li img {
-        width: 200px;
-        min-width: 200px;
+        width: auto;
+        max-width: 200px;
+        /*min-width: 200px;*/
         margin-right: 20px;
     }
 }

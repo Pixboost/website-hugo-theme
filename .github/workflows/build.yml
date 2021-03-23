@@ -1,6 +1,9 @@
 name: Build
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   buildAndDeploy:
@@ -17,8 +20,10 @@ jobs:
           mkdir site/dist
           mkdir site/dist/css
           cp -r site/public/blog site/dist
+          cp -r site/public/about site/dist
           cp -r site/public/img site/dist
           cp site/public/index.html site/dist/
+          cp site/public/css/about-page.css site/dist/css/
           cp site/public/css/blog-page.css site/dist/css/
           cp site/public/css/blog-section.css site/dist/css/
           cp site/public/css/page-home.css site/dist/css/
@@ -39,6 +44,12 @@ jobs:
         with:
           credentials: ${{ secrets.gcp_credentials }}
           path: site/dist/blog
+          destination: pixboost-www
+      - name: Deploy about
+        uses: google-github-actions/upload-cloud-storage@main
+        with:
+          credentials: ${{ secrets.gcp_credentials }}
+          path: site/dist/about
           destination: pixboost-www
       - name: Deploy homepage
         uses: google-github-actions/upload-cloud-storage@main
