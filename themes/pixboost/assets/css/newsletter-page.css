@@ -1,0 +1,30 @@
+#mc_embed_signup{
+    background:#fff; clear:left;
+    padding-bottom: 20px;
+}
+
+#mc_embed_signup > form {
+    padding: 0 !important;
+}
+
+#mc-embedded-subscribe {
+    margin: 0 !important;
+}
+
+#mce-responses {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.response {
+    text-align: center;
+}
+
+.block {
+    padding: 10px;
+    max-width: 1000px;
+    margin: auto;
+}

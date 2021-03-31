@@ -1,0 +1,39 @@
+/* CONTACT US */
+.contact-us {
+    padding: 10px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.contact-us .contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-us .contact-form input {
+    height: 35px;
+    font-size: 18px;
+    padding-left: 7px;
+    border-radius: 5px;
+    border: 1px solid rgb(172, 168, 168);
+}
+
+.contact-us .contact-form textarea {
+    font-size: 18px;
+    padding-left: 7px;
+    border-radius: 5px;
+    border: 1px solid rgb(172, 168, 168);
+}
+
+.contact-us .contact-form .spacer {
+    height: 10px;
+}
+
+.contact-us .contact-form .btn-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+/* CONTACT US */

@@ -1,0 +1,22 @@
+/* FAQ */
+.faq {
+    padding: 10px;
+    max-width: 1000px;
+    margin: auto;
+    /*Make up free space for scrolling*/
+    padding-bottom: 700px;
+}
+
+.faq .qa {
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.faq .qa .q {
+    background-color: #FAFAD2;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 18px;
+}
+
+/* FAQ */
