@@ -26,6 +26,8 @@ jobs:
           cp -r site/public/faq site/dist
           cp -r site/public/newsletter site/dist
           cp -r site/public/prices site/dist
+          cp -r site/public/privacy-policy site/dist
+          cp -r site/public/terms-of-service site/dist
           cp -r site/public/img site/dist
           cp site/public/index.html site/dist/
           cp site/public/css/about-page.css site/dist/css/
@@ -90,6 +92,18 @@ jobs:
         with:
           credentials: ${{ secrets.gcp_credentials }}
           path: site/dist/prices
+          destination: pixboost-www
+      - name: Deploy privacy-policy
+        uses: google-github-actions/upload-cloud-storage@main
+        with:
+          credentials: ${{ secrets.gcp_credentials }}
+          path: site/dist/privacy-policy
+          destination: pixboost-www
+      - name: Deploy terms-of-service
+        uses: google-github-actions/upload-cloud-storage@main
+        with:
+          credentials: ${{ secrets.gcp_credentials }}
+          path: site/dist/terms-of-service
           destination: pixboost-www
       - name: Deploy homepage
         uses: google-github-actions/upload-cloud-storage@main

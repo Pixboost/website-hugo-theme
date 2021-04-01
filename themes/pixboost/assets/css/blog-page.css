@@ -1,13 +1,3 @@
-.single-page {
-    max-width: 1000px;
-    margin: auto;
-    font-size: 1.2em;
-}
-
-.single-page {
-    padding: 10px;
-}
-
 .single-page img,
 .single-page video {
     max-width: 100%;
