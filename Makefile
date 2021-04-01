@@ -21,3 +21,7 @@ endif
 .PHONY: build
 build:
 	$(RUN) -w /src/site $(IMAGE)
+
+.PHONY:
+lighthouse-test:
+	docker run -it --rm -v $(shell pwd):/home/lhci/site -v $(shell pwd)/.lighthouseci:/home/lhci/.lighthouseci pixboost/lighthouse-ci-cli lhci --config ./site/lighthouserc.yaml autorun

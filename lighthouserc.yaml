@@ -1,0 +1,16 @@
+ci:
+    collect:
+        staticDistDir: ./site/site/public/
+        additive: false
+        url:
+        - index.html
+        settings:
+            chrome-flags: "--no-sandbox --headless"
+            throttling-method: simulate
+            # https://github.com/GoogleChrome/lighthouse/blob/8f500e00243e07ef0a80b39334bedcc8ddc8d3d0/lighthouse-core/config/constants.js#L19-L26
+            throttling:
+                throughputKbps: 1638
+                uploadThroughputKbps: 675
+                cpuSlowdownMultiplier: 4
+    assert:
+        preset: lighthouse:no-pwa
