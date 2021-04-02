@@ -17,105 +17,20 @@ jobs:
         run: make build
       - name: Lighthouse Test
         run: make lighthouse-test || true
+
       - name: Copy test results
-        uses: google-github-actions/upload-cloud-storage@main
+        uses: actions-hub/gcloud@master
+        env:
+          PROJECT_ID: pixboost
+          APPLICATION_CREDENTIALS: ${{ secrets.gcp_credentials }}
         with:
-          credentials: ${{ secrets.gcp_credentials }}
-          path: .lighthouseci
-          destination: pixboost-www/.gh/${{ github.run_number }}
-      - name: Prepare Deployment Artifact
-        run: |
-          mkdir site/dist
-          mkdir site/dist/css
-          cp -r site/public/about site/dist
-          cp -r site/public/blog site/dist
-          cp -r site/public/casestudy-officeworks site/dist
-          cp -r site/public/contacts site/dist
-          cp -r site/public/faq site/dist
-          cp -r site/public/newsletter site/dist
-          cp -r site/public/prices site/dist
-          cp -r site/public/privacy-policy site/dist
-          cp -r site/public/terms-of-service site/dist
-          cp -r site/public/img site/dist
-          cp site/public/index.html site/dist/
-          cp site/public/css/about-page.css site/dist/css/
-          cp site/public/css/blog-page.css site/dist/css/
-          cp site/public/css/blog-section.css site/dist/css/
-          cp site/public/css/casestudy-page.css site/dist/css/
-          cp site/public/css/contacts-page.css site/dist/css/
-          cp site/public/css/faq-page.css site/dist/css/
-          cp site/public/css/newsletter-page.css site/dist/css/
-          cp site/public/css/page-home.css site/dist/css/
-          cp site/public/css/prices-page.css site/dist/css/
-      - name: Deploy CSS
-        uses: google-github-actions/upload-cloud-storage@main
+          args: cp -r ./.lighthouseci/* gs://pixboost-www/.lighthouse-ci/run-{{ github.run_number }}
+          cli: gsutil
+      - name: Copy web site
+        uses: actions-hub/gcloud@master
+        env:
+          PROJECT_ID: pixboost
+          APPLICATION_CREDENTIALS: ${{ secrets.gcp_credentials }}
         with:
-          credentials: ${{ secrets.gcp_credentials }}
-          path: site/dist/css
-          destination: pixboost-www
-      - name: Deploy img
-        uses: google-github-actions/upload-cloud-storage@main
-        with:
-          credentials: ${{ secrets.gcp_credentials }}
-          path: site/dist/img
-          destination: pixboost-www
-      - name: Deploy about
-        uses: google-github-actions/upload-cloud-storage@main
-        with:
-          credentials: ${{ secrets.gcp_credentials }}
-          path: site/dist/about
-          destination: pixboost-www
-      - name: Deploy blog
-        uses: google-github-actions/upload-cloud-storage@main
-        with:
-          credentials: ${{ secrets.gcp_credentials }}
-          path: site/dist/blog
-          destination: pixboost-www
-      - name: Deploy casestudy-officeworks
-        uses: google-github-actions/upload-cloud-storage@main
-        with:
-          credentials: ${{ secrets.gcp_credentials }}
-          path: site/dist/casestudy-officeworks
-          destination: pixboost-www
-      - name: Deploy contacts
-        uses: google-github-actions/upload-cloud-storage@main
-        with:
-          credentials: ${{ secrets.gcp_credentials }}
-          path: site/dist/contacts
-          destination: pixboost-www
-      - name: Deploy faq
-        uses: google-github-actions/upload-cloud-storage@main
-        with:
-          credentials: ${{ secrets.gcp_credentials }}
-          path: site/dist/faq
-          destination: pixboost-www
-      - name: Deploy newsletter
-        uses: google-github-actions/upload-cloud-storage@main
-        with:
-          credentials: ${{ secrets.gcp_credentials }}
-          path: site/dist/newsletter
-          destination: pixboost-www
-      - name: Deploy prices
-        uses: google-github-actions/upload-cloud-storage@main
-        with:
-          credentials: ${{ secrets.gcp_credentials }}
-          path: site/dist/prices
-          destination: pixboost-www
-      - name: Deploy privacy-policy
-        uses: google-github-actions/upload-cloud-storage@main
-        with:
-          credentials: ${{ secrets.gcp_credentials }}
-          path: site/dist/privacy-policy
-          destination: pixboost-www
-      - name: Deploy terms-of-service
-        uses: google-github-actions/upload-cloud-storage@main
-        with:
-          credentials: ${{ secrets.gcp_credentials }}
-          path: site/dist/terms-of-service
-          destination: pixboost-www
-      - name: Deploy homepage
-        uses: google-github-actions/upload-cloud-storage@main
-        with:
-          credentials: ${{ secrets.gcp_credentials }}
-          path: site/dist/index.html
-          destination: pixboost-www
+          args: cp -r ./site/public/* gs://pixboost-www/
+          cli: gsutil
