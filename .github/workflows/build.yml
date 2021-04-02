@@ -22,7 +22,7 @@ jobs:
         with:
           credentials: ${{ secrets.gcp_credentials }}
           path: .lighthouseci
-          destination: pixboost-www/.gh/${{ github.run_number }}/
+          destination: pixboost-www/.gh/${{ github.run_number }}
       - name: Prepare Deployment Artifact
         run: |
           mkdir site/dist
