@@ -17,6 +17,12 @@ jobs:
         run: make build
       - name: Lighthouse Test
         run: make lighthouse-test || true
+      - name: Copy test results
+        uses: google-github-actions/upload-cloud-storage@main
+        with:
+          credentials: ${{ secrets.gcp_credentials }}
+          path: .lighthouseci/*
+          destination: pixboost-www/.gh/${{ env.GITHUB_RUN_NUMBER }}/
       - name: Prepare Deployment Artifact
         run: |
           mkdir site/dist
