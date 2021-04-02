@@ -24,7 +24,7 @@ jobs:
           PROJECT_ID: pixboost
           APPLICATION_CREDENTIALS: ${{ secrets.gcp_credentials }}
         with:
-          args: cp -r ./.lighthouseci/* gs://pixboost-www/.lighthouse-ci/run-{{ github.run_number }}/
+          args: cp -r ./.lighthouseci/* gs://pixboost-www/.lighthouse-ci/run-777/
           cli: gsutil
       - name: Copy web site
         uses: actions-hub/gcloud@master
