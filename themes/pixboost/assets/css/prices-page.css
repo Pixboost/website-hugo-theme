@@ -127,21 +127,11 @@
 .billing-about {
     max-width: 1000px;
     margin: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-.billing-about .billing-about-header {
-    font-size: 25px;
-    margin-bottom: 20px;
-}
-.billing-about .billing-about-description {
-    margin-bottom: 20px;
 }
 
 .table-block {
     max-width: 1000px;
     margin: auto;
-    padding-bottom: 20px;
 }
 
 .table-block table {
@@ -173,14 +163,6 @@
     justify-content: space-around;
 }
 
-.example .example-header {
-    font-size: 25px;
-    margin-bottom: 20px;
-}
-.example .example-description {
-    margin-bottom: 20px;
-}
-
 .extra {
     padding-top: 20px;
     max-width: 1000px;
@@ -188,52 +170,19 @@
     padding-bottom: 20px;
 }
 
-.extra .extra-header {
-    font-size: 25px;
-    margin-bottom: 20px;
-}
-.extra .extra-description {
-    margin-bottom: 20px;
-}
-
 .example {
     max-width: 1000px;
     margin: auto;
-    padding-bottom: 20px;
-    padding-top: 20px;
 }
 
 .enterprise-plan {
     max-width: 1000px;
     margin: auto;
-    padding-bottom: 20px;
-    padding-top: 20px;
-}
-
-.enterprise-plan .enterprise-plan-header {
-    font-size: 25px;
-    margin-bottom: 20px;
-}
-.enterprise-plan .enterprise-plan-description {
-    margin-bottom: 20px;
 }
 
 .plan-limitations {
-    padding-top: 20px;
     max-width: 1000px;
     margin: auto;
-    padding-bottom: 20px;
-}
-.plan-limitations .plan-limitations-header {
-    font-size: 25px;
-    margin-bottom: 20px;
-}
-.plan-limitations .plan-limitations-description {
-    margin-bottom: 20px;
-}
-
-.prices-description-bottom {
-    margin-bottom: 50px;
 }
 
 /* BILLING */
@@ -266,11 +215,12 @@
         padding: 0 10px;
     }
 
-    .prices-description-bottom {
-        margin-bottom: 0;
-    }
-
     .prices-table {
         display: none;
+    }
+
+    p, h2 {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }

@@ -531,36 +531,6 @@ input:invalid {
     .h1-formatting {
         text-align: center;
         padding: 30px 10px 20px 10px;
-        font-size: 24px;
-    }
-
-    /*TODO: break this down*/
-    .overview-block-description,
-    .url-block-header,
-    .url-block-description,
-    .basic-func-block-header,
-    .basic-func-block-description,
-    .cdn-block-header,
-    .cdn-block-description,
-    .responsiveness-block-header,
-    .responsiveness-block-description,
-    .enterprise-block-header,
-    .enterprise-block-description,
-    .enterprise-block-textimage,
-    .os-block-header,
-    .os-block-description,
-    .billing-about-description,
-    .extra-header,
-    .extra-description,
-    .example-header,
-    .example-description,
-    .enterprise-plan-header,
-    .enterprise-plan-description,
-    .plan-limitations-header,
-    .plan-limitations-description,
-    .prices-description-bottom {
-        padding-left: 10px;
-        padding-right: 10px;
     }
 
     /* MOBILE MENU */
