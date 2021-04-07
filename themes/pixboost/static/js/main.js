@@ -17,7 +17,6 @@ window.trackLink = function(name, category) {
 }
 
 $(function() {
-    var _csrf;
     var _feedbackCsrf;
 
     function submitFeedback(email, text) {
@@ -33,16 +32,12 @@ $(function() {
             contentType: 'application/json',
             success: function () {
                 $('.js-feedback-thanks').removeClass('hidden');
+                $('.js-feedback-email').val('');
+                $('.js-feedback-text').val('');
             },
             error: function () {
                 $('.js-feedback-error').removeClass('hidden');
             }
-        });
-    }
-
-    function getCSRF() {
-        $.get('/api/1/auth/csrf', function (csrf) {
-            _csrf = csrf
         });
     }
 
@@ -66,7 +61,6 @@ $(function() {
         }
     });
 
-    getCSRF();
     getFeedbackCSRF();
 
     $('.js-mobile-menu-button').on('click', function () {
