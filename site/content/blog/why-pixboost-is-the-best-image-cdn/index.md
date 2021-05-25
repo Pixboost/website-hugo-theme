@@ -38,7 +38,45 @@ For instance, some projects don't support next generation formats, like WebP or 
 
 ### Containers optimised runtime
 
+We choose to use Golang because you could compile it and get a lightweight staticly linked executable that could be easily moved around. We provide docker image and that is the best way to deploy the service into environment.
+
+Containers became a pretty much default runtime nowadays, so you could easily deploy images service on all popular clouds and manage infra by yourself (cost is usually lower, setup and service more complex) or use serverless offerings (running cost is higher, but managing is trivial).
 
 
 ### CDN optimised
 
+Given we have [opinion](#opiniated-api-or-simple-is-power) on everything we also think you are better to deploy the image API behind Content Delivery Network. Transformimgs supports Accept and Vary HTTP headers to serve images in the next generation formats and taking advantage of Save-Data client hint.
+
+Given that assumption we could also streamline design decisions which makes the service implementation simpler and minimises risk of issues.
+
+## Pixboost SaaS offering
+
+Pixboost is a SaaS offering on top of the transformimgs service which brings all of the above benefit and adds more
+
+### CDN Included
+
+We include CDN in our offering and we took our time to pick the best one. Currently we use Google CDN and there are reasons:
+
+* HTTP/3 support. Google was one of the initiator of the standard and was one of the first who added it to their Content Delivery Network
+
+* Google is Network. Google is the company who actually takes care of the network end to end. They put cable [down the ocean](https://cloud.google.com/blog/products/infrastructure/introducing-the-echo-subsea-cable), put Fibre to your house and make the most popular browser. So, we thought they can be trusted :)
+
+* They have more than [100 points of presence](https://cloud.google.com/cdn/docs/locations), so you can make sure the images will be close to your users.
+
+* Google is always one of the leader in all top [latency benchmarks](https://www.cdnperf.com/)
+
+We constantly monitor the performance and competitors and have a clear plan of how we could migrate Pixboost to a different CDN. So, if there will be a better option then we'll switch there to provide our customer with the best available option.
+
+### Tools and libraries
+
+In addition to API that you could easily use in your HTML markup we also provide JS and React libraries that provide some feature like lazy loading out of the box.
+
+On the other side of content delivery we also have Snippet Generator tool that helps content managers to put optimised images on the landing pages and articles.
+
+TODO: Screenshot
+
+### Simple pricing
+
+You pay only for weight of the images that been delivered to your users. That's really it. So, it's pay for what you use.
+
+What also would surprise you is if you serve the same number of images it becomes cheaper for you cause we improve the algorithms that make images smaller. For instance, when we [introduced AVIF format]() some of our clients started paying by up to 30% less than before.
