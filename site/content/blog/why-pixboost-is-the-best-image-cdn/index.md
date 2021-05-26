@@ -12,6 +12,8 @@ I decided to structure this post in two sections. In the first part I'll talk ab
 
 In the second part I'll go into our SaaS offering and why you could prefer it to our competitors.
 
+The TLDR: Making things our way allows us to have a solid solution that works for most Web projects out there. The missions is to do one small thing, but be the best at it.
+
 ## Transformimgs Open Source Image CDN
 
 ### Images service built for web
@@ -24,11 +26,13 @@ Targeting web also enables us to eliminate some features that we think should be
 
 ### Opiniated API or simple is power
 
-Our API has just 4 endpoints and you can't change much when using them. This is done intentionally and opens a few doors for us:
+Our API has just 4 endpoints, and you don't have much choice when using them. This is done intentionally and opens a few doors for us:
 
 * Maintain API compatibility is easy. Without having thousands of options allow us to not worry about backward compatibility meaning the users don't need to look out for deprecated options and update their integration.
 * Making algorithms smarter behind the scene. For instance, you can't specify the output format. Instead, we use the best possible format behind the scene. One of the examples would be AVIF and images with text. We found that on those images AVIF might generate some visible artifacts, so it's better to use WebP for those.
 * Less code is a great advantage that generates less bugs. 
+
+We don't say that we will never add more operations, but we'd like them to fit very well into our [web first strategy](#images-service-built-for-web). For example, we don't think that watermarks are user experience for product images in online shop, so we wouldn't add it to the service.
 
 ### Zero (almost) config
 
@@ -51,11 +55,21 @@ Given that assumption we could also streamline design decisions which makes the 
 
 ## Pixboost SaaS offering
 
-Pixboost is a SaaS offering on top of the transformimgs service which brings all of the above benefit and adds more
+Pixboost is a SaaS offering on top of the transformimgs service which brings all the above benefits and adds more. Let's see what they are.
+
+### SaaS
+
+Just quickly reiterate what benefits SaaS have.
+
+* We take care of updates and security
+* We make sure the service runs 24/7 and have [SLA]()
+* We have a very thorough testing plan and before releasing a new version we go through hundreds of images and see if the main metrics are only improving.
+* Image optimisation is quite CPU heavy workload, so it's a tough challenge to run it cost effectively. However, I think we nailed it, so we can offer a reasonable price for our service.
+* Easy to use dashboard with the latest stats and usage information
 
 ### CDN Included
 
-We include CDN in our offering and we took our time to pick the best one. Currently we use Google CDN and there are reasons:
+We include CDN in our offering, and we took our time to pick the best one. Currently we use Google CDN and there are reasons:
 
 * HTTP/3 support. Google was one of the initiator of the standard and was one of the first who added it to their Content Delivery Network
 
@@ -75,8 +89,27 @@ On the other side of content delivery we also have Snippet Generator tool that h
 
 TODO: Screenshot
 
+### End 2 End solution
+
+Because we provide end to end solution including tools and CDN we're also covering some of the edge cases like cache invalidation and warmup that could be integrated into more complex workflow. You could find the example of cache invalidation on workflow for AWS S3 integration here - https://github.com/Pixboost/aws-s3-invalidate-cdn.
+
 ### Simple pricing
 
 You pay only for weight of the images that been delivered to your users. That's really it. So, it's pay for what you use.
 
 What also would surprise you is if you serve the same number of images it becomes cheaper for you cause we improve the algorithms that make images smaller. For instance, when we [introduced AVIF format]() some of our clients started paying by up to 30% less than before.
+
+### Open Source
+
+At Pixboost we try to make everything Open Source: image processing API, libraries, website.
+
+I'm a true believer in Open Source and think that it's the best business model for IT projects out there. Some of the highlights why open source is better:
+
+* Quality is better. You publish the source code to the whole World, so it's essential to have a clean and well documented code.
+* Community that you build around your project helps a lot with everything really. Finding issues quicker, brainstorming, product roadmap are some of the things you could get help with. 
+* I do think that the Internet is a more that just source of the information. Some of the essential things like shopping, issuing passport or booking a doctor appointment is done over the Internet. Open source helps to make it transparent, so we can make sure that there is no fraud or privacy in the code.
+
+## Conclusion
+
+I re-read the article and hey, I like what's in there! Let me sign up to this Pixboost and see what it is :) If you think the same then give it a go. If you have concerns or think differently - that's good and maybe there is a solution out there that suits your better.
+
