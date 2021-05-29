@@ -24,4 +24,5 @@ build:
 
 .PHONY:
 lighthouse-test:
+	echo PWD $(shell pwd)
 	docker run --rm -v $(shell pwd):/home/lhci/site -v $(shell pwd)/.lighthouseci:/home/lhci/.lighthouseci pixboost/lighthouse-ci-cli lhci --config ./site/lighthouserc.yaml autorun
