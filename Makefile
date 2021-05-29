@@ -26,5 +26,7 @@ build:
 lighthouse-test:
 	echo PWD $(shell pwd)
 	ls -la
+	echo "---------------"
+	ls -la ./.lighthouseci
 	echo docker run --rm -v $(shell pwd):/home/lhci/site -v $(shell pwd)/.lighthouseci:/home/lhci/.lighthouseci pixboost/lighthouse-ci-cli lhci --config ./site/lighthouserc.yaml autorun
 	docker run --rm -v $(shell pwd):/home/lhci/site -v $(shell pwd)/.lighthouseci:/home/lhci/.lighthouseci pixboost/lighthouse-ci-cli lhci --config ./site/lighthouserc.yaml autorun
