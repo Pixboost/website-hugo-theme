@@ -14,3 +14,6 @@ ci:
                 cpuSlowdownMultiplier: 4
     assert:
         preset: lighthouse:no-pwa
+    upload:
+        target: filesystem
+        outputDir: site/.lighthouseci
