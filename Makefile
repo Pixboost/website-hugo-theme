@@ -30,4 +30,4 @@ lighthouse-test:
 	ls -la ./.lighthouseci
 	docker --version
 	echo docker run --rm -v $(shell pwd):/home/lhci/site -v $(shell pwd)/.lighthouseci:/home/lhci/.lighthouseci pixboost/lighthouse-ci-cli lhci --config ./site/lighthouserc.yaml autorun
-	docker run --rm -v "$(shell pwd):/home/lhci/site" -v "$(shell pwd)/.lighthouseci:/home/lhci/.lighthouseci" pixboost/lighthouse-ci-cli lhci --config ./site/lighthouserc.yaml autorun
+	docker run --rm --mount="type=bind,src=$(shell pwd)/.lighthouseci,dst=/home/lhci/.lighthouseci" -v "$(shell pwd):/home/lhci/site" pixboost/lighthouse-ci-cli lhci --config ./site/lighthouserc.yaml autorun
