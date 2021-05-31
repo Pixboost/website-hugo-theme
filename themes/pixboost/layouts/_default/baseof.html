@@ -2,7 +2,11 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+
+        {{ if not .Params.v2 }}
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        {{ end }}
+
         <title>{{.Title}}</title>
         <meta name="description" content="{{.Description}}">
         <link rel="canonical" href="{{.Permalink}}">
@@ -13,20 +17,28 @@
 
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
+        {{ if not .Params.v2 }}
         <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto|Coustard&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
         <link rel="stylesheet" href="/css/common.css"/>
+        {{ else }}
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="/css/v2/common.css"/>
+        {{ end }}
 
-        {{$style :=  printf "css/%s-%s.css" .Type .Kind | resources.Get}}
+        {{$style :=  printf "css/v2/%s-%s.css" .Type .Kind | resources.Get}}
+        {{ if not .Params.v2 }}
+        {{$style =  printf "css/%s-%s.css" .Type .Kind | resources.Get}}
+        {{end}}
         {{if $style}}
         <link rel="stylesheet" href="{{$style.RelPermalink}}"/>
         {{end}}
 
-
-
+        {{ if not .Params.v2 }}
         <!--[if lt IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
         <![endif]-->
+        {{ end }}
 
         <script id="pb-script" data-api-key="MzY2MjQ4NzQ2Mw__" data-autoload=""
                 src="https://pixboost.com/libs/pixboost.bundle.min.js" async=""></script>
@@ -48,10 +60,16 @@
         <!-- End Google Events -->
     </head>
     <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
+        {{ if not .Params.v2 }}
+            {{- partial "header.html" . -}}
+            <div id="content">
+                {{- block "main" . }}{{- end }}
+            </div>
+            {{- partial "footer.html" . -}}
+        {{ else }}
+            {{- partial "header-v2.html" . -}}
+            {{- block "main" . }}{{- end }}
+            {{- partial "footer-v2.html" . -}}
+        {{ end }}
     </body>
 </html>
