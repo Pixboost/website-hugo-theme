@@ -1,14 +1,18 @@
 <header>
-  <a href="/">
-    <img src="/img/v2/logo.svg" alt="Pixboost Logo"/>
-  </a>
-  <nav>
-    <ul>
-      <li><a href="/about/"  onclick="window.trackLink('About','about')">About</a></li>
-      <li><a href="/prices/"  onclick="window.trackLink('Prices','prices')">Prices</a></li>
-      <li><a href="/newsletter/" onclick="window.trackLink('Newsletter','newsletter')">Newsletter</a></li>
-      <li><a href="https://help.pixboost.com" target="_blank" onclick="window.trackLink('Documentation','documentation')">Documentation</a></li>
-      <li><a href="/blog/" onclick="window.trackLink('Blog','blog')">Blog</a></li>
-    </ul>
-  </nav>
+  <div class="center header">
+    <a href="/">
+      <img src="/img/v2/logo.svg" alt="Pixboost Logo" height="60"/>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="/about/" class="{{ if eq .Type "about" }}selected{{end}}"  onclick="window.trackLink('About','about')">About</a></li>
+        <li><a href="/prices/" class="{{ if eq .Type "prices" }}selected{{end}}"  onclick="window.trackLink('Prices','prices')">Prices</a></li>
+        <li><a href="/newsletter/" class="{{ if eq .Type "newsletter" }}selected{{end}}" onclick="window.trackLink('Newsletter','newsletter')">Newsletter</a></li>
+        <li><a href="https://help.pixboost.com"  target="_blank" onclick="window.trackLink('Documentation','documentation')">Documentation</a></li>
+        <li><a href="/blog/" class="{{ if eq .Type "blog" }}selected{{end}}" onclick="window.trackLink('Blog','blog')">Blog</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn btn-light" href="/customer/#login" onclick="window.trackLink('Login','login')">LOGIN</a>
+  </div>
 </header>
