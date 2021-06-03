@@ -1,10 +1,11 @@
 main {
-    /*background-color: black;*/
+    background-color: rgb(var(--background-color));
 }
 
 p.title {
     font-size: 0.7em;
     color: rgb(var(--green-brand-color));
+    margin-bottom: 0;
 }
 
 /* Hero Section*/
@@ -25,11 +26,16 @@ p.title {
 
 #hero .description {
     color: #ADADB9;
+    margin-top: 0;
+}
+
+#hero .cta {
+    margin-top: var(--space-4);
 }
 
 #hero .video {
     width: 100%;
     padding: var(--space-4);
-    background: radial-gradient(ellipse at center, rgba(var(--green-brand-color), 0.4), rgba(var(--green-brand-color), 0), white);
+    background: radial-gradient(circle, rgba(var(--green-brand-color), 0.3), rgb(var(--background-color)) 70%);
 }
 
