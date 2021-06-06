@@ -1,5 +1,7 @@
 main {
-    background-color: rgb(var(--background-color));
+    background-image: url("/img/v2/homepage/bg.svg");
+    background-size: cover;
+    padding: 0 var(--space-4);
 }
 
 p.title {
@@ -8,10 +10,18 @@ p.title {
     margin-bottom: 0;
 }
 
+section.no-frame,
+section.with-frame>.frame{
+    max-width: 1296px;
+    margin: auto;
+    padding: var(--space-6);
+}
+
 /* Hero Section*/
 #hero {
     display: flex;
     flex-direction: row;
+    background-color: rgb(var(--background-color));
 }
 
 #hero .content {
@@ -39,3 +49,91 @@ p.title {
     background: radial-gradient(circle, rgba(var(--green-brand-color), 0.3), rgb(var(--background-color)) 70%);
 }
 
+/* How it works */
+
+#how-it-works {
+    display: flex;
+    justify-content: center;
+}
+
+#how-it-works .frame {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+#how-it-works .text {
+    display: flex;
+    flex-direction: row;
+}
+
+#how-it-works .text .heading {
+    width: 50%;
+}
+
+#how-it-works .text .description {
+    width: 50%;
+    line-height: 150%;
+    color: rgb(var(--description-color));
+    font-size: 0.9em;
+}
+
+#how-it-works .infographic {
+    display: flex;
+    flex-direction: row;
+
+}
+
+#how-it-works .infographic .card {
+    max-width: 300px;
+}
+
+#how-it-works .infographic .card img {
+    width: 100%;
+}
+
+#how-it-works .infographic .card .heading {
+    font-weight: bold;
+}
+
+#how-it-works .infographic .card .description {
+    color: rgb(var(--description-color));
+    font-size: 0.8em;
+    line-height: 140%;
+}
+
+#how-it-works .infographic .connection {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#how-it-works .infographic .connection .right-arrow {
+    color: rgb(var(--green-brand-color));
+    font-size: 4em;
+    margin-top: 0;
+}
+
+#how-it-works .infographic .connection .left-arrow {
+    color: rgba(var(--green-brand-color), 0.5);
+    font-size: 4em;
+}
+
+/* Who We Are */
+
+#who-we-are {
+    display: flex;
+    flex-direction: row;
+}
+
+#who-we-are .content {
+    margin-right: var(--space-2);
+}
+
+#who-we-are .video video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}

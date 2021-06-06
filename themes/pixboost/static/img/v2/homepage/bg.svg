@@ -1,0 +1,84 @@
+<svg width="1920" height="8752" viewBox="0 0 1920 8752" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<rect width="1920" height="8752" fill="white"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="-1" y="-6" width="1921" height="1862">
+<rect x="-1" y="-6" width="1921" height="1862" fill="white"/>
+</mask>
+<g mask="url(#mask0)">
+<rect x="-1" y="-6" width="1921" height="1862" fill="url(#paint0_radial)"/>
+</g>
+<g clip-path="url(#clip1)">
+<circle cx="960" cy="3764" r="2500" fill="#F5F5FA"/>
+</g>
+<path d="M-540 2274H2460V3004C2460 3004 1814 2510.09 960 2510.09C106 2510.09 -540 3004 -540 3004V2274Z" fill="#F5F5FA"/>
+<g clip-path="url(#clip2)">
+<mask id="mask1" mask-type="alpha" maskUnits="userSpaceOnUse" x="-1" y="4292" width="1921" height="2000">
+<rect width="1921" height="2000" transform="matrix(-1 0 0 1 1920 4292)" fill="white"/>
+</mask>
+<g mask="url(#mask1)">
+<rect width="1921" height="1746" transform="matrix(-1 0 0 1 1920 4292)" fill="url(#paint1_radial)"/>
+</g>
+</g>
+<g clip-path="url(#clip3)">
+<g clip-path="url(#clip4)">
+<circle cx="960" cy="1992" r="2500" fill="white"/>
+</g>
+</g>
+<path d="M-540 7016H2460V7746C2460 7746 1814 7252.09 960 7252.09C106 7252.09 -540 7746 -540 7746V7016Z" fill="#F5F5FA"/>
+<g clip-path="url(#clip5)">
+<circle cx="960" cy="8340" r="2500" fill="#F5F5FA"/>
+</g>
+<g filter="url(#filter0_f)">
+<path d="M831.798 6393.25C1083.26 6572.87 1241.8 5937.25 1028.88 6763.81C-10.2024 7541.25 724.763 6775.37 473.297 6595.75C221.832 6416.13 -31.9485 6275.77 118.243 6113.35C268.434 5950.92 580.332 6213.63 831.798 6393.25Z" fill="#BDBDFF" fill-opacity="0.1"/>
+</g>
+<g filter="url(#filter1_f)">
+<path d="M1857.45 6464.32C2231.03 6825.67 1608.46 6585.3 1412.43 6787.96C1577.99 7188.79 1521.16 7559.54 1147.59 7198.2C774.017 6836.85 630.084 6379.63 826.106 6176.98C1022.13 5974.32 1483.88 6102.97 1857.45 6464.32Z" fill="white" fill-opacity="0.1"/>
+</g>
+<g filter="url(#filter2_f)">
+<path d="M960.733 6020.59C658.486 6043.5 413.466 6225.04 413.466 6426.07C413.466 6627.1 672.727 6381.24 974.974 6358.34C1277.22 6335.43 1508 6544.15 1508 6343.11C1508 6142.08 1262.98 5997.68 960.733 6020.59Z" fill="#D7D7F0" fill-opacity="0.5"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f" x="-48.4722" y="5940.69" width="1298.58" height="1286.96" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="60.8855" result="effect1_foregroundBlur"/>
+</filter>
+<filter id="filter1_f" x="616.715" y="5959.2" width="1479.59" height="1507.58" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="60.8855" result="effect1_foregroundBlur"/>
+</filter>
+<filter id="filter2_f" x="213.465" y="5818.2" width="1494.53" height="886.359" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur"/>
+</filter>
+<radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(959.5 -6) rotate(90) scale(1862 1921)">
+<stop stop-color="#0E1232"/>
+<stop offset="1" stop-color="#021413"/>
+</radialGradient>
+<radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(960.5) rotate(90) scale(1746 1921)">
+<stop stop-color="#0E1232"/>
+<stop offset="1" stop-color="#021413"/>
+</radialGradient>
+<clipPath id="clip0">
+<rect width="1920" height="8752" fill="white"/>
+</clipPath>
+<clipPath id="clip1">
+<rect width="1920" height="1247" fill="white" transform="translate(0 1264)"/>
+</clipPath>
+<clipPath id="clip2">
+<rect width="1920" height="1746" fill="white" transform="matrix(-1 0 0 1 1920 4292)"/>
+</clipPath>
+<clipPath id="clip3">
+<rect width="1920" height="200" fill="white" transform="translate(0 4292)"/>
+</clipPath>
+<clipPath id="clip4">
+<rect width="1920" height="1190" fill="white" transform="translate(0 3402)"/>
+</clipPath>
+<clipPath id="clip5">
+<rect width="1920" height="1378" fill="white" transform="translate(0 5840)"/>
+</clipPath>
+</defs>
+</svg>
