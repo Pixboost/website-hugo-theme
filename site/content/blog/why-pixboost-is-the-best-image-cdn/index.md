@@ -1,99 +1,107 @@
 ---
 title: "Why Pixboost Is the Best Image Cdn"
+description: "Pixboost is an Image CDN and there are few others on the market. But we think we are doing the best product with the strong differentiation point. In this article we cover why we think so."
 date: 2021-05-24T13:01:55Z
 draft: true
+image: winner.jpg
 ---
 
-We've got this question on Twitter and I thought that this is a huge gap that we haven't fill that elaborates our vision. Special thanks to @TODO for pointing this out.
+When it comes to web projects, it is crucial for the final result to be top-notch in the aspect of speed. Images make up one of the areas that can have a significant effect on how fast a website loads. However, fine-tuning this area is a little more complex than merely adjusting image sizes.
 
-TODO: Tweet card
+It involves applying different technologies to make marginal gains in how images in web projects are delivered to the end user. Image CDNs have emerged as one of the go-to technologies in solving image optimization and delivery issues. In that regard, we are going to explain our philosophy and what sets it apart from those of other similar tools.
 
-I decided to structure this post in two sections. In the first part I'll talk about our open source image service which is the heart of Pixboost. I'll explain what the philosophy is and how it's different to other similar tools.
+We shall also go into detail about value in our SaaS offering and what makes it better than others on the market.
 
-In the second part I'll go into our SaaS offering and why you could prefer it to our competitors.
-
-The TLDR: Making things our way allows us to have a solid solution that works for most Web projects out there. The missions is to do one small thing, but be the best at it.
 
 ## Transformimgs Open Source Image CDN
 
-### Images service built for web
+### An images service built for web
 
-Our main focus is to build image service that covers needs of typical web project that gets loaded on the different browsers by people from different location on the different devices and different network quality.
+Our main focus is to build an images service that covers the needs of a typical web project that gets loaded on different browsers. This web project would also be the kind loaded by people from numerous locations on different devices and varying network quality.
 
-Being web-first allows us to make some decisions like supporting formats that browsers support, or we could decide to not support some feature that are not widely adopted, e.g. client hints.
+Being web-first allows us to make some decisions like supporting formats that browsers support. It also means we could decide not to support a feature that is not widely adopted, such as client hints.
 
-Targeting web also enables us to eliminate some features that we think should be done by other tools. For example, making image round should be done by CSS and not API.
+Targeting the web also enables us to eliminate some features that we think should be done by other tools. For example, making an image round should be done by CSS and not by an API.
 
-### Opiniated API or simple is power
+### Opinionated API or simple is power
 
-Our API has just 4 endpoints, and you don't have much choice when using them. This is done intentionally and opens a few doors for us:
+Our API has just four endpoints, and you don't have much choice when using them. This is done intentionally and opens a few doors for us such as:
 
-* Maintain API compatibility is easy. Without having thousands of options allow us to not worry about backward compatibility meaning the users don't need to look out for deprecated options and update their integration.
-* Making algorithms smarter behind the scene. For instance, you can't specify the output format. Instead, we use the best possible format behind the scene. One of the examples would be AVIF and images with text. We found that on those images AVIF might generate some visible artifacts, so it's better to use WebP for those.
-* Less code is a great advantage that generates less bugs. 
+* Maintaining API compatibility is easier. By not having thousands of options, we do not have to worry about backward compatibility meaning the users don't need to look out for deprecated options and update their integration.
 
-We don't say that we will never add more operations, but we'd like them to fit very well into our [web first strategy](#images-service-built-for-web). For example, we don't think that watermarks are user experience for product images in online shop, so we wouldn't add it to the service.
+*  Making algorithms smarter behind the scenes. For instance, you can't specify the output format. Instead, we determine the best possible format behind the scenes and go with that. Some good examples would be AVIF and images with text. We found that on those images, AVIF might generate some visible artifacts, so it's better to use WebP for such images. 
 
-### Zero (almost) config
+*  Less code also means that you reduce the chances of encountering bugs.
 
-This is very close to the previous point, but is different. We still don't have config file, and you could only change behaviour using command line flags. We will try to keep it that way as long as possible.
+We don't say that we will never add more operations, but we'd like them to fit very well into our web-first strategy. For example, we don't think that watermarks are a key part of the user experience for product images in an online shop, so we wouldn't add watermarking to the service.
 
-For instance, some projects don't support next generation formats, like WebP or AVIF in the default configuration. In our case, we do support them, and you can't turn them off. 
+### Minimal configuration
 
-### Containers optimised runtime
+This choice is made in the same spirit with the previous point, but it manifests differently. We still don't have a configuration file, meaning that you can only change behavior using command line flags. We will try to keep it that way for as long as possible.
 
-We choose to use Golang because you could compile it and get a lightweight staticly linked executable that could be easily moved around. We provide docker image and that is the best way to deploy the service into environment.
+It’s worth noting that some projects don't support next generation formats, like WebP or AVIF in the default configuration. In our case, we do support them, and you can't turn them off.
 
-Containers became a pretty much default runtime nowadays, so you could easily deploy images service on all popular clouds and manage infra by yourself (cost is usually lower, setup and service more complex) or use serverless offerings (running cost is higher, but managing is trivial).
+### Container-Optimized runtime
 
+We chose to use Go because you could compile it and get a lightweight, statically-linked executable that could be easily moved around. We provide a docker image and that is the best way to deploy the service into the environment.
+
+Containers have pretty much become a default runtime nowadays, so you could easily deploy an images service on all popular clouds and manage infra by yourself - the cost is usually lower, setup and service are more complex, or use server-less offerings - the running cost is higher, but managing is negligible.
 
 ### CDN optimised
 
-Given we have [opinion](#opiniated-api-or-simple-is-power) on everything we also think you are better to deploy the image API behind Content Delivery Network. Transformimgs supports Accept and Vary HTTP headers to serve images in the next generation formats and taking advantage of Save-Data client hint.
+Since we have an opinion on nearly everything regarding images for web projects, we also think you are better off deploying the image API behind a Content Delivery Network. Transformimgs supports Accept and Vary HTTP headers to serve images in the next generation formats and taking advantage of the Save-Data client hint.
 
-Given that assumption we could also streamline design decisions which makes the service implementation simpler and minimises risk of issues.
+Given that assumption, we could also streamline design decisions which makes the service implementation simpler and minimizes the risk of any issues.
 
 ## Pixboost SaaS offering
 
-Pixboost is a SaaS offering on top of the transformimgs service which brings all the above benefits and adds more. Let's see what they are.
+Pixboost is a SaaS offering on top of the transformimgs service which brings all the above benefits and adds more. Let's take a closer look at its benefits.
 
 ### SaaS
 
+For starters, since Pixboost is a Saas, it comes with a lot of the typical benefits of SaaS such as.
+
 Just quickly reiterate what benefits SaaS have.
 
-* We take care of updates and security
-* We make sure the service runs 24/7 and have [SLA]()
+*  We take care of all updates and security. This means that you don’t have to worry about your tools being out-of-date or vulnerable to new kinds of breaches. By extensively monitoring the way different customers use Pixboost, we are able to advance it based on what we learn about the users’ greatest desires.
+
+* We make sure the service runs 24/7, while also offering Service-Level Agreement (SLA). Many web projects start off on different scales, and their demands grow as time goes by. So for the smaller projects in particular, it is important to have a solution where there’s more flexibility in terms of what the provider will offer and subsequently, what it will cost the customer.
+
 * We have a very thorough testing plan and before releasing a new version we go through hundreds of images and see if the main metrics are only improving.
-* Image optimisation is quite CPU heavy workload, so it's a tough challenge to run it cost effectively. However, I think we nailed it, so we can offer a reasonable price for our service.
-* Easy to use dashboard with the latest stats and usage information
+
+*  Image optimization is quite CPU-intensive, so it can be very expensive to run effectively. However, we have managed to make it as lean as possible, meaning we can offer a reasonable price for our service.
+
+* We provide a very user-friendly experience through a simplified dashboard. We also enable in-depth analytics and reporting by providing the latest statistics and usage information. 
 
 ### CDN Included
 
-We include CDN in our offering, and we took our time to pick the best one. Currently we use Google CDN and there are reasons:
+We included CDN in our offering, and we took our time to pick the best one. Currently we use Google CDN and these are the reasons why:
 
-* HTTP/3 support. Google was one of the initiator of the standard and was one of the first who added it to their Content Delivery Network
+*  It has HTTP/3 support. Google was one of the initiators of the standard and among the first to add it to their Content Delivery Network.
 
-* Google is Network. Google is the company who actually takes care of the network end to end. They put cable [down the ocean](https://cloud.google.com/blog/products/infrastructure/introducing-the-echo-subsea-cable), put Fibre to your house and make the most popular browser. So, we thought they can be trusted :)
+* Google is the company that actually takes care of the network end-to-end. They lay cables down in the ocean, take fibre all the way to your house and make the most popular browser. Therefore, we feel that they can be trusted since they do a lot to develop this ecosystem.
 
-* They have more than [100 points of presence](https://cloud.google.com/cdn/docs/locations), so you can make sure the images will be close to your users.
+* They have more than 100 points of presence, so you can make sure the images will be fairly close to your users regardless of where they are loading the website from.
 
-* Google is always one of the leader in all top [latency benchmarks](https://www.cdnperf.com/)
-
-We constantly monitor the performance and competitors and have a clear plan of how we could migrate Pixboost to a different CDN. So, if there will be a better option then we'll switch there to provide our customer with the best available option.
+* Google is always one of the leaders when it comes to latency benchmarks for CDNs. We constantly compare its performance to competitors, and have a clear plan of how to migrate Pixboost to a different CDN if necessary. So, if there’s a better option, then we'll switch to it so as to consistently provide our customers with the best available option.
 
 ### Tools and libraries
 
-In addition to API that you could easily use in your HTML markup we also provide JS and React libraries that provide some feature like lazy loading out of the box.
+In addition to the API that you can easily use in your HTML markup, we also provide JS and React libraries, which come with features like lazy loading out-of-the-box. 
 
-On the other side of content delivery we also have Snippet Generator tool that helps content managers to put optimised images on the landing pages and articles.
+On the other side of content delivery, we also have a Snippet Generator tool that helps content managers to put optimise images on the landing pages and articles.
 
 TODO: Screenshot
 
 ### End 2 End solution
 
-Because we provide end to end solution including tools and CDN we're also covering some of the edge cases like cache invalidation and warmup that could be integrated into more complex workflow. You could find the example of cache invalidation on workflow for AWS S3 integration here - https://github.com/Pixboost/aws-s3-invalidate-cdn.
+Because we provide an end-to-end solution including tools, libraries and a CDN, we're also covering some of the edge cases like cache invalidation and warmup, that could be integrated into a more complex workflow. You could find the example of cache invalidation on a workflow for AWS S3 integration [here](https://github.com/Pixboost/aws-s3-invalidate-cdn).
 
 ### Simple pricing
+
+With Pixboost, you only pay for the weight of the images that have been delivered to your users. That's really it. So, it's pay for what you use. What may also surprise you is that if you serve the same number of images continuously, it becomes cheaper for you because we improve the algorithms that make images smaller.
+
+For instance, when we introduced AVIF format, some of our clients started paying up to 30% less than before.
 
 You pay only for weight of the images that been delivered to your users. That's really it. So, it's pay for what you use.
 
@@ -101,15 +109,32 @@ What also would surprise you is if you serve the same number of images it become
 
 ### Open Source
 
-At Pixboost we try to make everything Open Source: image processing API, libraries, website.
+At Pixboost, we try to make everything Open Source; image processing API, libraries, website, etc. We are true believers in Open Source and think that it's the best business model for IT projects out there. 
 
-I'm a true believer in Open Source and think that it's the best business model for IT projects out there. Some of the highlights why open source is better:
+Here are some of the main reasons why we think open source is better:
 
-* Quality is better. You publish the source code to the whole World, so it's essential to have a clean and well documented code.
-* Community that you build around your project helps a lot with everything really. Finding issues quicker, brainstorming, product roadmap are some of the things you could get help with. 
-* I do think that the Internet is a more that just source of the information. Some of the essential things like shopping, issuing passport or booking a doctor appointment is done over the Internet. Open source helps to make it transparent, so we can make sure that there is no fraud or privacy in the code.
+* Quality is better. Since the source code is published to the whole world, it's essential to have clean and well-documented code.
+
+*  The large community surrounding your project really helps a lot with everything. You get to detect issues much quicker, you can brainstorm different approaches to solving problems and also get extra assistance with your product roadmap.
+
+* We think that the Internet is more than just a large source of information. Some of the essential activities like shopping, issuing passports or booking a doctor appointment are done over the Internet. Open Source helps to make everything more transparent, so we can make sure that there is no fraud or secrecy in the code.
+
+### Customer Support
+
+It’s extremely important to be able to receive help in case anything goes wrong with the images in your web project. At Pixboost, not only do we do 24/7 monitoring, we also have a quick turnaround, with the ability to solve issues in as low as one hour.
+
+It all depends on the nature of the issue, and your chosen pricing plan.
 
 ## Conclusion
 
-I re-read the article and hey, I like what's in there! Let me sign up to this Pixboost and see what it is :) If you think the same then give it a go. If you have concerns or think differently - that's good and maybe there is a solution out there that suits your better.
+Ultimately, Pixboost is a formidable solution for various reasons. Firstly, it lets you not have to worry about every little setting. It is designed to be simple and do as much on its own as possible.
 
+Secondly, Pixboost captures the best of two different worlds. It comes as a SaaS offering, which means that you have someone dedicated to offering help in case of any troubles. However, help is not limited to the team you pay.
+
+You can opt for the open source version and benefit from both the other members of the general public that contribute, and the consultants from Pixboost who can help you customize the solution according to your project’s unique needs.
+
+Thirdly, Pixboost does more than just solving image optimization issues. It gives you greater liberty over how you work, from details like managing API keys, to alternating between different automated API workflow call capacities and bandwidth packages.
+
+Depending on your traffic levels, you may also be eligible for discounts. Keep in mind that for as long as Pixboost improves at image compression faster than your usage levels, it remains progressively cheaper.
+
+Lastly, it is always wise to select such tools with the growth of your web project in mind. You’re better off with a tool that maintains its quality as user location and browsers vary, and Pixboost excels at that.
