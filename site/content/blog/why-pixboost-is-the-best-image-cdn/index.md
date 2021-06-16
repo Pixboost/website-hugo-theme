@@ -53,8 +53,6 @@ Containers have pretty much become a default runtime nowadays, so you could easi
 
 ### CDN optimised
 
-{{< full-width-image image="cdn-locations.png" alt="Content delivery network locations" >}}
-
 Since we have an opinion on nearly everything regarding images for web projects, we also think you are better off deploying the image API behind a Content Delivery Network. Transformimgs supports Accept and Vary HTTP headers to serve images in the next generation formats and taking advantage of the Save-Data client hint.
 
 Given that assumption, we could also streamline design decisions which makes the service implementation simpler and minimizes the risk of any issues.
@@ -81,7 +79,10 @@ Just quickly reiterate what benefits SaaS have.
 
 ### CDN Included
 
-We included CDN in our offering, and we took our time to pick the best one. Currently we use Google CDN and these are the reasons why:
+{{< full-width-image image="cdn-locations.png" alt="Content delivery network locations" >}}
+
+
+We included CDN in our offering, and we took our time to pick the best one. Currently, we use Google CDN, and these are the reasons why:
 
 *  It has HTTP/3 support. Google was one of the initiators of the standard and among the first to add it to their Content Delivery Network.
 
@@ -89,7 +90,7 @@ We included CDN in our offering, and we took our time to pick the best one. Curr
 
 * They have more than 100 points of presence, so you can make sure the images will be fairly close to your users regardless of where they are loading the website from.
 
-* Google is always one of the leaders when it comes to latency benchmarks for CDNs. We constantly compare its performance to competitors, and have a clear plan of how to migrate Pixboost to a different CDN if necessary. So, if there’s a better option, then we'll switch to it so as to consistently provide our customers with the best available option.
+* Google is always one of the leaders when it comes to latency benchmarks for CDNs. We constantly compare its performance to competitors, and have a clear plan of how to migrate Pixboost to a different CDN if necessary. So, if there’s a better option, then we'll switch to it to consistently provide our customers with the best available option.
 
 ### Tools and libraries
 
@@ -111,7 +112,7 @@ For instance, when we introduced AVIF format, some of our clients started paying
 
 You pay only for weight of the images that been delivered to your users. That's really it. So, it's pay for what you use.
 
-What also would surprise you is if you serve the same number of images it becomes cheaper for you cause we improve the algorithms that make images smaller. For instance, when we [introduced AVIF format]() some of our clients started paying by up to 30% less than before.
+What also would surprise you is if you serve the same number of images it becomes cheaper for you cause we improve the algorithms that make images smaller. For instance, when we [introduced AVIF format](/blog/next-gen-avif-format/) some of our clients started paying by up to 30% less than before.
 
 ### Open Source
 
