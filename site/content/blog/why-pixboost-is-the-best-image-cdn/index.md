@@ -1,8 +1,8 @@
 ---
 title: "Why Pixboost Is the Best Image Cdn"
-description: "Pixboost is an Image CDN and there are few others on the market. But we think we are doing the best product with the strong differentiation point. In this article we cover why we think so."
+description: "Pixboost is an Image CDN and there are few others on the market. We think we are doing the best product with the strong differentiation points. In this article we cover why we think so."
 date: 2021-05-24T13:01:55Z
-draft: true
+draft: false
 image: winner.jpg
 ---
 
@@ -25,6 +25,8 @@ Targeting the web also enables us to eliminate some features that we think shoul
 
 ### Opinionated API or simple is power
 
+{{< full-width-image image="API.jpg" alt="Image API" >}}
+
 Our API has just four endpoints, and you don't have much choice when using them. This is done intentionally and opens a few doors for us such as:
 
 * Maintaining API compatibility is easier. By not having thousands of options, we do not have to worry about backward compatibility meaning the users don't need to look out for deprecated options and update their integration.
@@ -37,6 +39,8 @@ We don't say that we will never add more operations, but we'd like them to fit v
 
 ### Minimal configuration
 
+{{< full-width-image image="config.jpg" alt="Configuration options" >}}
+
 This choice is made in the same spirit with the previous point, but it manifests differently. We still don't have a configuration file, meaning that you can only change behavior using command line flags. We will try to keep it that way for as long as possible.
 
 It’s worth noting that some projects don't support next generation formats, like WebP or AVIF in the default configuration. In our case, we do support them, and you can't turn them off.
@@ -48,6 +52,8 @@ We chose to use Go because you could compile it and get a lightweight, staticall
 Containers have pretty much become a default runtime nowadays, so you could easily deploy an images service on all popular clouds and manage infra by yourself - the cost is usually lower, setup and service are more complex, or use server-less offerings - the running cost is higher, but managing is negligible.
 
 ### CDN optimised
+
+{{< full-width-image image="cdn-locations.png" alt="Content delivery network locations" >}}
 
 Since we have an opinion on nearly everything regarding images for web projects, we also think you are better off deploying the image API behind a Content Delivery Network. Transformimgs supports Accept and Vary HTTP headers to serve images in the next generation formats and taking advantage of the Save-Data client hint.
 
