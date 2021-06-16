@@ -15,6 +15,10 @@ We shall also go into detail about value in our SaaS offering and what makes it 
 
 ## Transformimgs Open Source Image CDN
 
+Transformimgs is an open source image transformation service that could be easily deployed behind Content Delivery Network and serve responsive images.
+
+It is the heart of Pixboost and we think making it Open Source has many advantages. You could find the [project on Github here](https://github.com/Pixboost/transformimgs).
+
 ### An images service built for web
 
 Our main focus is to build an images service that covers the needs of a typical web project that gets loaded on different browsers. This web project would also be the kind loaded by people from numerous locations on different devices and varying network quality.
@@ -98,7 +102,8 @@ In addition to the API that you can easily use in your HTML markup, we also prov
 
 On the other side of content delivery, we also have a Snippet Generator tool that helps content managers to put optimise images on the landing pages and articles.
 
-TODO: Screenshot
+
+{{< full-width-image image="snippet-generator-tool.png" alt="Snippet Generator Tool" >}}
 
 ### End 2 End solution
 
