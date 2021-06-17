@@ -81,6 +81,8 @@ Just quickly reiterate what benefits SaaS have.
 
 * We provide a very user-friendly experience through a simplified dashboard. We also enable in-depth analytics and reporting by providing the latest statistics and usage information. 
 
+{{< signup >}}
+
 ### CDN Included
 
 {{< full-width-image image="cdn-locations.png" alt="Content delivery network locations" >}}
@@ -136,6 +138,8 @@ Here are some of the main reasons why we think open source is better:
 It’s extremely important to be able to receive help in case anything goes wrong with the images in your web project. At Pixboost, not only do we do 24/7 monitoring, we also have a quick turnaround, with the ability to solve issues in as low as one hour.
 
 It all depends on the nature of the issue, and your chosen pricing plan.
+
+{{< signup >}}
 
 ## Conclusion
 
