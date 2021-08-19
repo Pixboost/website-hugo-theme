@@ -8,9 +8,9 @@ draft: false
 
 We've done quite a bit of work in the last months and are proud to share all the things we released recently. The new features touched every bit of the service starting in the image optimisation backend, following by API enhancements and finishing in the dashboard. 
 
-So, buckle up and let's get into it!
-
 <!--more-->
+
+So, buckle up and let's get into it!
 
 ## Backend updates to AVIF and Webp
 
