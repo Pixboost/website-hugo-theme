@@ -49,15 +49,19 @@ It's also worth mentioning that the Pixboost engine is open sources, and you cou
 
 This is something many of you asked for and was on our priority list. HTTP image source is an alias for a part of the source URL, so it makes an API call shorter and there is no need for 2 domain names which could look a bit tedious. For example, using the original images' domain approach your API request would look like this:
 
-`https://pixboost.com/api/2/img/https://yourwebsite.com/images/logo.png/optimise?auth=API_KEY`
+```html
+https://pixboost.com/api/2/img/https://yourwebsite.com/images/logo.png/optimise?auth=API_KEY
+```
 
 You could create an HTTP image source with an alias `images` that will point to `https://yourwebsite.com/images`, so the exact request as above will be:
 
-`https://pixboost.com/api/2/img/images/logo.png/optimise?auth=API_KEY`
+```html
+https://pixboost.com/api/2/img/images/logo.png/optimise?auth=API_KEY
+```
 
 As you could see there is no domain name and long prefixes could roll up in shorter alternatives.
 
-{{< simple-image image="add-http-image-source.png" alt="Add HTTP image source">}}
+{{< full-width-image image="add-http-image-source.png" alt="Add HTTP image source">}}
 
 [Read more in the documentation](https://help.pixboost.com/setup/adding-http-image-source)
 
@@ -71,13 +75,13 @@ We made a start to analytics insights in Pixboost. Now, you could find:
 
 We have plans to add more to that with errors and savings come shortly. If you have an idea - shoot us a message at customer.service@pixboost.com
 
-{{< simple-image image="analytics.png" alt="Analytics in Pixboost">}}
+{{< full-width-image image="analytics.png" alt="Analytics in Pixboost">}}
 
 ## Billing history in the dashboard
 
 This is another enhancement (some may say necessity:)) in the Dashboard. Since June, you can find the last 12 months of your usage and payments history by navigating to the "Billing" section. 
 
-{{< simple-image image="billing-history.jpeg" alt="Billing history">}}
+{{< full-width-image image="billing-history.png" alt="Billing history">}}
 
 ## Caching of source images for AWS S3 buckets
 
@@ -95,7 +99,7 @@ The API endpoint could be reached by using `POST` request on `/api/2/img/warmup?
 
 This workflow could be useful when your users are uploading content, so you could trigger cache warmup on the upload.
 
-{{< simple-image image="cache-warmup.png" alt="Cache Warmup scenario">}}
+{{< full-width-image image="cache-warmup.png" alt="Cache Warmup scenario">}}
 
 ## Conclusion
 
