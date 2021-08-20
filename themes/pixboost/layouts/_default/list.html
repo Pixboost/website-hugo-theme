@@ -5,7 +5,8 @@
     <ul>
         {{ range .Pages }}
             <li>
-                <a class="title" href="{{.RelPermalink}}">{{.Title}}</a>
+                <a class="title" href="{{.RelPermalink}}">{{.Title}}</a><br/>
+                <small>Published on: {{.Date | time.Format "Jan 2, 2006"}}</small>
 
                 <div class="article-image-and-summary">
                     {{if .Params.image}}

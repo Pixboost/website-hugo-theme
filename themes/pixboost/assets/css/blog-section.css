@@ -10,6 +10,10 @@
     padding: 0;
 }
 
+.list-page ul li {
+    margin-bottom: 30px;
+}
+
 .list-page li img {
     width: 100%;
     height: auto;
@@ -29,6 +33,11 @@
     .article-image-and-summary {
         flex-direction: row;
         align-items: center;
+    }
+
+    .article-image-and-summary p {
+        padding: 0;
+        margin: 0;
     }
 
     .list-page li img {
