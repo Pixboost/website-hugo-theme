@@ -23,6 +23,8 @@ body {
     --space-4: 2rem;
     --space-5: 2.5rem;
     --space-6: 3rem;
+    --space-10: 5rem;
+    --space-12: 6rem;
 }
 
 h1 {

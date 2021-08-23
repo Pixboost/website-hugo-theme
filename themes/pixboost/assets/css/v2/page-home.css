@@ -12,9 +12,9 @@ p.title {
 
 section.no-frame,
 section.with-frame>.frame{
-    max-width: 1296px;
+    max-width: 1180px;
     margin: auto;
-    padding: var(--space-6);
+    padding: var(--space-12);
 }
 
 /* Hero Section*/
@@ -132,8 +132,47 @@ section.with-frame>.frame{
     margin-right: var(--space-2);
 }
 
+#who-we-are .content .description {
+    color: rgb(var(--description-color));
+}
+
 #who-we-are .video video {
     width: 100%;
     height: auto;
     border-radius: 10px;
+}
+
+/* What You Get */
+#what-you-get {
+    display: flex;
+    flex-direction: column;
+}
+
+#what-you-get .title {
+    text-align: center;
+}
+
+#what-you-get h2 {
+    text-align: center;
+}
+
+#what-you-get .row {
+    display: flex;
+    flex-direction: row;
+}
+
+#what-you-get .row img {
+    max-height: 420px;
+}
+
+#what-you-get .row .heading {
+    font-weight: bold;
+}
+
+#what-you-get .row .description {
+    color: rgb(var(--description-color));
+}
+
+#what-you-get .row>img {
+    margin-right: var(--space-4);
 }
