@@ -1,7 +1,8 @@
 main {
-    background-image: url("/img/v2/homepage/bg.svg");
-    background-size: cover;
-    padding: 0 var(--space-4);
+    /*background-image: url("/img/v2/homepage/bg.svg");*/
+    /*background-size: cover;*/
+    background-color: rgb(var(--background-color));
+    /*padding: 0 var(--space-4);*/
 }
 
 p.title {
@@ -11,6 +12,7 @@ p.title {
 }
 
 section.no-frame,
+section>.no-frame,
 section.with-frame>.frame{
     max-width: 1180px;
     margin: auto;
@@ -54,6 +56,16 @@ section.with-frame>.frame{
 #how-it-works {
     display: flex;
     justify-content: center;
+    position: relative;
+}
+
+#how-it-works .background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: #F5F5FA;
+    clip-path: ellipse(70% 60% at 50% 100%);
 }
 
 #how-it-works .frame {
@@ -61,6 +73,7 @@ section.with-frame>.frame{
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    z-index: 2;
 }
 
 #how-it-works .text {
@@ -124,8 +137,24 @@ section.with-frame>.frame{
 /* Who We Are */
 
 #who-we-are {
+    position: relative;
+}
+
+#who-we-are .no-frame {
     display: flex;
     flex-direction: row;
+    background-color: #F5F5FA;
+    position: relative;
+    z-index: 2;
+}
+
+.background {
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    z-index: 1;
+    background-color: #F5F5FA;
+    top: 0;
 }
 
 #who-we-are .content {
@@ -144,9 +173,27 @@ section.with-frame>.frame{
 
 /* What You Get */
 #what-you-get {
+    position: relative;
+}
+
+#what-you-get .background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: white;
+    clip-path: ellipse(70% 50% at 50% 50%);
+    top: 0;
+}
+
+#what-you-get .no-frame {
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 2;
 }
+
+
 
 #what-you-get .title {
     text-align: center;
