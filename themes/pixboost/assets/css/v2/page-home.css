@@ -1,8 +1,5 @@
 main {
-    /*background-image: url("/img/v2/homepage/bg.svg");*/
-    /*background-size: cover;*/
     background-color: rgb(var(--background-color));
-    /*padding: 0 var(--space-4);*/
 }
 
 p.title {
@@ -11,9 +8,8 @@ p.title {
     margin-bottom: 0;
 }
 
-section.no-frame,
-section>.no-frame,
-section.with-frame>.frame{
+section>.content-wrapper,
+section.content-wrapper {
     max-width: 1180px;
     margin: auto;
     padding: var(--space-12);
@@ -79,10 +75,12 @@ section.with-frame>.frame{
 #how-it-works .text {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 #how-it-works .text .heading {
     width: 50%;
+    padding-right: var(--space-4);
 }
 
 #how-it-works .text .description {
@@ -140,7 +138,7 @@ section.with-frame>.frame{
     position: relative;
 }
 
-#who-we-are .no-frame {
+#who-we-are .content-wrapper {
     display: flex;
     flex-direction: row;
     background-color: #F5F5FA;
@@ -186,7 +184,7 @@ section.with-frame>.frame{
     top: 0;
 }
 
-#what-you-get .no-frame {
+#what-you-get .content-wrapper {
     display: flex;
     flex-direction: column;
     position: relative;
