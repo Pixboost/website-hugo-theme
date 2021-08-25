@@ -340,3 +340,8 @@ section.content-wrapper {
     margin: var(--space-4) 0;
 }
 
+/* CLIENTS */
+
+#clients {
+    background-color: rgb(var(--grey-color));
+}
