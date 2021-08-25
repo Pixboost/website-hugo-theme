@@ -344,4 +344,18 @@ section.content-wrapper {
 
 #clients {
     background-color: rgb(var(--grey-color));
+    text-align: center;
+}
+
+#clients .brands {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    align-items: center;
+    justify-items: center;
+}
+
+#clients .brands img {
+    max-width: 100%;
+    padding: var(--space-4);
+    max-height: 80%;
 }
