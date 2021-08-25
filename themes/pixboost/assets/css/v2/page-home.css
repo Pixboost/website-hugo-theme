@@ -270,6 +270,8 @@ section.content-wrapper {
     display: flex;
     flex-direction: column;
     text-align: center;
+
+    --icon-top-overflow: 40px;
 }
 
 #features .frame {
@@ -295,11 +297,12 @@ section.content-wrapper {
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
+    padding-top: var(--icon-top-overflow);
 }
 
 #features .cards .card {
     background-color: rgb(var(--grey-color));
-    padding: calc(var(--space-2) + 40px) var(--space-2) var(--space-5) var(--space-2);
+    padding: calc(var(--space-2) + var(--icon-top-overflow)) var(--space-2) var(--space-5) var(--space-2);
     border-radius: 15px;
     position: relative;
 }
@@ -328,6 +331,12 @@ section.content-wrapper {
     display: inline-block;
     padding: var(--space-1);
     position: absolute;
-    top: -40px;
+    top: calc(-1 * var(--icon-top-overflow));
+}
+
+#features .cta {
+    display: flex;
+    justify-content: space-around;
+    margin: var(--space-4) 0;
 }
 
