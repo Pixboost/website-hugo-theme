@@ -16,7 +16,9 @@ body {
 :root {
     --green-brand-color: 2, 187, 169;
     --background-color: 8, 19, 34;
+    --grey-color: 245, 245, 250;
     --description-color: 84, 84, 97;
+    --light-description-color: 173, 173, 185;
     --space-1: 0.5rem;
     --space-2: 1rem;
     --space-3: 1.5rem;
