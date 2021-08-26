@@ -7,7 +7,7 @@ body {
 }
 
 .center {
-    max-width: 1200px;
+    max-width: 1180px;
     margin: auto;
     width: 100%;
     height: 100%;
@@ -100,6 +100,7 @@ header > div {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding: 0 var(--space-12);
 }
 
 nav {

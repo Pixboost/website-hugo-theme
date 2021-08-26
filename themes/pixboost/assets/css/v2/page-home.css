@@ -350,7 +350,7 @@ section.content-wrapper {
 
 #clients .background {
     position: absolute;
-    height: 120%;
+    height: 150%;
     width: 100%;
     z-index: 1;
     background-color: rgb(var(--grey-color));
@@ -388,7 +388,7 @@ section.content-wrapper {
     width: 100%;
     z-index: 1;
     background-color: white;
-    clip-path: ellipse(70% 50% at 50% 50%);
+    clip-path: ellipse(80% 93% at 50% 98%);
     top: 0;
 }
 
@@ -399,18 +399,46 @@ section.content-wrapper {
     z-index: 2;
 }
 
+#testimonials .testimonials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 #testimonials .testimonial {
     background-color: white;
-    width: 100%;
     height: 100%;
+    max-width: 400px;
     border-radius: 15px;
     box-shadow: 0 50px 120px rgba(7, 7, 88, 0.1);
     backdrop-filter: blur(20px);
-    padding: var(--space-4);
+    padding: var(--space-6);
+    text-align: left;
+}
+
+#testimonials .testimonial .heading {
+    margin-bottom: var(--space-4);
+}
+
+#testimonials .testimonial .text {
+    color: rgb(var(--description-color));
+}
+
+#testimonials .testimonial .author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: var(--space-4);
+}
+
+#testimonials .testimonial .author .name-and-title {
+    text-align: left;
 }
 
 #testimonials .testimonial .author img {
-    max-width: 40px;
+    max-width: 70px;
+    max-height: 70px;
     border: 1px solid rgb(var(--green-brand-color));
     border-radius: 40px;
+    margin-right: var(--space-4);
 }
