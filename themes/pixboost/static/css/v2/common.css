@@ -130,3 +130,27 @@ nav a.selected {
 }
 
 /* ----------------------- */
+
+/* Footer */
+
+footer {
+    background: linear-gradient(#0E1232C8 3.81%, rgba(var(--background-color, 255)) 101.92%);
+    padding: 0 var(--space-4);
+}
+
+footer > div {
+    padding: var(--space-12) var(--space-12);
+}
+
+footer .social {
+    margin-top: var(--space-2);
+}
+
+footer .social>a:first-child {
+    margin-right: var(--space-1);
+}
+
+footer .copyright {
+    color: white;
+    margin-top: var(--space-10);
+}
