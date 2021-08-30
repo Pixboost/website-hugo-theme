@@ -138,7 +138,7 @@ footer {
     padding: 0 var(--space-4);
 }
 
-footer > div {
+footer > div:first-child {
     padding: var(--space-12) var(--space-12);
     display: flex;
     flex-direction: row;
@@ -156,7 +156,8 @@ footer .social>a:first-child {
 
 footer .copyright {
     color: white;
-    margin-top: var(--space-10);
+    margin: 0;
+    padding: var(--space-2) var(--space-12);
 }
 
 footer .menu {
@@ -179,4 +180,51 @@ footer .menu .column a {
 footer .heading {
     color: white;
     font-weight: bold;
+}
+
+
+@media (max-width: 767.98px) {
+    nav {
+        display: none;
+    }
+
+    header > div {
+        padding: 0 0;
+    }
+
+    header .btn {
+        display: none;
+    }
+
+    footer {
+        padding: 0 var(--space-2) var(--space-4) var(--space-2);
+    }
+
+    footer .copyright {
+        padding: var(--space-2);
+    }
+
+    footer .company-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    footer .social {
+        margin-top: 0;
+    }
+
+    footer .menu {
+        flex-direction: column;
+    }
+
+    footer .menu .column {
+        padding: 0;
+    }
+
+    footer > div:first-child {
+        flex-direction: column;
+        padding: var(--space-2);
+    }
 }
