@@ -140,6 +140,10 @@ footer {
 
 footer > div {
     padding: var(--space-12) var(--space-12);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
 }
 
 footer .social {
@@ -153,4 +157,26 @@ footer .social>a:first-child {
 footer .copyright {
     color: white;
     margin-top: var(--space-10);
+}
+
+footer .menu {
+    display: flex;
+    flex-direction: row;
+}
+
+footer .menu .column {
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--space-6);
+}
+
+footer .menu .column a {
+    color: white;
+    margin-bottom: var(--space-2);
+    font-size: small;
+}
+
+footer .heading {
+    color: white;
+    font-weight: bold;
 }
