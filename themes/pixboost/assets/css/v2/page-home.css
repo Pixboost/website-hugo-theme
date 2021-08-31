@@ -313,6 +313,7 @@ section.content-wrapper {
     padding: calc(var(--space-2) + var(--icon-top-overflow)) var(--space-2) var(--space-5) var(--space-2);
     border-radius: 15px;
     position: relative;
+    max-width: 30%;
 }
 
 #features .cards .card ul {
@@ -572,6 +573,7 @@ section.content-wrapper {
 
     #features .cards .card {
         margin-top: calc(var(--icon-top-overflow) + var(--space-2));
+        max-width: none;
     }
 
     #features .cta a {
