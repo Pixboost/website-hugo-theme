@@ -3,7 +3,8 @@
     <a href="/">
       <img src="/img/v2/logo-invert.svg" alt="Pixboost Logo" height="40"/>
     </a>
-    <nav>
+    <nav class="nav-js">
+      <span class="close-button close-button-js">X</span>
       <ul>
         <li><a href="/about/" class="{{ if eq .Type "about" }}selected{{end}}"  onclick="window.trackLink('About','about')">About</a></li>
         <li><a href="/prices/" class="{{ if eq .Type "prices" }}selected{{end}}"  onclick="window.trackLink('Prices','prices')">Prices</a></li>
@@ -13,6 +14,7 @@
       </ul>
     </nav>
 
+    <img class="mobile-menu mobile-menu-js" src="/img/v2/mobile-menu.svg" alt="mobile menu icon"/>
     <a class="btn btn-light" href="/customer/#login" onclick="window.trackLink('Login','login')">LOGIN</a>
   </div>
 </header>
