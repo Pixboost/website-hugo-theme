@@ -15,6 +15,18 @@ section.content-wrapper {
     padding: var(--space-12);
 }
 
+.heading {
+    font-size: 1.1em;
+}
+
+.description {
+    font-size: 0.9em;
+}
+
+.cta {
+    margin: var(--space-4) 0 !important;
+}
+
 /* Hero Section*/
 #hero {
     display: flex;
@@ -35,10 +47,6 @@ section.content-wrapper {
 #hero .description {
     color: #ADADB9;
     margin-top: 0;
-}
-
-#hero .cta {
-    margin-top: var(--space-4);
 }
 
 #hero .video {
@@ -87,7 +95,6 @@ section.content-wrapper {
     width: 50%;
     line-height: 150%;
     color: rgb(var(--description-color));
-    font-size: 0.9em;
 }
 
 #how-it-works .infographic {
@@ -110,7 +117,6 @@ section.content-wrapper {
 
 #how-it-works .infographic .card .description {
     color: rgb(var(--description-color));
-    font-size: 0.8em;
     line-height: 140%;
 }
 
@@ -188,7 +194,7 @@ section.content-wrapper {
     width: 100%;
     z-index: 1;
     background-color: white;
-    clip-path: ellipse(70% 50% at 50% 50%);
+    clip-path: ellipse(90% 50% at 50% 50%);
     top: 0;
 }
 
@@ -232,10 +238,6 @@ section.content-wrapper {
 
 #what-you-get .row .description {
     color: rgb(var(--description-color));
-}
-
-#what-you-get .cta {
-    margin: var(--space-4) 0;
 }
 
 /* TOOLS */
@@ -346,7 +348,6 @@ section.content-wrapper {
 #features .cta {
     display: flex;
     justify-content: space-around;
-    margin: var(--space-4) 0;
 }
 
 /* CLIENTS */
@@ -397,7 +398,7 @@ section.content-wrapper {
     width: 100%;
     z-index: 1;
     background-color: white;
-    clip-path: ellipse(80% 93% at 50% 98%);
+    clip-path: ellipse(90% 93% at 50% 98%);
     top: 0;
 }
 
@@ -493,6 +494,7 @@ section.content-wrapper {
     #how-it-works .infographic .connection {
         flex-direction: row;
         justify-content: space-around;
+        align-items: center;
     }
 
     #how-it-works .infographic .connection .left-arrow {
