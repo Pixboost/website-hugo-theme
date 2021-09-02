@@ -105,10 +105,12 @@ section.content-wrapper {
 
 #how-it-works .infographic .card {
     max-width: 300px;
+    width: 25%;
 }
 
 #how-it-works .infographic .card img {
     width: 100%;
+    height: auto;
 }
 
 #how-it-works .infographic .card .heading {
