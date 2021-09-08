@@ -260,6 +260,7 @@ section.content-wrapper {
 
 #tools>div>img {
     max-width: 100%;
+    height: auto;
 }
 
 #tools h2 {
