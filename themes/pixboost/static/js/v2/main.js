@@ -1,4 +1,14 @@
 /**
+ * Submit Google Analytics event
+ */
+window.trackLink = function(name, category) {
+  gtag('event', 'click', {
+    'event_category': category,
+    'event_label': name
+  });
+}
+
+/**
  * Setup Hubspot chat
  */
 window.hsConversationsSettings = {
