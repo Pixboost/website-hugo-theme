@@ -495,6 +495,11 @@ section.content-wrapper {
         margin-top: var(--space-2);
     }
 
+    #how-it-works .infographic .card {
+        width: 100%;
+        max-width: none;
+    }
+
     #how-it-works .infographic .connection {
         flex-direction: row;
         justify-content: space-around;
