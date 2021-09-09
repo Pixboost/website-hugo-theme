@@ -386,6 +386,7 @@ section.content-wrapper {
     max-width: 100%;
     padding: var(--space-4);
     max-height: 80%;
+    height: auto;
 }
 
 /* TESTIMONIALS */
