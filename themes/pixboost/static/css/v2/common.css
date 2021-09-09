@@ -89,6 +89,41 @@ h2 {
     background: #00A795;
 }
 
+/* Chat */
+#chat-window {
+    width: 300px;
+    position: fixed;
+    z-index: 10;
+    bottom: 55px;
+    right: 10px;
+}
+
+#hubspot-conversations-inline-iframe {
+    height: 500px;
+    border: 1px solid var(--dark-grey-color);
+}
+
+.chat-button {
+    position: fixed;
+    background-color: white;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    border: 2px solid rgb(var(--grey-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.chat-button:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 2px var(--dark-grey-color);
+}
+
 /* Navigation */
 
 header {
@@ -191,6 +226,11 @@ footer .heading {
 
 
 @media (max-width: 767.98px) {
+    .chat-button {
+        bottom: 5px;
+        right: 5px;
+    }
+
     nav {
         visibility: hidden;
         opacity: 0;
