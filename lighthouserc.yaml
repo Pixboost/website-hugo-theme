@@ -12,6 +12,8 @@ ci:
                 throughputKbps: 1638
                 uploadThroughputKbps: 675
                 cpuSlowdownMultiplier: 4
+            skipAudits:
+                - full-page-screenshot
     assert:
         preset: lighthouse:no-pwa
     upload:
