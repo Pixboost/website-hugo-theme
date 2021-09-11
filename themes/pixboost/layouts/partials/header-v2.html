@@ -6,16 +6,16 @@
     <nav class="nav-js">
       <span class="close-button close-button-js">X</span>
       <ul>
-        <li><a href="/about/" class="{{ if eq .Type "about" }}selected{{end}}"  onclick="window.trackLink('About','about')">About</a></li>
-        <li><a href="/prices/" class="{{ if eq .Type "prices" }}selected{{end}}"  onclick="window.trackLink('Prices','prices')">Prices</a></li>
-        <li><a href="/newsletter/" class="{{ if eq .Type "newsletter" }}selected{{end}}" onclick="window.trackLink('Newsletter','newsletter')">Newsletter</a></li>
-        <li><a href="https://help.pixboost.com"  target="_blank" rel="noopener" onclick="window.trackLink('Documentation','documentation')">Documentation</a></li>
-        <li><a href="/blog/" class="{{ if eq .Type "blog" }}selected{{end}}" onclick="window.trackLink('Blog','blog')">Blog</a></li>
+        <li><a href="/about/" class="{{ if eq .Type "about" }}selected{{end}}">About</a></li>
+        <li><a href="/prices/" class="{{ if eq .Type "prices" }}selected{{end}}">Prices</a></li>
+        <li><a href="/newsletter/" class="{{ if eq .Type "newsletter" }}selected{{end}}">Newsletter</a></li>
+        <li><a href="https://help.pixboost.com"  target="_blank" rel="noopener">Documentation</a></li>
+        <li><a href="/blog/" class="{{ if eq .Type "blog" }}selected{{end}}">Blog</a></li>
       </ul>
     </nav>
 
     <img class="mobile-menu mobile-menu-js" src="/img/v2/mobile-menu.svg" alt="mobile menu icon"/>
-    <a class="btn btn-light" href="/customer/#login" onclick="window.trackLink('Login','login')">LOGIN</a>
+    <a class="btn btn-light" href="/customer/#login">LOGIN</a>
   </div>
 </header>
 
