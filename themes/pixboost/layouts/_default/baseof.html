@@ -21,6 +21,8 @@
         <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto|Coustard&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
         <link rel="stylesheet" href="/css/common.css"/>
         {{ else }}
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+        <link rel='preload' as='style' href='https://fonts.googleapis.com/css?family=Poppins&display=swap'>
         <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
         <link rel="stylesheet" href="/css/v2/common.css"/>
         {{ end }}
@@ -40,8 +42,10 @@
         <![endif]-->
         {{ end }}
 
+        {{ if not .Params.v2 }}
         <script id="pb-script" data-api-key="MzY2MjQ4NzQ2Mw__" data-autoload=""
                 src="https://pixboost.com/libs/pixboost.bundle.min.js" async=""></script>
+        {{ end }}
 
         {{ if not .Params.v2 }}
         <!-- Google Events. Global site tag (gtag.js) - Google Analytics -->

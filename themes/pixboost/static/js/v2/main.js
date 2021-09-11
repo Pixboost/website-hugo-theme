@@ -11,7 +11,8 @@ window.hsConversationsSettings = {
   loadImmediately: false, // Delay the load of the chat widget
   inlineEmbedSelector: '#chat-window',
 };
-let _hsq = window._hsq = window._hsq || [];
+
+var _hsq = window._hsq = window._hsq || [];
 _hsq.push(['doNotTrack']);
 
 window.onload = function() {
