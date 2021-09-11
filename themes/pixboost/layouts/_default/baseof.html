@@ -43,6 +43,7 @@
         <script id="pb-script" data-api-key="MzY2MjQ4NzQ2Mw__" data-autoload=""
                 src="https://pixboost.com/libs/pixboost.bundle.min.js" async=""></script>
 
+        {{ if not .Params.v2 }}
         <!-- Google Events. Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104255542-2"></script>
         <script>
@@ -52,6 +53,19 @@
                 dataLayer.push(arguments);
             }
 
+            gtag('js', new Date());
+
+            gtag('config', 'UA-104255542-2');
+            gtag('config', 'AW-968330479');
+        </script>
+        <!-- End Google Events -->
+        {{ else }}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PCD05XSKG"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+
             gtag('consent', 'default', {
                 'ad_storage': 'denied',
                 'analytics_storage': 'denied'
@@ -59,10 +73,9 @@
 
             gtag('js', new Date());
 
-            gtag('config', 'UA-104255542-2');
-            gtag('config', 'AW-968330479');
+            gtag('config', 'G-8PCD05XSKG');
         </script>
-        <!-- End Google Events -->
+        {{ end }}
     </head>
     <body>
         {{ if not .Params.v2 }}

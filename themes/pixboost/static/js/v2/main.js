@@ -1,11 +1,7 @@
-/**
- * Submit Google Analytics event
- */
-window.trackLink = function(name, category) {
-  gtag('event', 'click', {
-    'event_category': category,
-    'event_label': name
-  });
+window.trackSignup = function (method) {
+  gtag('event', 'sign_up', {
+    method: method
+  })
 }
 
 /**
@@ -15,6 +11,8 @@ window.hsConversationsSettings = {
   loadImmediately: false, // Delay the load of the chat widget
   inlineEmbedSelector: '#chat-window',
 };
+let _hsq = window._hsq = window._hsq || [];
+_hsq.push(['doNotTrack']);
 
 window.onload = function() {
   setupMobileMenu();
