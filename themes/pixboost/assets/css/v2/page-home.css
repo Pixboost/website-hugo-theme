@@ -460,7 +460,7 @@ section.content-wrapper {
 @media (max-width: 767.98px) {
     section>.content-wrapper,
     section.content-wrapper {
-        padding: var(--space-2);
+        padding: var(--space-6) var(--space-2);
     }
 
     /*  Hero  */
@@ -492,7 +492,7 @@ section.content-wrapper {
 
     #how-it-works .infographic {
         flex-direction: column;
-        margin-top: var(--space-2);
+        margin-top: var(--space-4);
     }
 
     #how-it-works .infographic .card {
@@ -536,7 +536,7 @@ section.content-wrapper {
     #what-you-get .row {
         flex-direction: column;
         align-items: flex-start;
-        margin-top: var(--space-2);
+        margin-top: var(--space-4);
     }
 
     #what-you-get .row:nth-child(even) {
@@ -611,6 +611,7 @@ section.content-wrapper {
 
     #testimonials .testimonials {
         flex-direction: column;
+        align-items: center;
     }
 
     #testimonials .testimonials .testimonial {
