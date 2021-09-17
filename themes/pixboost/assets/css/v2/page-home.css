@@ -21,10 +21,29 @@ section.content-wrapper {
 
 .description {
     font-size: 0.9em;
+    line-height: 150%;
 }
 
 .cta {
     margin: var(--space-4) 0 !important;
+}
+
+main ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+main ul li {
+    padding: var(--space-1) var(--space-1);
+    margin-left: 1em;
+    text-indent: -1em;
+}
+
+main ul li:before {
+    content: "•";
+    color: rgb(var(--green-brand-color));
+    padding: 0 var(--space-1) 0 0;
 }
 
 /* Hero Section*/
@@ -93,7 +112,6 @@ section.content-wrapper {
 
 #how-it-works .text .description {
     width: 50%;
-    line-height: 150%;
     color: rgb(var(--description-color));
 }
 
@@ -115,11 +133,11 @@ section.content-wrapper {
 
 #how-it-works .infographic .card .heading {
     font-weight: bold;
+    min-height: 50px;
 }
 
 #how-it-works .infographic .card .description {
     color: rgb(var(--description-color));
-    line-height: 140%;
 }
 
 #how-it-works .infographic .connection {
@@ -319,22 +337,6 @@ section.content-wrapper {
     border-radius: 15px;
     position: relative;
     max-width: 30%;
-}
-
-#features .cards .card ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-#features .cards .card ul li {
-    padding: var(--space-1) var(--space-1);
-}
-
-#features .cards .card ul li:before {
-    content: "•";
-    color: rgb(var(--green-brand-color));
-    padding: 0 var(--space-1) 0 0;
 }
 
 #features .cards .card .icon {
