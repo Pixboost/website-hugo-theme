@@ -1,18 +1,7 @@
-main {
-    background-color: rgb(var(--background-color));
-}
-
 p.title {
     font-size: 0.7em;
     color: rgb(var(--green-brand-color));
     margin-bottom: 0;
-}
-
-section>.content-wrapper,
-section.content-wrapper {
-    max-width: 1180px;
-    margin: auto;
-    padding: var(--space-12);
 }
 
 .heading {
@@ -26,24 +15,6 @@ section.content-wrapper {
 
 .cta {
     margin: var(--space-4) 0 !important;
-}
-
-main ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-main ul li {
-    padding: var(--space-1) var(--space-1);
-    margin-left: 1em;
-    text-indent: -1em;
-}
-
-main ul li:before {
-    content: "•";
-    color: rgb(var(--green-brand-color));
-    padding: 0 var(--space-1) 0 0;
 }
 
 /* Hero Section*/
