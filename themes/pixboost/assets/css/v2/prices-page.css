@@ -10,60 +10,73 @@
     justify-content: space-between;
 }
 
-.plan {
+#prices .plan {
     background-color: white;
     max-width: 18%;
+    min-width: 18%;
     border-radius: 14px;
 }
 
-.plan>div {
+#prices .plan>div {
     padding: var(--space-2);
 }
 
-.plan .price {
-    text-align: center;
-    color: rgb(var(--green-brand-color));
-}
-
-.plan p {
+#prices .plan p {
     margin: var(--space-1) 0;
 }
 
-.plan .price .amount {
-    font-size: 3em;
+#prices .plan .price {
+    text-align: center;
+    color: rgb(var(--green-brand-color));
+    min-height: 160px;
+}
+
+#prices .plan .price .top {
+    min-height: 70px;
+}
+
+#prices .plan .price .amount {
+    font-size: 2em;
     font-weight: bold;
     position: relative;
 }
 
-.plan .price .amount sup {
+#prices .plan .price .amount sup {
     font-weight: normal;
     font-size: 30%;
     position: absolute;
     margin: 1em -0.5em;
 }
 
-.plan .price .name {
-    font-size: 2em;
+#prices .plan .price .name {
+    font-size: 1.8em;
     font-weight: bold;
 }
 
-.plan .terms {
+#prices .plan .terms {
     background-color: rgb(var(--grey-color));
+    min-height: 200px;
 }
 
-.plan .terms .traffic {
+#prices .plan .terms .traffic {
     text-align: center;
     color: rgb(var(--green-brand-color));
-    font-size: 1.8em;
+    font-size: 1.6em;
 }
 
-.plan .terms .features {
+#prices .plan .terms .features {
     font-size: 0.8em;
     color: rgb(var(--description-color));
 }
 
-.plan .cta {
+#prices .plan .cta {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+#prices .plan .cta .btn {
+    padding-right: var(--space-2);
+    padding-left: var(--space-2);
+    font-size: 0.8em;
 }
