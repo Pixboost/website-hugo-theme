@@ -1,5 +1,11 @@
 /* Prices */
 
+#prices {
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--space-2);
+}
+
 #prices h2 {
     color: white;
 }
@@ -79,4 +85,63 @@
     padding-right: var(--space-2);
     padding-left: var(--space-2);
     font-size: 0.8em;
+}
+
+#prices .note {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#prices .note hr {
+    width: 25%;
+    border: 2px rgb(var(--green-brand-color)) solid;
+    border-radius: 2px;
+    margin: var(--space-6) 0 var(--space-2) 0;
+}
+
+#prices .note .text {
+    color: white;
+    text-align: center;
+    width: 50%;
+    margin: 0;
+}
+
+/* Compare plans */
+
+#compare-plans table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#compare-plans col:not(.attributes) {
+    background-color: rgb(var(--grey-color));
+}
+
+#compare-plans table thead th.title {
+    background-color: rgb(var(--green-brand-color));
+    border-radius: 14px 14px 0 0;
+    padding: var(--space-2) var(--space-2);
+    color: white;
+}
+
+#compare-plans table thead th.green {
+    background-color: rgb(var(--green-brand-color));
+}
+
+#compare-plans table thead th.blue {
+    background-color: rgb(var(--blue-color));
+}
+
+#compare-plans table tbody th {
+    text-align: left;
+    padding: var(--space-2) var(--space-2) var(--space-2) 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image: linear-gradient(to right, rgb(var(--description-color)), rgba(var(--description-color), 0)) 1;
+}
+
+#compare-plans table tbody td {
+    text-align: center;
+    padding: var(--space-1);
 }
