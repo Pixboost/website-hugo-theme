@@ -1,3 +1,23 @@
+.note {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.note hr {
+    width: 25%;
+    border: 2px rgb(var(--green-brand-color)) solid;
+    border-radius: 2px;
+    margin: var(--space-6) 0 var(--space-2) 0;
+}
+
+.note .text {
+    text-align: center;
+    width: 50%;
+    margin: 0;
+}
+
+
 /* Prices */
 
 #prices {
@@ -87,35 +107,52 @@
     font-size: 0.8em;
 }
 
-#prices .note {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#prices .note hr {
-    width: 25%;
-    border: 2px rgb(var(--green-brand-color)) solid;
-    border-radius: 2px;
-    margin: var(--space-6) 0 var(--space-2) 0;
-}
-
 #prices .note .text {
     color: white;
-    text-align: center;
-    width: 50%;
-    margin: 0;
 }
 
 /* Compare plans */
 
+#compare-plans {
+    position: relative;
+}
+
+#compare-plans .frame {
+    position: relative;
+}
+
+#compare-plans .background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: rgb(var(--grey-color));
+    clip-path: ellipse(70% 60% at 50% 100%);
+    bottom: 0;
+}
+
+#compare-plans .table-wrapper {
+    position: relative;
+}
+
+#compare-plans .table-background {
+    position: absolute;
+    background-color: rgb(var(--grey-color));
+    width: calc(100% / 7 * 6 + var(--space-2));
+    height: 100%;
+    left: calc(100% / 7 - var(--space-1));
+    top: 0;
+    z-index: 1;
+}
+
 #compare-plans table {
     width: 100%;
     table-layout: fixed;
-}
-
-#compare-plans col:not(.attributes) {
-    background-color: rgb(var(--grey-color));
+    position: relative;
+    z-index: 2;
+    padding: var(--space-3) 0;
+    border-spacing: var(--space-1) 0;
+    font-size: 0.8em;
 }
 
 #compare-plans table thead th.title {
@@ -136,12 +173,38 @@
 #compare-plans table tbody th {
     text-align: left;
     padding: var(--space-2) var(--space-2) var(--space-2) 0;
+    font-weight: normal;
+}
+
+#compare-plans table tbody tr:not(:last-child) th {
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-image: linear-gradient(to right, rgb(var(--description-color)), rgba(var(--description-color), 0)) 1;
+    border-image: linear-gradient(to right, rgb(var(--description-color)), rgba(var(--description-color), 0) 80%) 1;
+}
+
+#compare-plans table tbody tr:not(:last-child) td {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image: linear-gradient(to right, rgba(var(--description-color), 0) 10%, rgb(var(--description-color)) 50%, rgba(var(--description-color), 0) 90%) 1;
 }
 
 #compare-plans table tbody td {
     text-align: center;
     padding: var(--space-1);
+}
+
+#compare-plans table tbody td:nth-child(even) {
+    background-color: white;
+}
+
+#compare-plans table tbody td:nth-child(odd) {
+    background-color: rgb(250, 250, 253);
+}
+
+#compare-plans table tbody tr:last-child td {
+    border-radius: 0 0 14px 14px;
+}
+
+#compare-plans table tbody tr.price td {
+    font-weight: bold;
 }
