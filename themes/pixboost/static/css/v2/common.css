@@ -133,6 +133,19 @@ main ul li:before {
     padding: 0 var(--space-1) 0 0;
 }
 
+.description {
+    font-size: 0.9em;
+    line-height: 150%;
+}
+
+.icon {
+    background-color: rgba(var(--green-brand-color), 0.4);
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px #a9aaad;
+    border: 2px solid #F6FAFB;
+    padding: var(--space-1);
+}
+
 /* Chat */
 #chat-window {
     width: 300px;

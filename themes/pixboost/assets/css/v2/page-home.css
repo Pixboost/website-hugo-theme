@@ -8,11 +8,6 @@ p.title {
     font-size: 1.1em;
 }
 
-.description {
-    font-size: 0.9em;
-    line-height: 150%;
-}
-
 .cta {
     margin: var(--space-4) 0 !important;
 }
@@ -298,12 +293,7 @@ p.title {
 }
 
 #features .cards .card .icon {
-    border: 2px solid #F6FAFB;
-    box-shadow: 5px 5px 20px #a9aaad;
-    border-radius: 15px;
-    background-color: rgba(var(--green-brand-color), 0.4);
     display: inline-block;
-    padding: var(--space-1);
     position: absolute;
     top: calc(-1 * var(--icon-top-overflow));
 }

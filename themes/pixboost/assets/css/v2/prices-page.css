@@ -208,3 +208,38 @@
 #compare-plans table tbody tr.price td {
     font-weight: bold;
 }
+
+/* Limitations */
+
+#limitations {
+    background-color: rgb(var(--grey-color));
+    position: relative;
+    text-align: center;
+}
+
+#limitations .description {
+    color: rgb(var(--description-color));
+}
+
+#limitations .limits {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#limitations .limits > div {
+    display: flex;
+    flex-direction: row;
+    padding: var(--space-2) var(--space-1);
+    width: 30%;
+    background-color: white;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: left;
+    text-align: left;
+}
+
+#limitations .limits > div .icon {
+    margin-right: var(--space-3);
+}
