@@ -217,6 +217,19 @@
     text-align: center;
 }
 
+#limitations .content-wrapper {
+    z-index: 1;
+    position: relative;
+}
+
+#limitations .background {
+    position: absolute;
+    z-index: 2;
+    background-color: rgb(var(--grey-color));
+    height: 200%;
+    width: 100%;
+}
+
 #limitations .description {
     color: rgb(var(--description-color));
 }
@@ -242,4 +255,25 @@
 
 #limitations .limits > div .icon {
     margin-right: var(--space-3);
+}
+
+/* Example */
+
+#example {
+    position: relative;
+}
+
+#example .content-wrapper {
+    position: relative;
+    z-index: 3;
+}
+
+#example .background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: white;
+    clip-path: ellipse(90% 50% at 50% 50%);
+    top: 0;
 }
