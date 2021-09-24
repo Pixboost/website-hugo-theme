@@ -4,10 +4,6 @@ p.title {
     margin-bottom: 0;
 }
 
-.heading {
-    font-size: 1.1em;
-}
-
 .cta {
     margin: var(--space-4) 0 !important;
 }

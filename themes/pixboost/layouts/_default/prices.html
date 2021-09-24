@@ -311,6 +311,45 @@
   <section id="example">
     <div class="content-wrapper">
       <h2>Example of billing calculation</h2>
+      <div class="infographic">
+        <div class="card">
+          <div class="image">
+            <img src="/img/v2/prices/example/original-image.png" alt="developer loads one big image" width="400" height="370">
+          </div>
+          <p class="heading">Original image size</p>
+          <p class="description">Imagine, you have an Original image which weights 1MB on your website.</p>
+        </div>
+        <div class="connection">&rarr;</div>
+        <div class="card">
+          <div class="image">
+            <img src="/img/v2/prices/example/pixboost-processed-image.png" alt="pixboost processed image" width="400" height="370">
+          </div>
+          <p class="heading">Image processing</p>
+          <p class="description">Pixboost downloads it, optimises / transforms it on CDN for 30 days.</p>
+        </div>
+        <div class="connection">&rarr;</div>
+        <div class="card">
+          <div class="image">
+            <img src="/img/v2/prices/example/compressed-image.png" alt="pixboost compresses image" width="400" height="370">
+          </div>
+          <p class="heading">Image compression</p>
+          <p class="description">We compress it to 600KB not losing the quality.</p>
+        </div>
+        <div class="connection">&rarr;</div>
+        <div class="card">
+          <div class="image">
+            <img src="/img/v2/prices/example/user-received-image.png" alt="user loads optimised image" width="400" height="370">
+          </div>
+          <p class="heading">Users saw it</p>
+          <p class="description">Let’s pretend that 100 users saw it.</p>
+        </div>
+      </div>
+      <div class="calculation">
+        <p>
+          So, the calculation would be:<br>
+          <span>600Kb * 100 views = 60MB of billed bandwidth</span>
+        </p>
+      </div>
     </div>
     <div class="background"></div>
   </section>

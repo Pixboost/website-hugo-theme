@@ -226,7 +226,7 @@
     position: absolute;
     z-index: 2;
     background-color: rgb(var(--grey-color));
-    height: 200%;
+    height: 120%;
     width: 100%;
 }
 
@@ -261,6 +261,7 @@
 
 #example {
     position: relative;
+    text-align: center;
 }
 
 #example .content-wrapper {
@@ -274,6 +275,91 @@
     width: 100%;
     z-index: 2;
     background-color: white;
-    clip-path: ellipse(90% 50% at 50% 50%);
+    clip-path: ellipse(85% 55% at 50% 60%);
     top: 0;
+}
+
+#example .infographic {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: left;
+}
+
+#example .infographic .card {
+    max-width: 20%;
+}
+
+#example .infographic .connection {
+    color: rgb(var(--green-brand-color));
+    height: 100%;
+    font-size: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 50px;
+}
+
+#example .infographic .card .image {
+    padding: var(--space-2);
+    box-shadow: 0 20px 100px rgba(11, 11, 51, 0.1);
+    backdrop-filter: blur(80px);
+    border-radius: 12px;
+    margin-bottom: var(--space-3);
+    background: white;
+}
+
+#example .infographic .card .image img {
+    width: 100%;
+    height: auto;
+}
+
+#example .infographic .card .heading {
+    font-weight: bold;
+    width: 100%;
+}
+
+#example .infographic .card .description {
+    color: rgb(var(--description-color));
+}
+
+#example .calculation {
+    width: 100%;
+    border-radius: 48px;
+    background-color: rgb(var(--grey-color));
+    padding: var(--space-5);
+}
+
+#example .calculation p {
+    font-weight: bold;
+}
+
+#example .calculation p span {
+    color: rgb(var(--green-brand-color));
+}
+
+@media (max-width: 767.98px) {
+    section>.content-wrapper,
+    section.content-wrapper {
+        padding: var(--space-6) var(--space-2);
+    }
+
+    #prices .plans {
+        scroll-snap-type: x mandatory;
+        overflow-x: scroll;
+        scroll-padding: 0 50%;
+    }
+
+    #prices .plans .plan {
+        scroll-snap-align: start;
+        min-width: 70%;
+    }
+
+    #limitations .limits {
+        flex-direction: column;
+    }
+
+    #example .infographic {
+        flex-direction: column;
+    }
 }
