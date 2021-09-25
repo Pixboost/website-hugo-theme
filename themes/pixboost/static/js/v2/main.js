@@ -4,6 +4,18 @@ window.trackSignup = function (method) {
   })
 }
 
+window.openChat = function () {
+  const chatWindow = document.querySelector('#chat-window');
+
+  if (!window.HubSpotConversations.widget.status().loaded) {
+    window.HubSpotConversations.widget.load();
+  }
+
+  chatWindow.style.visibility = 'visible';
+
+  return false;
+}
+
 /**
  * Setup Hubspot chat
  */
