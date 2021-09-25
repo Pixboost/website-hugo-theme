@@ -300,6 +300,10 @@
     padding-top: 50px;
 }
 
+#example .infographic .connection:before {
+    content: "→";
+}
+
 #example .infographic .card .image {
     padding: var(--space-2);
     box-shadow: 0 20px 100px rgba(11, 11, 51, 0.1);
@@ -344,6 +348,10 @@
         padding: var(--space-6) var(--space-2);
     }
 
+    .note .text {
+        width: 80%;
+    }
+
     #prices .plans {
         scroll-snap-type: x mandatory;
         overflow-x: scroll;
@@ -351,15 +359,49 @@
     }
 
     #prices .plans .plan {
-        scroll-snap-align: start;
+        scroll-snap-align: center;
         min-width: 70%;
+    }
+
+    #prices .plans .plan:not(:last-child) {
+        margin-right: var(--space-1);
+    }
+
+    #compare-plans {
+        display: none;
     }
 
     #limitations .limits {
         flex-direction: column;
     }
 
+    #limitations .limits>div {
+        width: 100%;
+    }
+
+    #limitations .limits>div:not(:last-child) {
+        margin-bottom: var(--space-2);
+    }
+
     #example .infographic {
         flex-direction: column;
+    }
+
+    #example .background {
+        clip-path: ellipse(190% 51% at 50% 53%);
+    }
+
+    #example .infographic .card {
+        width: 100%;
+        max-width: none;
+    }
+
+    #example .infographic .connection {
+        padding-top: 0;
+        align-items: center;
+    }
+
+    #example .infographic .connection:before {
+        content: "↓";
     }
 }
