@@ -276,7 +276,7 @@
       <div class="limits">
         <div>
           <div class="icon">
-            <img src="/img/v2/prices/limitations/file-size.svg" alt="file size meter"/>
+            <img src="/img/v2/prices/limitations/file-size.svg" alt="file size meter" loading="lazy"/>
           </div>
           <p>
             Maximum image file size - 10MB
@@ -284,7 +284,7 @@
         </div>
         <div>
           <div class="icon">
-            <img src="/img/v2/prices/limitations/api-keys.svg" alt="api logo"/>
+            <img src="/img/v2/prices/limitations/api-keys.svg" alt="api logo" loading="lazy"/>
           </div>
           <p>
             10 API Keys *
@@ -292,7 +292,7 @@
         </div>
         <div>
           <div class="icon">
-            <img src="/img/v2/prices/limitations/image-sources.svg" alt="globe"/>
+            <img src="/img/v2/prices/limitations/image-sources.svg" alt="globe" loading="lazy"/>
           </div>
           <p>
             10 Image Sources (domains) *
@@ -316,7 +316,22 @@
       <div class="infographic">
         <div class="card">
           <div class="image">
-            <img src="/img/v2/prices/example/original-image.png" alt="developer loads one big image" width="400" height="370">
+            <img
+                src="https://pixboost.com/api/2/img/website/prices/example/original-image.png/optimise?auth=NzM5MTYwMjAy"
+                srcset="
+                https://pixboost.com/api/2/img/website/prices/example/original-image.png/resize?size=200&auth=NzM5MTYwMjAy 200w,
+                https://pixboost.com/api/2/img/website/prices/example/original-image.png/resize?size=300&auth=NzM5MTYwMjAy 300w,
+                https://pixboost.com/api/2/img/website/prices/example/original-image.png/optimise?auth=NzM5MTYwMjAy 400w
+              "
+                alt="developer loads one big image"
+                sizes="
+                (min-width: 768px) 300px,
+                100vw
+              "
+                width="400"
+                height="370"
+                loading="lazy"
+            />
           </div>
           <p class="heading">Original image size</p>
           <p class="description">Imagine, you have an Original image which weights 1MB on your website.</p>
@@ -324,7 +339,22 @@
         <div class="connection"></div>
         <div class="card">
           <div class="image">
-            <img src="/img/v2/prices/example/pixboost-processed-image.png" alt="pixboost processed image" width="400" height="370">
+            <img
+                src="https://pixboost.com/api/2/img/website/prices/example/pixboost-processed-image.png/optimise?auth=NzM5MTYwMjAy"
+                srcset="
+                https://pixboost.com/api/2/img/website/prices/example/pixboost-processed-image.png/resize?size=200&auth=NzM5MTYwMjAy 200w,
+                https://pixboost.com/api/2/img/website/prices/example/pixboost-processed-image.png/resize?size=300&auth=NzM5MTYwMjAy 300w,
+                https://pixboost.com/api/2/img/website/prices/example/pixboost-processed-image.png/optimise?auth=NzM5MTYwMjAy 400w
+              "
+                alt="pixboost processed image"
+                sizes="
+                (min-width: 768px) 300px,
+                100vw
+              "
+                width="400"
+                height="370"
+                loading="lazy"
+            />
           </div>
           <p class="heading">Image processing</p>
           <p class="description">Pixboost downloads it, optimises / transforms it on CDN for 30 days.</p>
@@ -332,7 +362,22 @@
         <div class="connection"></div>
         <div class="card">
           <div class="image">
-            <img src="/img/v2/prices/example/compressed-image.png" alt="pixboost compresses image" width="400" height="370">
+            <img
+                src="https://pixboost.com/api/2/img/website/prices/example/compressed-image.png/optimise?auth=NzM5MTYwMjAy"
+                srcset="
+                https://pixboost.com/api/2/img/website/prices/example/compressed-image.png/resize?size=200&auth=NzM5MTYwMjAy 200w,
+                https://pixboost.com/api/2/img/website/prices/example/compressed-image.png/resize?size=300&auth=NzM5MTYwMjAy 300w,
+                https://pixboost.com/api/2/img/website/prices/example/compressed-image.png/optimise?auth=NzM5MTYwMjAy 400w
+              "
+                alt="pixboost compresses image"
+                sizes="
+                (min-width: 768px) 300px,
+                100vw
+              "
+                width="400"
+                height="370"
+                loading="lazy"
+            />
           </div>
           <p class="heading">Image compression</p>
           <p class="description">We compress it to 600KB not losing the quality.</p>
@@ -340,16 +385,31 @@
         <div class="connection"></div>
         <div class="card">
           <div class="image">
-            <img src="/img/v2/prices/example/user-received-image.png" alt="user loads optimised image" width="400" height="370">
+            <img
+                src="https://pixboost.com/api/2/img/website/prices/example/user-received-image.png/optimise?auth=NzM5MTYwMjAy"
+                srcset="
+                https://pixboost.com/api/2/img/website/prices/example/user-received-image.png/resize?size=200&auth=NzM5MTYwMjAy 200w,
+                https://pixboost.com/api/2/img/website/prices/example/user-received-image.png/resize?size=300&auth=NzM5MTYwMjAy 300w,
+                https://pixboost.com/api/2/img/website/prices/example/user-received-image.png/optimise?auth=NzM5MTYwMjAy 400w
+              "
+                alt="user loads optimised image"
+                sizes="
+                (min-width: 768px) 300px,
+                100vw
+              "
+                width="400"
+                height="370"
+                loading="lazy"
+            />
           </div>
           <p class="heading">Users saw it</p>
-          <p class="description">Let’s pretend that 100 users saw it.</p>
+          <p class="description">Let’s pretend that 1024 users saw it.</p>
         </div>
       </div>
       <div class="calculation">
         <p>
           So, the calculation would be:<br>
-          <span>600Kb * 100 views = 60MB of billed bandwidth</span>
+          <span>600Kb * 1024 views = 600MB of billed bandwidth</span>
         </p>
       </div>
     </div>
