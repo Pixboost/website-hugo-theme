@@ -1,0 +1,407 @@
+.note {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.note hr {
+    width: 25%;
+    border: 2px rgb(var(--green-brand-color)) solid;
+    border-radius: 2px;
+    margin: var(--space-6) 0 var(--space-2) 0;
+}
+
+.note .text {
+    text-align: center;
+    width: 50%;
+    margin: 0;
+}
+
+
+/* Prices */
+
+#prices {
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--space-2);
+}
+
+#prices h1 {
+    color: white;
+}
+
+#prices .plans {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#prices .plan {
+    background-color: white;
+    max-width: 18%;
+    min-width: 18%;
+    border-radius: 14px;
+}
+
+#prices .plan>div {
+    padding: var(--space-2);
+}
+
+#prices .plan p {
+    margin: var(--space-1) 0;
+}
+
+#prices .plan .price {
+    text-align: center;
+    color: rgb(var(--green-brand-color));
+    min-height: 160px;
+}
+
+#prices .plan .price .top {
+    min-height: 70px;
+}
+
+#prices .plan .price .amount {
+    font-size: 2em;
+    font-weight: bold;
+    position: relative;
+}
+
+#prices .plan .price .amount sup {
+    font-weight: normal;
+    font-size: 30%;
+    position: absolute;
+    margin: 1em -0.5em;
+}
+
+#prices .plan .price .name {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+#prices .plan .terms {
+    background-color: rgb(var(--grey-color));
+    min-height: 200px;
+}
+
+#prices .plan .terms .traffic {
+    text-align: center;
+    color: rgb(var(--green-brand-color));
+    font-size: 1.6em;
+}
+
+#prices .plan .terms .features {
+    font-size: 0.8em;
+    color: rgb(var(--description-color));
+}
+
+#prices .plan .cta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#prices .plan .cta .btn {
+    padding-right: var(--space-2);
+    padding-left: var(--space-2);
+    font-size: 0.8em;
+}
+
+#prices .note .text {
+    color: white;
+}
+
+/* Compare plans */
+
+#compare-plans {
+    position: relative;
+}
+
+#compare-plans .frame {
+    position: relative;
+}
+
+#compare-plans .background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: rgb(var(--grey-color));
+    clip-path: ellipse(70% 60% at 50% 100%);
+    bottom: 0;
+}
+
+#compare-plans .table-wrapper {
+    position: relative;
+}
+
+#compare-plans .table-background {
+    position: absolute;
+    background-color: rgb(var(--grey-color));
+    width: calc(100% / 7 * 6 + var(--space-2));
+    height: 100%;
+    left: calc(100% / 7 - var(--space-1));
+    top: 0;
+    z-index: 1;
+}
+
+#compare-plans table {
+    width: 100%;
+    table-layout: fixed;
+    position: relative;
+    z-index: 2;
+    padding: var(--space-3) 0;
+    border-spacing: var(--space-1) 0;
+    font-size: 0.8em;
+}
+
+#compare-plans table thead th.title {
+    background-color: rgb(var(--green-brand-color));
+    border-radius: 14px 14px 0 0;
+    padding: var(--space-2) var(--space-2);
+    color: white;
+}
+
+#compare-plans table thead th.green {
+    background-color: rgb(var(--green-brand-color));
+}
+
+#compare-plans table thead th.blue {
+    background-color: rgb(var(--blue-color));
+}
+
+#compare-plans table tbody th {
+    text-align: left;
+    padding: var(--space-2) var(--space-2) var(--space-2) 0;
+    font-weight: normal;
+}
+
+#compare-plans table tbody tr:not(:last-child) th {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image: linear-gradient(to right, rgb(var(--description-color)), rgba(var(--description-color), 0) 80%) 1;
+}
+
+#compare-plans table tbody tr:not(:last-child) td {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image: linear-gradient(to right, rgba(var(--description-color), 0) 10%, rgb(var(--description-color)) 50%, rgba(var(--description-color), 0) 90%) 1;
+}
+
+#compare-plans table tbody td {
+    text-align: center;
+    padding: var(--space-1);
+}
+
+#compare-plans table tbody td:nth-child(even) {
+    background-color: white;
+}
+
+#compare-plans table tbody td:nth-child(odd) {
+    background-color: rgb(250, 250, 253);
+}
+
+#compare-plans table tbody tr:last-child td {
+    border-radius: 0 0 14px 14px;
+}
+
+#compare-plans table tbody tr.price td {
+    font-weight: bold;
+}
+
+/* Limitations */
+
+#limitations {
+    background-color: rgb(var(--grey-color));
+    position: relative;
+    text-align: center;
+}
+
+#limitations .content-wrapper {
+    z-index: 1;
+    position: relative;
+}
+
+#limitations .background {
+    position: absolute;
+    z-index: 2;
+    background-color: rgb(var(--grey-color));
+    height: 120%;
+    width: 100%;
+}
+
+#limitations .description {
+    color: rgb(var(--description-color));
+}
+
+#limitations .limits {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#limitations .limits > div {
+    display: flex;
+    flex-direction: row;
+    padding: var(--space-2) var(--space-1);
+    width: 30%;
+    background-color: white;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: left;
+    text-align: left;
+}
+
+#limitations .limits > div .icon {
+    margin-right: var(--space-3);
+}
+
+/* Example */
+
+#example {
+    position: relative;
+    text-align: center;
+}
+
+#example .content-wrapper {
+    position: relative;
+    z-index: 3;
+}
+
+#example .background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: white;
+    clip-path: ellipse(85% 55% at 50% 60%);
+    top: 0;
+}
+
+#example .infographic {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: left;
+}
+
+#example .infographic .card {
+    max-width: 20%;
+}
+
+#example .infographic .connection {
+    color: rgb(var(--green-brand-color));
+    height: 100%;
+    font-size: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 50px;
+}
+
+#example .infographic .connection:before {
+    content: "→";
+}
+
+#example .infographic .card .image {
+    padding: var(--space-2);
+    box-shadow: 0 20px 100px rgba(11, 11, 51, 0.1);
+    backdrop-filter: blur(80px);
+    border-radius: 12px;
+    margin-bottom: var(--space-3);
+    background: white;
+}
+
+#example .infographic .card .image img {
+    width: 100%;
+    height: auto;
+}
+
+#example .infographic .card .heading {
+    font-weight: bold;
+    width: 100%;
+}
+
+#example .infographic .card .description {
+    color: rgb(var(--description-color));
+}
+
+#example .calculation {
+    width: 100%;
+    border-radius: 48px;
+    background-color: rgb(var(--grey-color));
+    padding: var(--space-5);
+}
+
+#example .calculation p {
+    font-weight: bold;
+}
+
+#example .calculation p span {
+    color: rgb(var(--green-brand-color));
+}
+
+@media (max-width: 767.98px) {
+    section>.content-wrapper,
+    section.content-wrapper {
+        padding: var(--space-6) var(--space-2);
+    }
+
+    .note .text {
+        width: 80%;
+    }
+
+    #prices .plans {
+        scroll-snap-type: x mandatory;
+        overflow-x: scroll;
+        scroll-padding: 0 50%;
+    }
+
+    #prices .plans .plan {
+        scroll-snap-align: center;
+        min-width: 70%;
+    }
+
+    #prices .plans .plan:not(:last-child) {
+        margin-right: var(--space-1);
+    }
+
+    #compare-plans {
+        display: none;
+    }
+
+    #limitations .limits {
+        flex-direction: column;
+    }
+
+    #limitations .limits>div {
+        width: 100%;
+    }
+
+    #limitations .limits>div:not(:last-child) {
+        margin-bottom: var(--space-2);
+    }
+
+    #example .infographic {
+        flex-direction: column;
+    }
+
+    #example .background {
+        clip-path: ellipse(190% 51% at 50% 53%);
+    }
+
+    #example .infographic .card {
+        width: 100%;
+        max-width: none;
+    }
+
+    #example .infographic .connection {
+        padding-top: 0;
+        align-items: center;
+    }
+
+    #example .infographic .connection:before {
+        content: "↓";
+    }
+}

@@ -1,277 +1,419 @@
 {{ define "main" }}
-<h1 class="h1-formatting">Billing and Prices</h1>
+<main>
+  <section id="prices" class="content-wrapper">
+    <h1>Billing and Prices</h1>
+    <div class="plans">
 
-<div class="plans" id="prices">
-  <div>&nbsp;</div>
-  <div class="plans-list">
-    <div class="plan-free">
-      <div class="title">Free</div>
-      <div class="price">$0</div>
-      <ul>
-        <li class="traffic">2 Gb</li>
-        <li>&nbsp;</li>
-        <li>Full functionality</li>
-        <li>No time limit</li>
-        <li>No credit card required</li>
-      </ul>
-      <div class="spacer"></div>
+      <div class="plan">
+        <div class="price">
+          <div class="top">
+            <p class="amount"><sup>$</sup>0</p>
+            <p class="period">Month</p>
+          </div>
+          <p class="name">Free</p>
+        </div>
+        <div class="terms">
+          <p class="traffic">2 Gb</p>
+          <ul class="features">
+            <li>Full functionality</li>
+            <li>No time limit</li>
+            <li>No credit card required</li>
+          </ul>
+        </div>
+        <div class="cta">
+          <a class="btn  btn-light" href="/customer/#/signup" onclick="window.trackSignup('Prices: Free')">
+            SIGN UP
+          </a>
+        </div>
+      </div>
 
-      <div class="btn-panel">
-        <a class="callout-btn"  onclick="window.trackLink('Signup Free','signup_free')" href="/customer/#/signup">Sign up</a>
+
+      <div class="plan">
+        <div class="price">
+          <div class="top">
+            <p class="amount"><sup>$</sup>5</p>
+            <p class="period">Month</p>
+          </div>
+          <p class="name">Startup</p>
+        </div>
+        <div class="terms">
+          <p class="traffic">10 Gb</p>
+        </div>
+        <div class="cta">
+          <a class="btn  btn-light" href="/customer/#/signup" onclick="window.trackSignup('Prices: Startup')">
+            SIGN UP
+          </a>
+        </div>
+      </div>
+
+      <div class="plan">
+        <div class="price">
+          <div class="top">
+            <p class="amount"><sup>$</sup>25</p>
+            <p class="period">Month</p>
+          </div>
+          <p class="name">Business</p>
+        </div>
+        <div class="terms">
+          <p class="traffic">50 Gb</p>
+        </div>
+        <div class="cta">
+          <a class="btn btn-light" href="/customer/#/signup" onclick="window.trackSignup('Prices: Business')">
+            SIGN UP
+          </a>
+        </div>
+      </div>
+
+      <div class="plan">
+        <div class="price">
+          <div class="top">
+            <p class="amount"><sup>$</sup>80</p>
+            <p class="period">Month</p>
+          </div>
+          <p class="name">Advanced</p>
+        </div>
+        <div class="terms">
+          <p class="traffic">200 Gb</p>
+        </div>
+        <div class="cta">
+          <a class="btn  btn-light" href="/customer/#/signup" onclick="window.trackSignup('Prices: Advanced')">
+            SIGN UP
+          </a>
+        </div>
+      </div>
+
+      <div class="plan">
+        <div class="price">
+          <div class="top">
+            <p>
+              <img src="/img/v2/prices/prices/enterprise-plan.svg" alt="enterprise plan"/>
+            </p>
+          </div>
+          <p class="name">Enterprise</p>
+        </div>
+        <div class="terms">
+          <ul class="features">
+            <li>24/7 Support</li>
+            <li>Integration support</li>
+            <li>Discounted pricing based on volume</li>
+          </ul>
+        </div>
+        <div class="cta">
+          <a class="btn btn-light" href="#" onclick="window.openChat()">
+            CONTACT US
+          </a>
+        </div>
       </div>
     </div>
-    <div class="spacer"></div>
-    <div class="plan">
-      <div class="title">Startup</div>
-      <div class="price">$5 / month</div>
-      <ul>
-        <li class="traffic">10 Gb</li>
-      </ul>
-      <div class="spacer"></div>
-      <div class="btn-panel">
-        <a class="btn"  onclick="window.trackLink('Signup S','signup_small')" href="/customer/#/signup">Sign up</a>
+    <div class="note">
+      <hr/>
+      <p class="text">
+        We bill only for the bandwidth. You are paying only for what your website uses and nothing more!
+      </p>
+    </div>
+  </section>
+
+  <section id="compare-plans">
+    <div class="content-wrapper frame">
+      <h2>Compare plans</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th class="green title">Free</th>
+              <th class="blue title">Startup</th>
+              <th class="green title">Business</th>
+              <th class="blue title">Advanced</th>
+              <th class="green title">Enterprise</th>
+              <th class="blue title">Open Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="price">
+              <th>Pricing</th>
+              <td>$0</td>
+              <td>$5 / month</td>
+              <td>$25 / month</td>
+              <td>$80 / month</td>
+              <td>Custom Pricing</td>
+              <td>$0</td>
+            </tr>
+
+            <tr>
+              <th>Bandwidth</th>
+              <td>2Gb</td>
+              <td>10Gb</td>
+              <td>50Gb</td>
+              <td>200Gb</td>
+              <td>Unlimited</td>
+              <td>Not Supported</td>
+            </tr>
+
+            <tr>
+              <th>Image Processing</th>
+              <td>Unlimited</td>
+              <td>Unlimited</td>
+              <td>Unlimited</td>
+              <td>Unlimited</td>
+              <td>Unlimited</td>
+              <td>Full Functionality</td>
+            </tr>
+
+            <tr>
+              <th>Billing Period</th>
+              <td>Not Billed</td>
+              <td>Monthly</td>
+              <td>Monthly</td>
+              <td>Monthly</td>
+              <td>Monthly / Annually</td>
+              <td>Not Billed</td>
+            </tr>
+
+            <tr>
+              <th>CDN</th>
+              <td>Included</td>
+              <td>Included</td>
+              <td>Included</td>
+              <td>Included</td>
+              <td>Included</td>
+              <td>Not Supported</td>
+            </tr>
+
+            <tr>
+              <th>Custom Domain Name</th>
+              <td>Supported</td>
+              <td>Supported</td>
+              <td>Supported</td>
+              <td>Supported</td>
+              <td>Supported</td>
+              <td>Not Supported</td>
+            </tr>
+
+            <tr>
+              <th>SLA</th>
+              <td>Not Supported</td>
+              <td>Supported</td>
+              <td>Supported</td>
+              <td>Supported</td>
+              <td>Supported</td>
+              <td>Not Supported</td>
+            </tr>
+
+            <tr>
+              <th>Automated Workflow API Calls</th>
+              <td>10</td>
+              <td>100</td>
+              <td>200</td>
+              <td>500</td>
+              <td>Unlimited</td>
+              <td>Not Supported</td>
+            </tr>
+
+            <tr>
+              <th>Integration Support</th>
+              <td>Contact Us</td>
+              <td>Free</td>
+              <td>Free</td>
+              <td>Free</td>
+              <td>Free</td>
+              <td>Contact Us</td>
+            </tr>
+
+            <tr>
+              <th>Issues Support</th>
+              <td>1-3 days</td>
+              <td>5-8 hours</td>
+              <td>3-5 hours</td>
+              <td>1-3 hours</td>
+              <td>24/7 Monitoring</td>
+              <td>GitHub Issues</td>
+            </tr>
+
+            <tr>
+              <th></th>
+              <td>
+                <a class="btn btn-sm btn-light" href="/customer/#/signup" onclick="window.trackSignup('Compare plans: Free')">SIGN UP</a>
+              </td>
+              <td>
+                <a class="btn btn-sm btn-light" href="/customer/#/signup" onclick="window.trackSignup('Compare plans: Startup')">SIGN UP</a>
+              </td>
+              <td>
+                <a class="btn btn-sm btn-light" href="/customer/#/signup" onclick="window.trackSignup('Compare plans: Business')">SIGN UP</a>
+              </td>
+              <td>
+                <a class="btn btn-sm btn-light" href="/customer/#/signup" onclick="window.trackSignup('Compare plans: Advanced')">SIGN UP</a>
+              </td>
+              <td>
+                <a class="btn btn-sm btn-light" href="#" onclick="window.openChat()">CONTACT US</a>
+              </td>
+              <td>
+                <a class="btn btn-sm btn-light" href="https://github.com/Pixboost/transformimgs" target="_blank" rel="noopener">GITHUB</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="table-background"></div>
+      </div>
+      <div class="note">
+        <hr/>
+        <p class="text">
+          Learn more about Pixboost billing in the <a href="https://help.pixboost.com/billing">Billing Section of the Documentation</a>
+        </p>
       </div>
     </div>
-    <div class="spacer"></div>
-    <div class="plan">
-      <div class="title">Business</div>
-      <div class="price">$25 / month</div>
-      <ul>
-        <li class="traffic">50 Gb</li>
-      </ul>
-      <div class="spacer"></div>
+    <div class="background"></div>
+  </section>
 
-      <div class="btn-panel">
-        <a class="btn"  onclick="window.trackLink('Signup M','signup_medium')" href="/customer/#/signup">Sign up</a>
+  <section id="limitations">
+    <div class="content-wrapper">
+      <h2>Limitations</h2>
+
+      <p class="description">
+        We are providing Out-of-the-box Cloud Service, therefore we try to make as fewer limitations as possible.
+      </p>
+
+      <div class="limits">
+        <div>
+          <div class="icon">
+            <img src="/img/v2/prices/limitations/file-size.svg" alt="file size meter" loading="lazy"/>
+          </div>
+          <p>
+            Maximum image file size - 10MB
+          </p>
+        </div>
+        <div>
+          <div class="icon">
+            <img src="/img/v2/prices/limitations/api-keys.svg" alt="api logo" loading="lazy"/>
+          </div>
+          <p>
+            10 API Keys *
+          </p>
+        </div>
+        <div>
+          <div class="icon">
+            <img src="/img/v2/prices/limitations/image-sources.svg" alt="globe" loading="lazy"/>
+          </div>
+          <p>
+            10 Image Sources (domains) *
+          </p>
+        </div>
+      </div>
+
+      <div class="note">
+        <hr/>
+        <p class="text">
+          * If you need more API Keys or Image Sources please contact us directly, and we will add more for your account.
+        </p>
       </div>
     </div>
-    <div class="spacer"></div>
-    <div class="plan">
-      <div class="title">Advanced</div>
-      <div class="price">$80 / month</div>
-      <ul>
-        <li class="traffic">200 Gb</li>
-      </ul>
-      <div class="spacer"></div>
+    <div class="background"></div>
+  </section>
 
-      <div class="btn-panel">
-        <a class="btn"  onclick="window.trackLink('Signup L','signup_large')" href="/customer/#/signup">Sign up</a>
+  <section id="example">
+    <div class="content-wrapper">
+      <h2>Example of billing calculation</h2>
+      <div class="infographic">
+        <div class="card">
+          <div class="image">
+            <img
+                src="https://pixboost.com/api/2/img/website/prices/example/original-image.png/optimise?auth=NzM5MTYwMjAy"
+                srcset="
+                https://pixboost.com/api/2/img/website/prices/example/original-image.png/resize?size=200&auth=NzM5MTYwMjAy 200w,
+                https://pixboost.com/api/2/img/website/prices/example/original-image.png/resize?size=300&auth=NzM5MTYwMjAy 300w,
+                https://pixboost.com/api/2/img/website/prices/example/original-image.png/optimise?auth=NzM5MTYwMjAy 400w
+              "
+                alt="developer loads one big image"
+                sizes="
+                (min-width: 768px) 300px,
+                100vw
+              "
+                width="400"
+                height="370"
+                loading="lazy"
+            />
+          </div>
+          <p class="heading">Original image size</p>
+          <p class="description">Imagine, you have an Original image which weights 1MB on your website.</p>
+        </div>
+        <div class="connection"></div>
+        <div class="card">
+          <div class="image">
+            <img
+                src="https://pixboost.com/api/2/img/website/prices/example/pixboost-processed-image.png/optimise?auth=NzM5MTYwMjAy"
+                srcset="
+                https://pixboost.com/api/2/img/website/prices/example/pixboost-processed-image.png/resize?size=200&auth=NzM5MTYwMjAy 200w,
+                https://pixboost.com/api/2/img/website/prices/example/pixboost-processed-image.png/resize?size=300&auth=NzM5MTYwMjAy 300w,
+                https://pixboost.com/api/2/img/website/prices/example/pixboost-processed-image.png/optimise?auth=NzM5MTYwMjAy 400w
+              "
+                alt="pixboost processed image"
+                sizes="
+                (min-width: 768px) 300px,
+                100vw
+              "
+                width="400"
+                height="370"
+                loading="lazy"
+            />
+          </div>
+          <p class="heading">Image processing</p>
+          <p class="description">Pixboost downloads it, optimises / transforms it on CDN for 30 days.</p>
+        </div>
+        <div class="connection"></div>
+        <div class="card">
+          <div class="image">
+            <img
+                src="https://pixboost.com/api/2/img/website/prices/example/compressed-image.png/optimise?auth=NzM5MTYwMjAy"
+                srcset="
+                https://pixboost.com/api/2/img/website/prices/example/compressed-image.png/resize?size=200&auth=NzM5MTYwMjAy 200w,
+                https://pixboost.com/api/2/img/website/prices/example/compressed-image.png/resize?size=300&auth=NzM5MTYwMjAy 300w,
+                https://pixboost.com/api/2/img/website/prices/example/compressed-image.png/optimise?auth=NzM5MTYwMjAy 400w
+              "
+                alt="pixboost compresses image"
+                sizes="
+                (min-width: 768px) 300px,
+                100vw
+              "
+                width="400"
+                height="370"
+                loading="lazy"
+            />
+          </div>
+          <p class="heading">Image compression</p>
+          <p class="description">We compress it to 600KB not losing the quality.</p>
+        </div>
+        <div class="connection"></div>
+        <div class="card">
+          <div class="image">
+            <img
+                src="https://pixboost.com/api/2/img/website/prices/example/user-received-image.png/optimise?auth=NzM5MTYwMjAy"
+                srcset="
+                https://pixboost.com/api/2/img/website/prices/example/user-received-image.png/resize?size=200&auth=NzM5MTYwMjAy 200w,
+                https://pixboost.com/api/2/img/website/prices/example/user-received-image.png/resize?size=300&auth=NzM5MTYwMjAy 300w,
+                https://pixboost.com/api/2/img/website/prices/example/user-received-image.png/optimise?auth=NzM5MTYwMjAy 400w
+              "
+                alt="user loads optimised image"
+                sizes="
+                (min-width: 768px) 300px,
+                100vw
+              "
+                width="400"
+                height="370"
+                loading="lazy"
+            />
+          </div>
+          <p class="heading">Users saw it</p>
+          <p class="description">Let’s pretend that 1024 users saw it.</p>
+        </div>
+      </div>
+      <div class="calculation">
+        <p>
+          So, the calculation would be:<br>
+          <span>600Kb * 1024 views = 600MB of billed bandwidth</span>
+        </p>
       </div>
     </div>
-    <div class="spacer"></div>
-    <div class="plan">
-      <div class="title">Enterprise</div>
-      <div class="price">&nbsp;</div>
-      <ul>
-        <li>Need something special? Contact us and we will be with you shortly.</li>
-      </ul>
-
-      <div class="spacer"></div>
-      <div class="btn-panel">
-        <a class="btn"  onclick="window.trackLink('Signup Enterprise','signup_enterprise')" href="/contacts/">Contact us</a>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<div class="billing-about">
-  <p>We bill only for the <b>bandwidth</b>. You are paying only for what your website uses and nothing more!</p>
-</div>
-
-<div class="table-block">
-  <h2>Compare Plans</h2>
-  <div class="prices-table">
-    <table>
-      <tr>
-        <th style="width:15%;"></th>
-        <th>FREE</th>
-        <th>Startup</th>
-        <th>Business</th>
-        <th>Advanced</th>
-        <th>Enterprise</th>
-        <th>Open Source</th>
-      </tr>
-      <tr>
-        <td><b>Pricing</b></td>
-        <td>$0</td>
-        <td>$5/month</td>
-        <td>$25/month</td>
-        <td>$80/month</td>
-        <td>Custom pricing</td>
-        <td>$0</td>
-      </tr>
-      <tr>
-        <td><b>Bandwidth</b></td>
-        <td>2GB</td>
-        <td>10GB</td>
-        <td>50GB</td>
-        <td>200GB</td>
-        <td>Unlimited</td>
-        <td>Not Supported</td>
-      </tr>
-      <tr>
-        <td><b>Image Processing</b></td>
-        <td>Unlimited</td>
-        <td>Unlimited</td>
-        <td>Unlimited</td>
-        <td>Unlimited</td>
-        <td>Unlimited</td>
-        <td>Full functionality</td>
-      </tr>
-      <tr>
-        <td><b>Billing Period</b></td>
-        <td>Not Billed</td>
-        <td>Monthly</td>
-        <td>Monthly</td>
-        <td>Monthly</td>
-        <td>Monthly/Annually</td>
-        <td>Not Billed</td>
-      </tr>
-      <tr>
-        <td><b>CDN</b></td>
-        <td>Supported</td>
-        <td>Supported</td>
-        <td>Supported</td>
-        <td>Supported</td>
-        <td>Supported</td>
-        <td>Not Supported</td>
-      </tr>
-      <tr>
-        <td><b>Custom Domain Name</b></td>
-        <td>Supported</td>
-        <td>Supported</td>
-        <td>Supported</td>
-        <td>Supported</td>
-        <td>Supported</td>
-        <td>Not Supported</td>
-      </tr>
-      <tr>
-        <td><b>SLA</b></td>
-        <td>Not Supported</td>
-        <td>Supported</td>
-        <td>Supported</td>
-        <td>Supported</td>
-        <td>Supported</td>
-        <td>Not Supported</td>
-      </tr>
-      <tr>
-        <td><b>Automated Workflow API calls</b></td>
-        <td>10</td>
-        <td>100</td>
-        <td>200</td>
-        <td>500</td>
-        <td>Unlimited</td>
-        <td>Not Supported</td>
-      </tr>
-      <tr>
-        <td><b>Integration Support</b></td>
-        <td>Contact us</td>
-        <td>Free</td>
-        <td>Free</td>
-        <td>Free</td>
-        <td>Free</td>
-        <td>Contact us</td>
-      </tr>
-      <tr>
-        <td><b>Issues Support</b></td>
-        <td>1-3 Days</td>
-        <td>5-8 Hours</td>
-        <td>3-5 Hours</td>
-        <td>1-3 Hours</td>
-        <td>24/7 Monitoring</td>
-        <td>Github Issues</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>
-          <div class="btn-panel">
-            <a class="btn" onclick="window.trackLink('Prices Free','prices_free')" href="/customer/#/signup">Sign up</a>
-          </div>
-        </td>
-        <td>
-          <div class="btn-panel">
-            <a class="btn" onclick="window.trackLink('Prices S','prices_small')" href="/customer/#/signup">Sign up</a>
-          </div>
-        </td>
-        <td>
-          <div class="btn-panel">
-            <a class="btn" onclick="window.trackLink('Prices M','prices_medium')" href="/customer/#/signup">Sign up</a>
-          </div>
-        </td>
-        <td>
-          <div class="btn-panel">
-            <a class="btn"  onclick="window.trackLink('Prices L','prices_large')" href="/customer/#/signup">Sign up</a>
-          </div></td>
-        <td>
-          <div class="btn-panel">
-            <a class="btn" onclick="window.trackLink('Prices Enterprise','prices_enterprise')" href="/contacts/">Contact us</a>
-          </div>
-        </td>
-        <td>
-          <div class="btn-panel">
-            <a class="btn" target="_blank" onclick="window.trackLink('Prices GitHub','prices_github')" href="https://github.com/Pixboost">GitHub</a>
-          </div>
-        </td>
-      </tr>
-    </table>
-  </div>
-  <p>Please, learn more about Pixboost Billing in the
-    <a href="https://help.pixboost.com/billing.html">Billing Section of the Documentation</a>.
-  </p>
-</div>
-
-<div class="plan-limitations">
-  <h2>Limitations</h2>
-  <p>
-    We are providing Out-of-the-box Cloud Service, therefore we try to make as fewer limitations as possible.
-  </p>
-  <div class="plan-limitations-list">
-    <ul>
-      <li>Maximum image file size - 10 MB</li>
-      <li>10 API Keys limit*</li>
-      <li>10 Image Sources (domains) limit*</li>
-    </ul>
-  </div>
-  <p>
-    *If you need more API Keys or Image Sources please contact us directly and we will add more for your account.
-  </p>
-</div>
-
-<div class="example">
-  <h2>Example of billing calculation</h2>
-  <div class="example-img">
-    <div data-pb-picture
-         data-url="https://pixboost.com/img/prices/pricing.jpg"
-         data-lazy=""
-         data-alt="how pricing works"
-         data-lg="optimise"
-         data-md="optimise"
-         data-sm="resize?size=640"
-    ></div>
-  </div>
-  <div class="example-list">
-    <ul>
-      <li>Imagine, you have a logo.png image which weights 1MB on your website.</li>
-      <li>We compress it to 600KB.</li>
-      <li>Let’s pretend that 100 users saw it.</li>
-      <li>So, the calculation would be: 600KB * 100 views = 60 MB of billed bandwidth.</li>
-    </ul>
-  </div>
-</div>
-
-<div class="enterprise-plan">
-  <h2>Enterprise Plan Bonuses</h2>
-  <p>
-    If you are looking into more than <b>200 GB</b> per month, please contact us directly because you are eligible for a special offer:
-  </p>
-  <div class="enterprise-plan-list">
-    <ul>
-      <li>Integration Support</li>
-      <li>Discounted prices depending on your traffic volume</li>
-      <li>24/7 Support</li>
-    </ul>
-  </div>
-</div>
-
+    <div class="background"></div>
+  </section>
+</main>
 {{ end }}
