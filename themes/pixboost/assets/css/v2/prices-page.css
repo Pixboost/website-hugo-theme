@@ -388,7 +388,7 @@
     }
 
     #example .background {
-        clip-path: ellipse(190% 51% at 50% 53%);
+        clip-path: ellipse(190% 53% at 50% 53%);
     }
 
     #example .infographic .card {

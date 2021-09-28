@@ -204,7 +204,7 @@ header > div {
 }
 
 header .mobile-menu,
-header .close-button {
+header .close-button-wrapper {
     display: none;
 }
 
@@ -303,6 +303,7 @@ footer .heading {
         background: rgb(var(--background-color));
         width: 100vw;
         height: 100vh;
+        z-index: 100;
 
         transition: opacity 500ms;
     }
@@ -320,12 +321,18 @@ footer .heading {
         margin-top: var(--space-2);
     }
 
-    nav .close-button {
+    nav .close-button-wrapper {
         display: inline-block;
         color: white;
         text-align: right;
         padding: var(--space-4);
         width: 100%;
+    }
+
+    nav .close-button-wrapper .close-button {
+        transform: rotate(45deg);
+        display: inline-block;
+        font-size: 2em;
     }
 
     header {
