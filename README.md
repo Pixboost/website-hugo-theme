@@ -1,8 +1,8 @@
 # Pixboost.com Hugo Theme
 
-Hugo theme used (not yet) on pixboost.com.
+Hugo theme used on pixboost.com.
 
 ## Developing
 
-* Run `make dev`
-* Open `http://localhost:1313`
+* `make dev`
+* `open khttp://localhost:1313`
