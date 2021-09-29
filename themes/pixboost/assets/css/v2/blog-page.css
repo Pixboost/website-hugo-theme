@@ -1,0 +1,52 @@
+article {
+    padding-top: var(--space-2) !important;
+}
+
+h1 > small {
+    font-size: 1rem;
+    display: block;
+    font-weight: normal;
+}
+
+.single-page img,
+.single-page video {
+    max-width: 100%;
+}
+
+.single-page img.full-width,
+.single-page .full-width img
+{
+    max-width: 100%;
+    height: auto;
+}
+
+.single-page .center {
+    text-align: center;
+}
+
+.single-page table {
+    width: 100%;
+}
+
+.single-page table thead th {
+    border-top: 1px solid var(--light-grey-color);
+    vertical-align: bottom;
+    border-bottom: 2px solid var(--light-grey-color);
+    padding: .75rem;
+}
+
+.single-page table td, .single-page table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid var(--light-grey-color);
+}
+
+.btn-panel {
+    text-align: center;
+}
+
+@media (max-width: 767.98px) {
+    article {
+        padding: var(--space-2) !important;
+    }
+}

@@ -5,6 +5,7 @@ lastmod: 2021-01-20T04:31:08Z
 description: "AVIF is a new image format for the Web that have wide browsers adoption with better compression than WebP. Read how you could use it today!"
 image: rally-car.jpg
 draft: false
+v2: true
 ---
 
 Images have come to dominate the Internet. Most of today’s websites are comprised of 50 to 80 percent images. 
