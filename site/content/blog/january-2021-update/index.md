@@ -4,6 +4,7 @@ date: 2021-01-26T21:23:42Z
 description: "Complete AVIF support, animated GIFs and React library enhancements are all landed in January 2021. Read details about all January updates in this blog!"
 image: 2021.jpg
 draft: false
+v2: true
 ---
 
 Hi there, 

@@ -28,19 +28,10 @@
     }
 </script>
 
-<style>
-    .single-page {
-        max-width: 1000px;
-        margin: auto;
-        font-size: 1.2em;
-        padding: 10px;
-    }
-</style>
-
 {{ end }}
 
 {{ define "main" }}
-<div class="single-page">
+<article class="single-page content-wrapper">
     <h1>{{ .Title }} <small>Published on: {{.Date | time.Format "Jan 2, 2006"}}</small></h1>
 
     {{if .Params.image}}
@@ -50,26 +41,26 @@
 
     <img
             srcset="
-                https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=400&save-data=hide&auth=MzY2MjQ4NzQ2Mw__ 400w,
-                https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=800&save-data=hide&auth=MzY2MjQ4NzQ2Mw__ 800w,
-                https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=500&save-data=hide&auth=MzY2MjQ4NzQ2Mw__ 500w,
-                https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=1000&save-data=hide&auth=MzY2MjQ4NzQ2Mw__ 1000w,
-                https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=640&save-data=hide&auth=MzY2MjQ4NzQ2Mw__ 640w,
-                https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=1280&save-data=hide&auth=MzY2MjQ4NzQ2Mw__ 1280w,
-                https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=768&save-data=hide&auth=MzY2MjQ4NzQ2Mw__ 768w,
-                https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=1536&save-data=hide&auth=MzY2MjQ4NzQ2Mw__ 1536w,
-                https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=1000&save-data=hide&auth=MzY2MjQ4NzQ2Mw__ 1000w,
-                https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=2000&save-data=hide&auth=MzY2MjQ4NzQ2Mw__ 2000w
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=400&save-data=hide&auth=NzM5MTYwMjAy 400w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=800&save-data=hide&auth=NzM5MTYwMjAy 800w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=500&save-data=hide&auth=NzM5MTYwMjAy 500w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1000&save-data=hide&auth=NzM5MTYwMjAy 1000w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=640&save-data=hide&auth=NzM5MTYwMjAy 640w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1280&save-data=hide&auth=NzM5MTYwMjAy 1280w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=768&save-data=hide&auth=NzM5MTYwMjAy 768w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1536&save-data=hide&auth=NzM5MTYwMjAy 1536w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1000&save-data=hide&auth=NzM5MTYwMjAy 1000w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=2000&save-data=hide&auth=NzM5MTYwMjAy 2000w
             "
             sizes="
                             (min-width: 768px) 1000px,
                             100vw
                         "
-            src="https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=1000&auth=MzY2MjQ4NzQ2Mw__"
+            src="https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1000&auth=NzM5MTYwMjAy"
             alt="{{$imageAlt}}"
     />
     {{end}}
 
     {{ .Content }}
-</div>
+</article>
 {{ end }}

@@ -1,39 +1,40 @@
 {{ define "main" }}
-<div class="list-page">
-    <h1> {{ .Title }} </h1>
+<main>
+    <section class="content-wrapper list-page">
+        <h1> {{ .Title }} </h1>
+        <ul>
+            {{ range .Pages }}
+                <li>
+                    <a class="title" href="{{.RelPermalink}}">{{.Title}}</a><br/>
+                    <small>Published on: {{.Date | time.Format "Jan 2, 2006"}}</small>
 
-    <ul>
-        {{ range .Pages }}
-            <li>
-                <a class="title" href="{{.RelPermalink}}">{{.Title}}</a><br/>
-                <small>Published on: {{.Date | time.Format "Jan 2, 2006"}}</small>
+                    <div class="article-image-and-summary">
+                        {{if .Params.image}}
+                        {{$image := printf "content/%s/%s" .File.Dir .Params.image | imageConfig}}
+                        {{$imageExt := path.Ext .Params.image}}
+                        {{$imageAlt := strings.TrimSuffix $imageExt .Params.image | humanize }}
+                        <img
+                            srcset="
+                                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=200&save-data=hide&auth=NzM5MTYwMjAy 200w,
+                                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=400&save-data=hide&auth=NzM5MTYwMjAy 400w,
+                                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=500&save-data=hide&auth=NzM5MTYwMjAy 500w,
+                                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1000&save-data=hide&auth=NzM5MTYwMjAy 1000w,
+                                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=768&save-data=hide&auth=NzM5MTYwMjAy 768w,
+                                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1536&save-data=hide&auth=NzM5MTYwMjAy 1536w,
 
-                <div class="article-image-and-summary">
-                    {{if .Params.image}}
-                    {{$image := printf "content/%s/%s" .File.Dir .Params.image | imageConfig}}
-                    {{$imageExt := path.Ext .Params.image}}
-                    {{$imageAlt := strings.TrimSuffix $imageExt .Params.image | humanize }}
-                    <img
-                        srcset="
-                            https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=200&save-data=hide&auth=MzY2MjQ4NzQ2Mw__ 200w,
-                            https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=400&save-data=hide&auth=MzY2MjQ4NzQ2Mw__ 400w,
-                            https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=500&save-data=hide&auth=MzY2MjQ4NzQ2Mw__ 500w,
-                            https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=1000&save-data=hide&auth=MzY2MjQ4NzQ2Mw__ 1000w,
-                            https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=768&save-data=hide&auth=MzY2MjQ4NzQ2Mw__ 768w,
-                            https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=1536&save-data=hide&auth=MzY2MjQ4NzQ2Mw__ 1536w,
+                            "
+                            src="https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=1000&save-data=hide&auth=MzY2MjQ4NzQ2Mw__"
+                            alt="{{$imageAlt}}"
+                        />
+                        {{end}}
 
-                        "
-                        src="https://pixboost.com/api/2/img/https://pixboost.com/{{.File.Dir}}{{.Params.image}}/resize?size=1000&save-data=hide&auth=MzY2MjQ4NzQ2Mw__"
-                        alt="{{$imageAlt}}"
-                    />
-                    {{end}}
-
-                    <p>
-                        {{.Summary}}
-                    </p>
-                </div>
-            </li>
-        {{ end }}
-    </ul>
-</div>
+                        <p>
+                            {{.Summary}}
+                        </p>
+                    </div>
+                </li>
+            {{ end }}
+        </ul>
+    </section>
+</main>
 {{ end }}

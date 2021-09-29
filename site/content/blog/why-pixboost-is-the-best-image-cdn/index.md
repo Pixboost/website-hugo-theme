@@ -4,6 +4,7 @@ description: "Pixboost is an Image CDN and there are few others on the market. W
 date: 2021-05-24T13:01:55Z
 draft: false
 image: winner.jpg
+v2: true
 ---
 
 When it comes to web projects, it is crucial for the final result to be top-notch in the aspect of speed. Images make up one of the areas that can have a significant effect on how fast a website loads. However, fine-tuning this area is a little more complex than merely adjusting image sizes.

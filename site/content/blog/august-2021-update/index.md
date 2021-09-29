@@ -4,6 +4,7 @@ date: 2021-08-15T00:00:00Z
 description: "Improved encoding performance for the next generation images, new features in Dashboard, API and more in the latest update."
 image: august-2021-update.jpg
 draft: false
+v2: true
 ---
 
 We've done quite a bit of work in the last months and are proud to share all the things we released recently. The new features touched every bit of the service starting in the image optimisation backend, following by API enhancements and finishing in the dashboard. 
@@ -32,7 +33,7 @@ We updated our implementation for both WebP and AVIF encoders. Currently, AVIF a
 | :----------------: | :----------------: | :--------: | :-----: |
 | 234155020          | 209962539          | 70859575   | **10%** |
 
-3. There was also a new release of [libwebp](https://chromium.googlesource.com/webm/libwebp) that fixed a few non-critical issues, but also promised further latency benefits. We did the same performance tests and here are the results:
+4. There was also a new release of [libwebp](https://chromium.googlesource.com/webm/libwebp) that fixed a few non-critical issues, but also promised further latency benefits. We did the same performance tests and here are the results:
 
 | libwebp (ms)  | libwebp v1.2.0 (ms) | Difference | Gain    |
 | :-----------: | :-----------------: | :--------: | :-----: |
@@ -61,7 +62,7 @@ https://pixboost.com/api/2/img/images/logo.png/optimise?auth=API_KEY
 
 As you could see there is no domain name and long prefixes could roll up in shorter alternatives.
 
-{{< full-width-image image="add-http-image-source.png" alt="Add HTTP image source">}}
+{{< simple-image image="add-http-image-source.png" alt="Add HTTP image source">}}
 
 [Read more in the documentation](https://help.pixboost.com/setup/adding-http-image-source)
 
@@ -75,13 +76,13 @@ We made a start to analytics insights in Pixboost. Now, you could find:
 
 We have plans to add more to that with errors and savings come shortly. If you have an idea - shoot us a message at customer.service@pixboost.com
 
-{{< full-width-image image="analytics.png" alt="Analytics in Pixboost">}}
+{{< simple-image image="analytics.png" alt="Analytics in Pixboost">}}
 
 ## Billing history in the dashboard
 
 This is another enhancement (some may say necessity:)) in the Dashboard. Since June, you can find the last 12 months of your usage and payments history by navigating to the "Billing" section. 
 
-{{< full-width-image image="billing-history.png" alt="Billing history">}}
+{{< simple-image image="billing-history.png" alt="Billing history">}}
 
 ## Caching of source images for AWS S3 buckets
 
@@ -99,7 +100,7 @@ The API endpoint could be reached by using `POST` request on `/api/2/img/warmup?
 
 This workflow could be useful when your users are uploading content, so you could trigger cache warmup on the upload.
 
-{{< full-width-image image="cache-warmup.png" alt="Cache Warmup scenario">}}
+{{< simple-image image="cache-warmup.png" alt="Cache Warmup scenario">}}
 
 ## Conclusion
 

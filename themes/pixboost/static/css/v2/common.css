@@ -5,6 +5,12 @@ body {
     font-family: Poppins,sans-serif;
     font-size: 16px;
     line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+pre {
+    overflow: auto;
 }
 
 .center {
@@ -102,7 +108,9 @@ main {
 }
 
 section>.content-wrapper,
-section.content-wrapper {
+section.content-wrapper,
+article.content-wrapper,
+article>.content-wrapper {
     max-width: 1180px;
     margin: auto;
     padding: var(--space-12);
