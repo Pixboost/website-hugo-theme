@@ -259,12 +259,17 @@ footer > div:first-child {
     justify-content: space-between;
 }
 
+footer .company-info {
+    margin-top: 1em;
+}
+
 footer .social {
     margin-top: var(--space-2);
 }
 
 footer .social>a {
     margin-right: var(--space-1);
+    text-decoration: none;
 }
 
 footer .copyright {
@@ -369,13 +374,13 @@ footer .heading {
 
     footer .company-info {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        justify-content: space-between;
     }
 
-    footer .social {
-        margin-top: 0;
+    footer .social a {
+        padding: var(--space-2)
     }
 
     footer .menu {
