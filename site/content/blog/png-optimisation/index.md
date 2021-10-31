@@ -8,31 +8,39 @@ v2: true
 ## Intro
 
 PNG and JPEG are the two oldest formats that web developers use
-to show images on their websites. However, those formats are currently used to store original images and next generation, such as WebP, AVIF and JPEG XL, are widely adopted by web browsers and used for image delivery.
+to add images to their web pages. Web standards came a long way, and we use next generation formats, such as WebP/AVIF/JpegXL, to deliver an image to the end user. But JPEG and PNG are still the source of truth most of the time. 
 
-In this article I'll explain why converting PNG to the next generation format is not that straightforward and how we went about to solve the problem.
+In this article I'll explain why converting PNG to the next-gen format is not as straightforward and how we went about it.
 
-All the examples in the article are written in Go and use [MagickWand](https://imagemagick.org/script/magick-wand.php) library for image manipulations. You can get the latest version of the library using [ImageMagick docker image](https://github.com/dooman87/imagemagick-docker) that I maintain.
+We use Go and [MagickWand](https://imagemagick.org/script/magick-wand.php) library for the code snippets.  You can get the latest version of the library using [ImageMagick docker image](https://github.com/dooman87/imagemagick-docker).
+
+Our opensource Image CDN ["transformimgs" that available on Github](https://github.com/Pixboost/transformimgs) is using the approach from this blog, and it works quite well in production.
+
+Let's get to it!
 
 ## PNG
 
-The formats to store images on the Web are: JPEG, PNG or SVG. SVG is for the vector graphics (geometrical primitives) and JPEG/PNG for raster (sequence of pixels). When having a raster image we can choose from PNG ad JPEG, so let's see what's the difference between those two. 
+Let's see what the main difference between JPEG and PNG and when we use each.
 
-* PNG is a [lossless format](https://en.wikipedia.org/wiki/Lossless_compression), meaning when you compress/uncompress the image it doesn't change. On the contrary when using JPEG - the result is not the same as original. It makes sense (and I explain later why) to use lossless compressions for sharp images with few colors. The examples could be **logos, banners, illustrations**.
+* PNG is a [lossless format](https://en.wikipedia.org/wiki/Lossless_compression), meaning when you compress/uncompress the image it doesn't change. On the contrary, the result image is not the same when using JPEG. So, if it is important for us to display exactly the same image then PNG will be our choice. However, it's rarely a requirement for the Web. But, we still want our images to look good. JPEG could introduce visual artefacts to the image and it will be most visible on the images with fewer details and colors. Generally, it makes sense to use lossless compressions for the sharp images with few colors. The examples could be **logos, banners, illustrations**. We'll look at some examples in the next section
 
 * PNG supports transparency. If you'd like to show background of the page on some parts of the image then you make those parts transparent. The popular use case is **product images** on online shops.
 
-The modern formats support both lossy and lossless encoding, and we can pick which one to use when transforming an image. 
+Keeping the above in mind it shouldn't be a problem to choose the format. Though, modern formats support both lossy and lossless encoding, and we can pick which one to use when transforming an image. Meaning if we used PNG for transparency then we still can encode it lossy. But how can we know that? 
 
-Here is the problem: 
+So, here comes the ~~elephant~~ problem: 
 
-**when is it better to use lossy or lossless compression when converting PNG?**
+{{< highlight >}}
+When is it better to use lossy or lossless compression when converting PNG to the next generation format?
+{{< /highlight >}}
 
 ## Lossy or Lossless?
 
-Lossy compressed images are smaller in size compared to lossless, but they also might have some visual artifacts. Let's take a look at some examples.
+Lossy compressed images are smaller compared to lossless, but they also might have some visual artifacts and glitches. Let's take a look at some examples.
 
-We use WebP format for the examples as it's most adopted format and images will display in the most browsers.
+We use WebP format here because it's most adopted format and the article's images will show up in the most browsers. We used ImageMagick 7.1.0-10 to convert PNG to WebP: `magick image.png -define webp:lossless=true/false image.webp`.
+
+### Example 1. Illustration
 
 Original PNG image:
 
@@ -45,15 +53,16 @@ When converting to:
 * [lossy](people-lossy.webp) - 100Kb
 * [lossless](people-lossless.webp) - 108Kb
 
-So, the difference is 8 Kb (3% of original image). Now, let's zoom in a bit and see what happened to quality:
+The difference is 8 Kb which is **3%** of original image. Now, let's zoom in a bit and see what happened to quality:
 
-![](people-lossless-zoom.png)
-
-![](people-lossy-zoom.png)
+{{< figure src="people-lossless-zoom.png" title="Lossy WebP (100Kb)" >}}
+{{< figure src="people-lossless-zoom.png" title="Lossless WebP (108Kb)" >}}
 
 You could see all the visual artefacts lossy compression introduced.
 
 In this case, 8Kb doesn't worth quality loss and we would prefer lossless compression over lossy.
+
+### Example 2. Photo
 
 Let's look at the other example where PNG used for transparency:
 
@@ -79,7 +88,9 @@ TODO: Link to fidelity
 
 After running the experiments above on the bunch of PNGs, we came up with the requirement: 
 
-**distinguish between photos and illustration/logos then use lossy compression for the first and lossless for the latter**. 
+{{< highlight >}}
+Distinguish between photos and illustration/logos then use lossy compression for the first and lossless for the latter
+{{< /highlight >}}
 
 ## Solution
 

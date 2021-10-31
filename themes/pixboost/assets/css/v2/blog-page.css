@@ -45,6 +45,15 @@ h1 > small {
     text-align: center;
 }
 
+.highlight {
+    font-size: 130%;
+    padding: var(--space-2) var(--space-4);
+}
+
+blockquote {
+    border-left: 2px solid rgb(var(--grey-color));
+}
+
 @media (max-width: 767.98px) {
     article {
         padding: var(--space-2) !important;
