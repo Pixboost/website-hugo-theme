@@ -2,6 +2,7 @@
 title: "Choosing between lossy and lossless conversion for PNG"
 date: 2021-10-23T19:52:05Z
 draft: false
+image: PNG-transformation.jpg
 v2: true
 ---
 
