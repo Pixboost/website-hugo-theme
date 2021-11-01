@@ -47,7 +47,13 @@ h1 > small {
 
 .emphasise {
     font-size: 130%;
-    padding: var(--space-2) var(--space-4);
+    padding: var(--space-2) 0;
+}
+
+.emphasise em:before {
+    content: '!!!';
+    color: rgb(var(--green-brand-color));
+    font-size: 150%;
 }
 
 .twitter-tweet {

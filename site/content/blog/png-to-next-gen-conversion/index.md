@@ -93,7 +93,7 @@ There is a visible glitch on the plant's pot texture, but most likely it will be
 After running the experiments above on the bunch of PNGs, the requirement distilled itself: 
 
 {{< emphasise >}}
-We should be able to distinguish between photos and illustration/logos then use lossy compression for the first and lossless for the latter
+We would like to distinguish between photos and illustration/logos then use lossy compression for the first and lossless for the latter
 {{< /emphasise >}}
 
 ## Solution
@@ -389,13 +389,13 @@ Once released a canary version to production, we ran 2 tests on different data s
   * The overall size of optimised images dropped from 21Mb to 8.5Mb which is *3x* better compression! 
   * The response time dropped by 2%.
 
-* 500 mix of PNG and JPEG images
-  * Overall size dropped from 45.7Mb to 43Mb which is *5%* improvement
-  * The processing time dropped by 5%
-
 {{< emphasise >}}
 Converted PNGs became 3 times smaller.
 {{< /emphasise >}}
+
+* 500 mix of PNG and JPEG images
+  * Overall size dropped from 45.7Mb to 43Mb which is *5%* improvement
+  * The processing time dropped by 5%
 
 ## Conclusion
 
