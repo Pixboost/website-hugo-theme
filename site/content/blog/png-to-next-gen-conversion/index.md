@@ -1,6 +1,7 @@
 ---
 title: "Choosing between lossy and lossless conversion for PNG"
 date: 2021-10-23T19:52:05Z
+description: "PNG is a lossless image format, but we could use either lossy or lossless converting to the next generation format. In this blog we explain how to choose between two"
 draft: false
 image: PNG-transformation.jpg
 v2: true
