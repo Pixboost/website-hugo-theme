@@ -7,12 +7,14 @@ v2: true
 
 ## Intro
 
-PNG and JPEG are the two oldest formats that web developers use
-to add images to their web pages. Web standards came a long way, and we use next generation formats, such as WebP/AVIF/JpegXL, to deliver an image to the end user. But JPEG and PNG are still the source of truth most of the time. 
+PNG and JPEG are the two oldest image formats that web developers use
+to add graphics on their web pages. Web standards came a long way, and often we use next generation formats, such as WebP/AVIF/JpegXL, to deliver an image to the end user. But JPEG and PNG are still the source of truth most of the time.
+
+{{< tweet 1455172402405679106 >}}
 
 In this article I'll explain why converting PNG to the next-gen format is not as straightforward and how we went about it.
 
-We use Go and [MagickWand](https://imagemagick.org/script/magick-wand.php) library for the code snippets.  You can get the latest version of the library using [ImageMagick docker image](https://github.com/dooman87/imagemagick-docker).
+We use Go and [MagickWand](https://imagemagick.org/script/magick-wand.php) library for the code snippets.  You can get the latest version of the library using [ImageMagick docker image](https://github.com/dooman87/imagemagick-docker) that I maintain.
 
 Our opensource Image CDN ["transformimgs" that available on Github](https://github.com/Pixboost/transformimgs) is using the approach from this blog, and it works quite well in production.
 
@@ -20,96 +22,100 @@ Let's get to it!
 
 ## PNG
 
-Let's see what the main difference between JPEG and PNG and when we use each.
+Let's see what the main difference between JPEG and PNG are and when we use each.
 
-* PNG is a [lossless format](https://en.wikipedia.org/wiki/Lossless_compression), meaning when you compress/uncompress the image it doesn't change. On the contrary, the result image is not the same when using JPEG. So, if it is important for us to display exactly the same image then PNG will be our choice. However, it's rarely a requirement for the Web. But, we still want our images to look good. JPEG could introduce visual artefacts to the image and it will be most visible on the images with fewer details and colors. Generally, it makes sense to use lossless compressions for the sharp images with few colors. The examples could be **logos, banners, illustrations**. We'll look at some examples in the next section
+Firstly, PNG is a [lossless format](https://en.wikipedia.org/wiki/Lossless_compression), meaning when you compress/uncompress the image it doesn't change. This is like ZIP archive that doesn't change the source data after you extracted it. On the contrary, the result image is not the same when using JPEG. So, if it is important for us to display exactly the same image then PNG will be our choice. However, it's rarely a requirement for the Web, rather we want our images to look good. JPEG could introduce visual artefacts to the image, and usually the images with fewer details and colors are affected the most. Generally, it makes sense to use lossless compressions for the sharp images with few colors. The examples could be **logos, banners, illustrations**. We'll look at some examples in the next section
 
-* PNG supports transparency. If you'd like to show background of the page on some parts of the image then you make those parts transparent. The popular use case is **product images** on online shops.
+Secondly, PNG supports transparency. If you'd like to show background of the page on some parts of the image then you make those parts transparent. The popular use case is **product images** on online shops.
 
-Keeping the above in mind it shouldn't be a problem to choose the format. Though, modern formats support both lossy and lossless encoding, and we can pick which one to use when transforming an image. Meaning if we used PNG for transparency then we still can encode it lossy. But how can we know that? 
+Keeping the above in mind it shouldn't be a problem to choose the format for the source image. Though, when we use modern formats to deliver the image, they support both lossy and lossless encoding, and we can pick which one to use.
 
 So, here comes the ~~elephant~~ problem: 
 
-{{< highlight >}}
-When is it better to use lossy or lossless compression when converting PNG to the next generation format?
-{{< /highlight >}}
+{{< emphasise >}}
+When does it better to use lossy or lossless compression when converting PNG to the next generation format?
+{{< /emphasise >}}
 
 ## Lossy or Lossless?
 
-Lossy compressed images are smaller compared to lossless, but they also might have some visual artifacts and glitches. Let's take a look at some examples.
+Lossy compressed images are smaller compared to lossless, but they also might have visual artifacts and glitches. Let's take a look at some examples.
 
-We use WebP format here because it's most adopted format and the article's images will show up in the most browsers. We used ImageMagick 7.1.0-10 to convert PNG to WebP: `magick image.png -define webp:lossless=true/false image.webp`.
+{{< note >}}
+We use ImageMagick with WebP format here because it's supported by all browsers: `magick image.png -define webp:lossless=[true/false] image.webp`.
+{{< /note >}}
+
 
 ### Example 1. Illustration
 
 Original PNG image:
 
-![](people.png)
-
-The original size of the image is **294Kb**. 
+{{< figure src="people.png" alt="illustration with people" title="Original PNG - 294Kb" >}}
 
 When converting to:
 
 * [lossy](people-lossy.webp) - 100Kb
 * [lossless](people-lossless.webp) - 108Kb
 
-The difference is 8 Kb which is **3%** of original image. Now, let's zoom in a bit and see what happened to quality:
+The difference is 8 Kb which is **3%** of the original image. Now, let's zoom in a bit and see what happened to quality:
 
-{{< figure src="people-lossless-zoom.png" title="Lossy WebP (100Kb)" >}}
-{{< figure src="people-lossless-zoom.png" title="Lossless WebP (108Kb)" >}}
+|                    |                      |
+|--------------------|----------------------|
+| {{< figure src="people-lossy-zoom.png" alt="zoomed in lossy image" title="Lossy WebP - 100Kb" >}} | {{< figure src="people-lossless-zoom.png" alt="zoomed in lossless image" title="Lossless WebP - 108Kb" >}} | 
 
-You could see all the visual artefacts lossy compression introduced.
 
-In this case, 8Kb doesn't worth quality loss and we would prefer lossless compression over lossy.
+The lossless version is exactly the same as original, and we could see that lossy image became smoother and also have some artifacts around red notebook and shadow from sweater. 
+
+The conclusion for us here was - 8Kb doesn't worth quality loss, and we would prefer **lossless compression over lossy** in this case.
 
 ### Example 2. Photo
 
 Let's look at the other example where PNG used for transparency:
 
-![](photo.png)
-
-The original size of the image - 276Kb
+{{< figure src="photo.png" alt="photo of a chair and a desk" title="Original PNG - 276Kb" >}}
 
 When converting to:
 
 * [lossy](photo-lossy.webp) - 16Kb
 * [lossless](photo-lossless.webp) - 143Kb
 
-The difference here is 127Kb (46% of the original image).
+The difference here is 127Kb which is **46%** of the original image.
 
-Let's zoom in and see what we got here:
+Let's compare zoomed in fragments:
 
-![](photo-lossless-zoom.png)
-![](photo-lossy-zoom.png)
+|                    |                      |
+|--------------------|----------------------|
+| {{< figure src="photo-lossy-zoom.png" alt="zoomed in lossy image" title="Lossy WebP - 16Kb" >}} | {{< figure src="photo-lossless-zoom.png" alt="zoomed in lossless image" title="Lossless WebP - 143Kb" >}} | 
 
-There is a visible glitch on the plant's vase texture, but most likely it will be lost to human eye due to number of details and colors. The difference in the size is huge, so using lossy compression would be much preferable in this case.
+There is a visible glitch on the plant's pot texture, but most likely it will be lost to a human eye due to number of details and colors. The difference in the size is huge, and verdict is **lossy compression would be much preferable** in this case.
 
-TODO: Link to fidelity
+After running the experiments above on the bunch of PNGs, the requirement distilled itself: 
 
-After running the experiments above on the bunch of PNGs, we came up with the requirement: 
-
-{{< highlight >}}
-Distinguish between photos and illustration/logos then use lossy compression for the first and lossless for the latter
-{{< /highlight >}}
+{{< emphasise >}}
+We should be able to distinguish between photos and illustration/logos then use lossy compression for the first and lossless for the latter
+{{< /emphasise >}}
 
 ## Solution
 
-After brainstorming, we ended up with 2 different ways of solving the quest:
+After brainstorming session, we tabled two conceptually different approaches:
 
-* Use machine learning (we are startup after all). We have a good dataset, so we could train a model and use it. There are few cons: 
-  * We don't have ML expert on the Team.
-  * Deployment would be complicated. ML model and training and using it in the application after that.
-  * How do you fix bug in it?
-  * What if it will want freedom and will take over our servers??!!!
-* Write a boring algorithm (we are profitable startup after all) that would use image statistics. There are few cons here as well:
-  * Might be less accurate
-  * Analysing images could be quite memory and CPU intensive operations and could be a showstopper in case of Image CDN where images should be processed in the reasonable time.
+1. Use machine learning (we are startup after all). We have a good dataset, so we could train a model and use it. There are few cons: 
+    * We don't have ML expert on the Team.
+    * Deployment would be complicated. ML model + training and using it in the application.
+    * How do you fix bugs in it?
+    * What if it will break free and will take over our servers/planet??!!!
+2. Write a boring algorithm (we are profitable startup after all) that would use image statistics. There are few cons here as well:
+    * Might be less accurate
+    * Analysing images are quite memory and CPU intensive and could be a showstopper in case of Image CDN where images should be processed in the reasonable time on the first request.
 
 We decided to go with option number 2 and fallback to the first if performance will become a problem.
 
 ## Implementation
 
-Before diving into the implementation we picked different types of [PNGs that we want to classify](https://github.com/Pixboost/transformimgs/tree/master/img/processor/test_files/is_illustration). Using them we wrote a simple table unit test:
+{{< note >}}
+The next two sections are problems and walls of code to solve them. TLDR: The code works and currently deployed in production. You could jump to the [results](#results) section if you wish.
+{{< /note >}}
+
+Before diving into the implementation we picked different types of [PNGs that we want to classify](https://github.com/Pixboost/transformimgs/tree/master/img/processor/test_files/is_illustration). Using them we wrote a table unit test:
 
 ```go
 var isIllustrationTests = []*testIsIllustration{
@@ -158,7 +164,7 @@ func TestImageMagick_IsIllustration(t *testing.T) {
 }
 ```
 
-All we need to do now is to make the test pass :)
+Now, we need to make it green :)
 
 After digging the Internet, we found a very [good article on image classification using ImageMagick](https://legacy.imagemagick.org/Usage/compare/#type_reallife). There was a solution from Jim Van Zandt:
 
@@ -169,9 +175,9 @@ After digging the Internet, we found a very [good article on image classificatio
 > * Work your way through the list until you have accounted for half the pixels in the image.
 > * If #pixels >>> #colors then it's cartoon like.
 
-That was a good starting point, so we implemented the algorithm above, but got mixed results. The original approach intended to work on cartoon images, however we would also want to include illustrations which has more colors and could be a bit more complicated than drawings. 
+That was a good starting point, so we implemented the algorithm, but got mixed results. The original approach intended to work on cartoon images, however we would also want to include illustrations which have more colors and could be more complex than drawings. 
 
-But we thought that idea of looking at 50% of the image is the right direction, but the stat we use to make the decision should be different. After several hours of digging dipper and looking at numbers we figured that instead of comparing number of pixels to number of colors it's better to compare a ratio of number of colors needed for 50% of an image to total number of colors. So, the first version looked like this:
+However, it felt that idea of looking at 50% of the image is the step into the right direction, but the stat we make the decision on doesn't behave exactly as we wish. After several hours of digging dipper and looking at numbers we figured that instead of comparing number of pixels to number of colors it would be better to compare the ratio of number of colors needed for 50% divided by total number of colors. Here is the first implementation:
 
 ```go
 func isIllustration(img []byte) (bool, error) {
@@ -184,7 +190,7 @@ func isIllustration(img []byte) (bool, error) {
 
 	colorsCnt, colors = mw.GetImageHistogram()
 
-	// Sorting colors by number of occurrence. 
+	// Sorting colors by number of occurrences. 
 	colorsCounts := make([]int, colorsCnt)
 	for i, c := range colors {
 		colorsCounts[i] = int(c.GetColorCount())
@@ -214,31 +220,33 @@ func isIllustration(img []byte) (bool, error) {
 	colorsCntIn50Pct := colorIdx + 1
 
 	// Calculate ratio between number of colors used for 50% of the image and 
-	// make a conclusion based on that.
+	// make a decision based on that.
 	return (float32(colorsCntIn50Pct)/float32(colorsCnt)) <= 0.02, nil
 
 }
 ```
 
-It almost worked except for the cases where the object on an image placed on background. There is many ways to solve identify background, but we went with the simplest approach: 
+It worked for all test images except for the cases with a background. What we wanted is to exclude background from or calculation. We wrote a simple algorithm that removes the background color: 
 
-* If the most popular color covers more than 10% of the image then assume it's background and ignore it during calculations
+* If the most popular color covers more than 10% of the image then assume it's a background and ignore it
 
-That solved our unit tests, and we were ready to take it for a spin on the the bigger scale!
+That solved our unit tests, and we were ready to take a new version for a spin on the bigger scale!
 
-We downloaded 300 most popular PNGs that currently optimised through Pixboost and ran them through the func. Then we compared results manually and made some minor tweaks to increase accuracy, which is between 98-99%!
+We downloaded 300 most popular PNGs that currently optimised through Pixboost and ran them through the func. Then we compared results manually and made some minor tweaks to increase accuracy, which is now in between 98-99%.
 
-We ran all that on a powerful laptops and once moved it to servers and put the under load we realised one thing:
+Ready for production, we though. However, we ran all the tests on powerful laptops and once moved to servers and put under the load we realised one thing:
 
-It ate all memory!
+{{< emphasise >}}
+It ate all the memory!
+{{< /emphasise >}}
 
 ## Performance
 
-Image processing is a resource intensive task. The MagickWand, library we use, builds an in-memory tree(cube) to calculary image histogram. That tree grows proportionally to number of colors used. At first, we thought there was a [memory leak](https://github.com/gographics/imagick/issues/265), and we spent a lot of time trying to fix it. We failed at the end, because there was no memory leak, but Golang and Linux are very smart on when to release memory off the process.
+Image processing is a resource intensive task. The MagickWand library we use builds an in-memory tree(cube) to calculate image histogram (number of colors). The tree grows proportionally to number of colors used. At first, we thought there was a [memory leak](https://github.com/gographics/imagick/issues/265), and we spent a lot of time trying to fix it. We failed at the end, because there was no memory leak, but Golang and Linux are very smart on when to release memory off the process.
 
 But we still had a memory problem to solve. We identified 2 hotspots where memory footprint increased dramatically:
 
-* Big number of colors. That was a case with a real-life photos that would have 60k+ colors. What we also found is that PNG compression works poorly on those and, we could find them by calculating ratio between number of bytes and pixels:
+* Images with the big number of colors. That was a case mainly with real-life photos that would have 60k+ colors. What we also found is that PNG compression works poorly on those and, we could find them by calculating ratio between number of bytes and pixels:
 
 ```go
 if float32(len(imgData))/float32(imgWidth*imgHeight) > 1.0 {
@@ -246,7 +254,7 @@ if float32(len(imgData))/float32(imgWidth*imgHeight) > 1.0 {
 }
 ```
 
-* When we would process a medium size image (1000x1000) with not too many colors (under 5k) the memory consumption would still be high (more than 1Gb). We solved that problem, by down scaling images to 500 pixels wide before calculating histogram:
+* When we process a medium size image (1000x1000) with not too many colors (under 5k) the memory consumption would still be high (more than 1Gb). We solved that problem, by down scaling images to 500 pixels wide before extracting a histogram:
 
 ```go
 	err := mw.ReadImageBlob(imgData)
@@ -265,7 +273,7 @@ if float32(len(imgData))/float32(imgWidth*imgHeight) > 1.0 {
 	colorsCnt, colors = mw.GetImageHistogram()
 ```
 
-We've also added a few more optimisations that helped us reduce the execution time further. Here is the final result that you could also find on [Github](https://github.com/Pixboost/transformimgs/blob/master/img/processor/imagemagick.go#L322):
+We've also added a few more optimisations that helped us to reduce the execution time and memory consumption further. Here is the final result that you could also find on [Github](https://github.com/Pixboost/transformimgs/blob/master/img/processor/imagemagick.go#L322):
 
 
 ```go
@@ -358,27 +366,37 @@ func (p *ImageMagick) isIllustration(src *img.Image, info *img.Info) (bool, erro
 }
 ```
 
+The code we ended up with is quite simple and straightforward which also means it will be easy to maintain and improve it in the future.
+
+{{< note >}}
+At the end of the day we still had to bump type of instances in our clusters from 8 to 16Gb which made everyone happy.
+{{< /note >}}
+
 ## Results
 
 In the greater scheme of things PNGs are only account for 5% of all Pixboost traffic, but:
 
-* We believe in accessible Web and doing a poor job on one format makes it less equal 
+* We believe in accessible Web and doing a poor job on one format makes it not 
 * We have few customers that heavily use PNG images
 * 5% of our traffic is still about 20Gb daily and growing.
 
-Once released a canary version to production, we ran 2 tests on different data sets that included again most popular images processed by Image CDN. The results comparing before and after:
+Once released a canary version to production, we ran 2 tests on different data sets that again included most popular processed images. We compared current production version output with a new one:
 
 * 350 PNG images
   * 202 images became smaller and 47 larger
-  * The overall size of optimised images dropped from 21Mb to 8.5Mb which is *3x* better compression compared to before! 
-  * The response time also dropped by 2%.
+  * The overall size of optimised images dropped from 21Mb to 8.5Mb which is *3x* better compression! 
+  * The response time dropped by 2%.
 
-* 500 mixed images (PNG and JPEG)
-  * Overall size dropped from 45.7Mb to 43Mb which is 5% improvement
-  * The processing time dropped by about 5%
+* 500 mix of PNG and JPEG images
+  * Overall size dropped from 45.7Mb to 43Mb which is *5%* improvement
+  * The processing time dropped by 5%
+
+{{< emphasise >}}
+Converted PNGs became 3 times smaller.
+{{< /emphasise >}}
 
 ## Conclusion
 
-It's been fun working on this feature which involved a lot of discovery, and testing. After all, our main goal is to deliver smaller images to the users, and we could accomplish it in this case. Happy days and we look forward to further improve the service and as always everyone could use it because it's open source:
+It's been fun working on this feature which involved a lot of discovery, testing and performance tunning. After all, our main goal is to deliver the best images to the users, and we could accomplish it in this case. Happy days and we look forward to further improve the service. 
 
-[](https://github.com/Pixboost/transformimgs)
+And you could all try it yourself using our [Open Source version](https://github.com/Pixboost/transformimgs) or [SaaS offering](/)!

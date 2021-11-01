@@ -45,13 +45,35 @@ h1 > small {
     text-align: center;
 }
 
-.highlight {
+.emphasise {
     font-size: 130%;
     padding: var(--space-2) var(--space-4);
 }
 
+.twitter-tweet {
+    margin: 10px auto;
+}
+
+.note {
+    border: 1px dashed rgb(var(--description-color));
+    padding: var(--space-1);
+    font-size: 90%;
+}
+
+figure {
+    text-align: center;
+}
+
+figure img {
+    border: 1px solid rgb(var(--description-color));
+}
+
 blockquote {
     border-left: 2px solid rgb(var(--grey-color));
+}
+
+.highlight pre {
+    padding: var(--space-1)
 }
 
 @media (max-width: 767.98px) {
