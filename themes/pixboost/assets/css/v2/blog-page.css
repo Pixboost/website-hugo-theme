@@ -51,7 +51,7 @@ h1 > small {
 }
 
 .emphasise em:before {
-    content: '!!!';
+    content: '🏳️‍🌈';
     color: rgb(var(--green-brand-color));
     font-size: 150%;
 }
