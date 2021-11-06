@@ -20,33 +20,26 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="menu-splitter-gray">
-</div>
 
-<div class="menu-splitter">
-</div>
-
-<div class="faq">
-  <h1>Frequently Asked Questions</h1>
-
-  <div class="toc">
+<main class="faq">
+  <section class="content-wrapper">
+    <h1>Frequently Asked Questions</h1>
     <ul>
       {{ range .Params.faq }}
-        <li><a href="#{{anchorize .q}}">{{.q}}</a></li>
+      <li><a href="#{{anchorize .q}}">{{.q}}</a></li>
       {{ end }}
     </ul>
-  </div>
-
-  <div class="qa" id="transformations">
-    {{ range .Params.faq }}
-      <div class="q" id="{{anchorize .q}}">
-        {{ .q }}
-      </div>
-      <div class="a">
-        {{ .a | markdownify }}
-      </div>
-    {{ end }}
-  </div>
-</div>
+    <div class="qa" id="transformations">
+      {{ range .Params.faq }}
+        <div class="q" id="{{anchorize .q}}">
+          {{ .q }}
+        </div>
+        <div class="a">
+          {{ .a | markdownify }}
+        </div>
+      {{ end }}
+    </div>
+  </section>
+</main>
 
 {{ end }}

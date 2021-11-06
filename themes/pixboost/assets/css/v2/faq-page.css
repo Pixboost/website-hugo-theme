@@ -1,0 +1,27 @@
+/* FAQ */
+main {
+    background-color: white;
+}
+
+section {
+    padding-top: var(--space-2) !important;
+}
+
+.q {
+    margin-top: var(--space-3);
+    background: rgba(var(--green-brand-color), 0.15);
+    padding: var(--space-2);
+    border-radius: 14px;
+}
+
+.a {
+    padding: var(--space-2);
+}
+
+@media all and (max-width: 767.98px) {
+    section > .content-wrapper,
+    section.content-wrapper {
+        padding: var(--space-6) var(--space-2);
+    }
+}
+/* FAQ */
