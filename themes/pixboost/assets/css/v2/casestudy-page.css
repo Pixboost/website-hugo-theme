@@ -1,0 +1,104 @@
+/* CASE STUDY */
+
+.btn-panel {
+    text-align: center;
+}
+
+.paragraph {
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
+}
+
+.paragraph .text-block {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.paragraph .text-header {
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.paragraph .text-image {
+    margin-bottom: 20px;
+}
+
+.paragraph .text-image > img {
+    max-width: 100%;
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid rgb(12, 168, 154);
+    padding: 20px;
+    font-size: 18px;
+}
+
+blockquote img{
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    width: 190px;
+    height: 190px;
+    /* border-radius: 50%;
+    margin-bottom: 30px; */
+
+}
+
+.paragraph .name{
+    margin: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    white-space: nowrap;
+    margin-right: 45px;
+}
+
+.paragraph .position{
+    margin: 20px;
+    font-size: 20px;
+    text-align: right;
+    white-space: nowrap;
+    margin-right: 45px;
+}
+
+.paragraph .btn-panel {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+/* CASE STUDY */
+
+@media all and (max-width: 560px) {
+    /*Case Study*/
+    .paragraph {
+        padding: 0 10px;
+    }
+
+    .paragraph blockquote {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .paragraph blockquote img {
+        display: none;
+    }
+
+    .paragraph .name,
+    .paragraph .position {
+        font-size: 18px;
+    }
+
+    .paragraph .text-block {
+        font-size: inherit;
+    }
+
+    .paragraph .block-embed {
+        overflow-x: scroll;
+    }
+
+    /*Case Study*/
+}
+
