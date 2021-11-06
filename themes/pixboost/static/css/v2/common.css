@@ -38,15 +38,15 @@ pre {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 3em !important;
 }
 
 h1 > small {
-    font-size: 0.7em;
+    font-size: 0.7em !important;
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 2.5em !important;
 }
 
 .btn {
@@ -63,6 +63,8 @@ h2 {
     line-height: 110%;
 
     width: fit-content;
+
+    cursor: pointer;
 }
 
 .btn > small {
@@ -101,6 +103,11 @@ h2 {
 
 .btn-green:hover {
     background: #00A795;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
 }
 
 main {
@@ -326,7 +333,7 @@ footer .heading {
         justify-content: flex-start;
         height: 100%;
         font-weight: bold;
-        font-size: large;
+        font-size: 120%;
         margin-top: var(--space-2);
     }
 
