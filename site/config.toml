@@ -3,3 +3,4 @@ languageCode = "en-us"
 title = "Pixboost Image CDN"
 theme = "pixboost"
 enableRobotsTXT = true
+enableGitInfo = true

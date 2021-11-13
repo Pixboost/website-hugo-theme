@@ -1,5 +1,5 @@
 RUN = docker run --rm -v $(shell pwd):/src --user "$(shell id -u):$(shell id -g)"
-IMAGE = klakegg/hugo:0.77.0
+IMAGE = klakegg/hugo:0.89.2-ext-debian
 
 .PHONY: dev
 dev:
