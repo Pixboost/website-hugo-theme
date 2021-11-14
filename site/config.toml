@@ -4,3 +4,6 @@ title = "Pixboost Image CDN"
 theme = "pixboost"
 enableRobotsTXT = true
 enableGitInfo = true
+
+[frontmatter]
+    lastmod = ['lastmod', ':git', 'date', 'publishDate']
