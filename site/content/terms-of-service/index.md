@@ -1,7 +1,6 @@
 ---
 title: "Pixboost - Terms of Service"
 description: "Terms of Service"
-date: 2021-04-01T00:00:00Z
 draft: false
 type: blog
 v2: true

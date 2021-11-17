@@ -32,7 +32,11 @@
 
 {{ define "main" }}
 <article class="single-page content-wrapper">
-    <h1>{{ .Title }} <small>Published on: {{.Date | time.Format "Jan 2, 2006"}}</small></h1>
+    <h1>{{ .Title }}
+        {{if .Date}}
+        <small>Published on: {{.Date | time.Format "Jan 2, 2006"}}</small>
+        {{end}}
+    </h1>
 
     {{if .Params.image}}
     {{$image := printf "content/%s/%s" .File.Dir .Params.image | imageConfig}}

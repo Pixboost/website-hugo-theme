@@ -1,7 +1,6 @@
 ---
 title: "Pixboost - Privacy Policy"
 description: "Privacy Policy"
-date: 2021-04-01T00:00:00Z
 draft: false
 type: blog
 v2: true
