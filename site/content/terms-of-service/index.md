@@ -6,17 +6,19 @@ type: blog
 v2: true
 ---
 
-**Last revised: August 20, 2017.**
+**Last revised: December 20, 2021.**
+
+**Effective from: January 20, 2022**
 
 Previous versions:
 * [August 20th, 2017](/terms-of-service-20082017/)
 
-### Changes from the previous revision
+### Changes in this revision
 
-* Changes to plans in [Service Fees](#service-fees) section.
-* Fixed grammar
-* Company Name (Pixboost -> IT Solutions Lab)
-* Updated support email from customer.service@pixboost.com -> customer.service@pixboost.com
+* Changes to the plans - [Service Fees](#service-fees)
+* Incorrect company Name (Pixboost -> IT Solutions Lab), added Australian Company Number (ACN) - [Information about the service](#information-about-the-service)
+* Updated support email from customer.service@pixboost.com to customer.service@pixboost.com
+* Minor grammar mistakes
 
 Pixboost (or the “Service”, “Pixboost Service”, “Pixboost”) is a
 cloud-based lightweight solution that helps its users optimize their
@@ -115,7 +117,7 @@ on how we manage your data and personal information.
 
 ## Service Fees
 
-1. Pixboost provides several Plans: “Free”, “Basic”, “Advanced”, ”” and
+1. Pixboost provides several Plans: “Free”, “Basic”, “Advanced”, ”All Included” and
 “Enterprise” Plans (or “Plans”). Users of the Service can choose a Plan
 from the Pixboost Website within the section entitled “Plans”.
 
@@ -135,7 +137,7 @@ by the user.
 6. You can start using the Service immediately without payment if you
 chose the “Free” Plan.
 
-7. For the Plans “Lite”, “Basic”, and “Advanced”, you have to provide credit card
+7. For the Plans “Basic”, “Advanced”, and “All Included” you have to provide credit card
 details on submission. Payment for a Plan is deducted at the beginning
 of the next month after each Billing Period.
 
@@ -159,19 +161,20 @@ CDN. This Plan does not require credit card or any other financial
 information from the user. No payment is required.
 
 13. “Basic” Plan includes:  50 Gb of data processing  per month, unlimited
-image processing, unlimited time, unlimited transactions, and use of the
-CDN. This Plan requires credit card information from the user. Payment
-of \$25 a month with \$0.45 per additional GB is required.
+image processing, unlimited time, unlimited transactions, 200 workflow API calls 
+and use of the CDN. This Plan requires credit card information from the user. Payment
+of \$25 a month is required.
 
 14. “Advanced” Plan includes: 200 Gb of data processing per month, unlimited
-image processing, unlimited time, unlimited transactions, and use of the
-CDN. This Plan requires credit card information from the user. Payment
-of \$80 a month with \$0.40 per additional GB is required.
+image processing, unlimited time, unlimited transactions, 500 workflow API calls,
+1 custom domain name, and use of the CDN. This Plan requires credit card information from the user. Payment
+of \$80 a month is required.
 
-15. “Advanced” Plan includes: 10 GB of data processing per month, unlimited
-image processing, unlimited time, unlimited transformations, and use of
-the CDN. This Plan requires credit card information from the user.
-Payment of \$5 a month with \$0.5 per additional GB is required.
+15. “All Included” Plan includes: 1000 GB of data processing per month, unlimited
+image processing, unlimited time, unlimited transformations, 
+1000 workflow API calls, 5 custom domain names, and use of the CDN. 
+This Plan requires credit card information from the user.
+Payment of \$380 a month is required.
 
 16. “Enterprise” Plan: this is a custom plan offered by Pixboost to
 meet special customer needs. For further information on this Plan please
@@ -183,14 +186,14 @@ Enterprise Plan. For more details please contact our friendly staff:
 [customer.service@pixboost.com](mailto:customer.service@pixboost.com)
 
 18. If you fail to make payment we will send you a notification with a
-one week waiting notice. If payment is not made by the due date from
-notice, Pixboost reserves the right to terminate your account without
+one-week waiting notice. If payment is not made by the due date from
+the notice, Pixboost reserves the right to terminate your account without
 further notice.
 
 19. If you wish to change your Plan you can do so at any time. The
 payment invoice will include only the last chosen Plan. For instance, if
-you have chosen the “L” Plan, but then decide to switch to the “S” Plan,
-at the end of the month you will be billed only the fee of the “S” Plan.
+you have chosen the “Advanced” Plan, but then decide to switch to the “Basic” Plan,
+at the end of the month you will be billed only the fee of the “Basic” Plan.
 
 ## Service Level Agreement
 
@@ -318,7 +321,7 @@ for its internal business purposes.
 4. You will not use any unlawful content or perform any unlawful
 actions through or in association with Pixboost. Pixboost reserves the
 right, but does not have the obligation to monitor User Content and to
-block any User whos content or actions violate those Terms of Service.
+block any User whose content or actions violate those Terms of Service.
 
 5. If you decide to remove your User Account from our Service, some
 information may remain in the System for a certain period of time. We
