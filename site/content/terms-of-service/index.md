@@ -11,7 +11,7 @@ v2: true
 **Effective from: January 20, 2022**
 
 Previous versions:
-* [August 20th, 2017](./20-08-2017/)
+* [August 20th, 2017](/terms-of-service-20-08-2017/)
 
 ### Changes in this revision
 
