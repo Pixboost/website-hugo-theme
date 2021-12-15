@@ -6,9 +6,9 @@ type: blog
 v2: true
 ---
 
-**Last revised: December 20, 2021.**
+**Last revised: December 16, 2021.**
 
-**Effective from January 20, 2022**
+**Effective from January 16, 2022**
 
 Previous versions:
 * [August 20th, 2017](/terms-of-service-20-08-2017/)
