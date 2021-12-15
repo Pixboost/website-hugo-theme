@@ -8,7 +8,7 @@ v2: true
 
 **Last revised: December 20, 2021.**
 
-**Effective from: January 20, 2022**
+**Effective from January 20, 2022**
 
 Previous versions:
 * [August 20th, 2017](/terms-of-service-20-08-2017/)
@@ -39,16 +39,16 @@ Service.
 
 ## Information about the Service
 
-1. Main purpose of the Service is to deliver a 24/7 robust and reliable
+1. The main purpose of the Service is to deliver a 24/7 robust and reliable
 image processing tool that transforms images and delivers them through a
 Content Delivery Network (CDN) to the Users’ Websites.
 
 2. Pixboost is located at [pixboost.com](https://pixboost.com).
 
-3. Pixboost is operated by Australian company "IT Solutions Lab Pty Ltd.", ABN: 566 305 839 58, ACN: 624 271 950.
+3. Pixboost is operated by the Australian company "IT Solutions Lab Pty Ltd.", ABN: 566 305 839 58, ACN: 624 271 950.
 
 4. From time to time Pixboost may modify, enhance, upgrade its
-functionality. We may notify you about changes by email. Also we may add
+functionality. We may notify you about changes by email. Also, we may add
 and offer additional features both free-of-charge or subject to
 additional fees, which may be governed by this document or different
 Terms of Service.
@@ -56,13 +56,13 @@ Terms of Service.
 ## Changes in the Terms of Service
 
 1. From time to time, Pixboost may change the Terms of Service to meet
-technical, legal or operational changes.
+technical, legal, or operational changes.
 
 2. All information about changes to the Terms of Service will be posted
-on the Pixboost Website no less than 30 days before the changes take
+on the Pixboost website, no less than 30 days before the changes take
 effect.
 
-3. You may choose to deny the changes of the Terms of Service. To do so
+3. You may choose to deny the changes to the Terms of Service. To do so
 you have to discontinue the use of the Service. If you continue using
 the Service after the new changes have taken effect, you indicate your
 agreement to the amended terms.
@@ -78,7 +78,7 @@ rules and regulations, and usage guidelines.
 
 1. Pixboost offers web API (“API Services”) for you to access its
 functionality of images transformation and optimization. To use the
-Service you have to connect your image hosting to the API Services.
+Service you have to add your images sources to the API Services.
 
 2. You are responsible for keeping the code that connects to the API
 Services up-to-date to ensure that it continues working accordingly.
@@ -100,7 +100,7 @@ You will be charged only for what you have used by the time of
 suspension.
 
 6. Pixboost may choose to terminate your license upon your breach of
-these Terms or for convenience with 30 days' advance notice.
+these Terms or for convenience with 30 days advance notice.
 
 ## Compliance with acceptable use policies of Content Delivery Networks
 
@@ -111,7 +111,7 @@ Terms of Service located at:
 
 ## Privacy
 
-1. At Pixboost we do our best to provide the safe and reliable solution
+1. At Pixboost we do our best to provide a safe and reliable solution
 for our users. Please see [Pixboost’s Privacy Policy](/privacy-policy/) for the information
 on how we manage your data and personal information.
 
@@ -152,16 +152,16 @@ miscalculations made by the Payment Service Providers.
 10. Fees are not refundable.
 
 11. Pixboost will only charge Users for the Services they use each
-Billing Period, which are specified in your User Account on the Pixboost
+Billing Period, which is specified on your User Account Dashboard on the Pixboost
 Website.
 
 12. “Free” Plan includes: 10 GB of data processing per month, unlimited
 image processing, unlimited time, unlimited transactions, and use of the
-CDN. This Plan does not require credit card or any other financial
+CDN. This Plan does not require a payment method
 information from the user. No payment is required.
 
-13. “Basic” Plan includes:  50 Gb of data processing  per month, unlimited
-image processing, unlimited time, unlimited transactions, 200 workflow API calls 
+13. “Basic” Plan includes: 50 Gb of data processing per month, unlimited
+image processing, unlimited time, unlimited transactions, 200 workflow API calls, 
 and use of the CDN. This Plan requires credit card information from the user. Payment
 of \$25 a month is required.
 
@@ -185,7 +185,7 @@ contact our friendly staff:
 Enterprise Plan. For more details please contact our friendly staff:
 [customer.service@pixboost.com](mailto:customer.service@pixboost.com)
 
-18. If you fail to make payment we will send you a notification with a
+18. If you fail to make a payment we will send you a notification with a
 one-week waiting notice. If payment is not made by the due date from
 the notice, Pixboost reserves the right to terminate your account without
 further notice.
@@ -197,7 +197,7 @@ at the end of the month you will be billed only the fee of the “Basic” Plan.
 
 ## Service Level Agreement
 
-1. "Monthly Uptime Percentage" means total number of minutes in a
+1. "Monthly Uptime Percentage" means the total number of minutes in a
 month, minus the number of minutes of Downtime suffered from all
 Downtime Periods in a month, divided by the total number of minutes in a
 month.
@@ -206,15 +206,15 @@ month.
 addresses associated with load balancing forwarding rules) due to the
 failure of Google's systems.
 
-3. "Downtime Period" means a period of five consecutive minutes of
-Downtime. Intermittent Downtime for a period of less than five minutes
+3. "Downtime Period" means five consecutive minutes of
+Downtime. Intermittent Downtime for less than five minutes
 will not be counted towards any Downtime Periods.
 
 4. Pixboost will provide a Monthly Uptime Percentage of at least
 99.95%, which includes access to all of Pixboost’s API Services.
 
 5. If Pixboost does not meet the Monthly Uptime Percentage stated
-above, and if you meet the obligations under this SLA,  you will be
+above, and if you meet the obligations under this SLA, you will be
 eligible to receive the Financial Credits described below:
 
 -   99.0%-99.95% - you will receive 10% of your current bill as credit,
@@ -227,13 +227,13 @@ eligible to receive the Financial Credits described below:
     credit, which will be deducted from your next monthly bill for
     Pixboost Service.
 
-6. You must request Financial Credit in case of a Downtime. In order to
+6. You must request Financial Credit in case of a Downtime. To
 receive financial credit you have to notify Pixboost technical support
 staff about your problem in no less than two weeks. You have to provide
 server log files showing loss of external connectivity, errors, and the
 date and time those errors occurred.
 
-7. Pixboost will not provide the Financial Credit in the following
+7. Pixboost will not provide Financial Credit in the following
 cases:
 
 -   circumstances beyond Pixboost’s reasonable control, including (but
@@ -245,8 +245,7 @@ cases:
 -   acts or omissions by Authorized Users.
 -   downtime resulting from individual periods of non-availability
     lasting less than five (5) minutes.
--   suspension or termination of your right to use the Service in
-    accordance with these Terms.
+-   suspension or termination of your right to use the Service under these Terms.
 -   if you are using the “Free” Plan.
 
 8. This SLA is your sole and exclusive remedy for any failure by
@@ -256,7 +255,7 @@ Pixboost to provide the Service.
 
 1. On the condition that you comply with this Terms of Service,
 Pixboost grants you a non-exclusive, non-transferable, revocable license
-to access the Services of Pixboost solely for the purpose of enabling
+to access the Services of Pixboost solely to enable
 you to use the Service in the manner permitted by these Terms of
 Service.
 
@@ -269,7 +268,7 @@ Service.
 -   disrupt in any way the work of other users with the Service;
 -   use the Service for any illegal or unauthorized purpose;
 -   spread the misleading or offensive information about the Service;
--   infringe or violate rights of the Service.
+-   infringe or violate the rights of the Service.
 
 3. If you violate any of the restrictions stated above your license
 will be terminated immediately and legal actions could be initiated.
@@ -285,13 +284,13 @@ User Account from the Service please contact our friendly staff:
 information, materials, and content including text, graphics, Pixboost
 Website data, formatting, designs, HTML, scripts, photographic content,
 images, source code, algorithms, and other content, excluding the User
-Content or unless you have the written permission from Pixboost. Except
-for the license stated in these Terms you are not granted any rights in
+Content or unless you have written permission from Pixboost. Except
+for the license stated in these Terms, you are not granted any rights in
 or to the Service including patents, copyrights, trademarks (both
 registered and unregistered), trade names, trade secrets, domain names,
-or any other rights, functions or licenses with respect to the Service.
+or any other rights, functions, or licenses with respect to the Service.
 
-2. You are allowed to use logo and name of the Pixboost Service with
+2. You are allowed to use the logo and name of the Pixboost Service with
 the referral link to the Pixboost Website (“pixboost.com”). All Pixboost
 Website content is the property of Pixboost and can be used only with
 the written permission of Pixboost with the referral link to the source.
@@ -300,7 +299,7 @@ the written permission of Pixboost with the referral link to the source.
 grant your permission to use your content, for the purposes of
 providing, supporting and/or developing the Service. You grant Pixboost
 the right to use your official company logo and name on Pixboost’s
-Website and/or publications. If you wish to decline the use of your logo
+Website, and/or publications. If you wish to decline the use of your logo
 and name please contact our friendly staff:
 [customer.service@pixboost.com](mailto:customer.service@pixboost.com).
 
@@ -320,7 +319,7 @@ for its internal business purposes.
 
 4. You will not use any unlawful content or perform any unlawful
 actions through or in association with Pixboost. Pixboost reserves the
-right, but does not have the obligation to monitor User Content and to
+right but does not have the obligation to monitor User Content and to
 block any User whose content or actions violate those Terms of Service.
 
 5. If you decide to remove your User Account from our Service, some
