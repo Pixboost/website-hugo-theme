@@ -1,24 +1,12 @@
 ---
-title: "Pixboost - Terms of Service"
+title: "Pixboost - Terms of Service - revision from 20th of August, 2017"
 description: "Terms of Service"
 draft: false
 type: blog
 v2: true
 ---
 
-**Last revised: December 20, 2021.**
-
-**Effective from: January 20, 2022**
-
-Previous versions:
-* [August 20th, 2017](./20-08-2017/)
-
-### Changes in this revision
-
-* Changes to the billing plans - [Service Fees](#service-fees)
-* Incorrect company name (Pixboost -> IT Solutions Lab), added Australian Company Number (ACN) - [Information about the service](#information-about-the-service)
-* Updated support email from customer.support@pixboost.com to customer.service@pixboost.com
-* Minor grammar mistakes
+**Last revised: August 20, 2017.**
 
 Pixboost (or the “Service”, “Pixboost Service”, “Pixboost”) is a
 cloud-based lightweight solution that helps its users optimize their
@@ -41,11 +29,12 @@ Service.
 
 1. Main purpose of the Service is to deliver a 24/7 robust and reliable
 image processing tool that transforms images and delivers them through a
-Content Delivery Network (CDN) to the Users’ Websites.
+CDN to the Users’ Websites.
 
-2. Pixboost is located at [pixboost.com](https://pixboost.com).
+2. Pixboost is located at
+[pixboost.com](https://www.google.com/url?q=https://pixboost.com/&sa=D&ust=1504409178476000&usg=AFQjCNFeaVEtdo7iDC2sKusY_njPQip3jw).
 
-3. Pixboost is operated by Australian company "IT Solutions Lab Pty Ltd.", ABN: 566 305 839 58, ACN: 624 271 950.
+3. Pixboost is operated by Pixboost, ABN: 566 305 839 58.
 
 4. From time to time Pixboost may modify, enhance, upgrade its
 functionality. We may notify you about changes by email. Also we may add
@@ -95,29 +84,29 @@ may be notified about changes at least 30 days in advance.
 5. You may choose to discontinue the use of Services or terminate the
 User Account completely any time. To discontinue the use of the Service
 please contact us on
-[customer.service@pixboost.com](mailto:customer.service@pixboost.com).
+[customer.support@pixboost.com](mailto:customer.support@pixboost.com).
 You will be charged only for what you have used by the time of
 suspension.
 
-6. Pixboost may choose to terminate your license upon your breach of
+6. Pixboost may choose to terminate your licence upon your breach of
 these Terms or for convenience with 30 days' advance notice.
 
 ## Compliance with acceptable use policies of Content Delivery Networks
 
-1. To deliver data from numerous locations quickly, and reliably we use
+1. To deliver data from numerous locations quickly and reliably we use
 Google Cloud CDN. You have to comply with the Google Cloud Platform
 Terms of Service located at:
-[https://cloud.google.com/terms/](https://cloud.google.com/terms/).
+[https://cloud.google.com/terms/](https://www.google.com/url?q=https://cloud.google.com/terms/&sa=D&ust=1504409178482000&usg=AFQjCNG9lUJ8AFX40yBRoauZhRJUe8hpSg).
 
 ## Privacy
 
 1. At Pixboost we do our best to provide the safe and reliable solution
-for our users. Please see [Pixboost’s Privacy Policy](/privacy-policy/) for the information
+for our users. Please see Pixboost’s Privacy Policy for the information
 on how we manage your data and personal information.
 
 ## Service Fees
 
-1. Pixboost provides several Plans: “Free”, “Basic”, “Advanced”, ”All Included” and
+1. Pixboost provides several Plans: “Free”, “S”, “M”, “L” and
 “Enterprise” Plans (or “Plans”). Users of the Service can choose a Plan
 from the Pixboost Website within the section entitled “Plans”.
 
@@ -137,13 +126,13 @@ by the user.
 6. You can start using the Service immediately without payment if you
 chose the “Free” Plan.
 
-7. For the Plans “Basic”, “Advanced”, and “All Included” you have to provide credit card
+7. For the Plans “S”, “M”, and “L”, you have to provide credit card
 details on submission. Payment for a Plan is deducted at the beginning
 of the next month after each Billing Period.
 
 8. One Pixboost User Account (or “Account”) can be used on several
 Users’ Websites. By Pixboost User Account, we mean a Registered User of
-the Pixboost Website. Traffic from all websites will be billed to this
+the Pixboost Website. Traffic from all Websites will be billed to this
 Account.
 
 9. Pixboost will not be liable for mistakes, errors, malfunctions and
@@ -151,49 +140,48 @@ miscalculations made by the Payment Service Providers.
 
 10. Fees are not refundable.
 
-11. Pixboost will only charge Users for the Services they use each
+11.  Pixboost will only charge Users for the Services they use each
 Billing Period, which are specified in your User Account on the Pixboost
 Website.
 
-12. “Free” Plan includes: 10 GB of data processing per month, unlimited
+12. “Free” Plan includes: 2 GB of data processing per month, unlimited
 image processing, unlimited time, unlimited transactions, and use of the
 CDN. This Plan does not require credit card or any other financial
 information from the user. No payment is required.
 
-13. “Basic” Plan includes:  50 Gb of data processing  per month, unlimited
-image processing, unlimited time, unlimited transactions, 200 workflow API calls 
-and use of the CDN. This Plan requires credit card information from the user. Payment
-of \$25 a month is required.
+13. “S” Plan includes: 10 GB of data processing per month, unlimited
+image processing, unlimited time, unlimited transformations, and use of
+the CDN. This Plan requires credit card information from the user.
+Payment of \$5 a month with \$0.5 per additional GB is required.
 
-14. “Advanced” Plan includes: 200 Gb of data processing per month, unlimited
-image processing, unlimited time, unlimited transactions, 500 workflow API calls,
-1 custom domain name, and use of the CDN. This Plan requires credit card information from the user. Payment
-of \$80 a month is required.
+14. “M” Plan includes:  50 Gb of data processing  per month, unlimited
+image processing, unlimited time, unlimited transactions, and use of the
+CDN. This Plan requires credit card information from the user. Payment
+of \$25 a month with \$0.45 per additional GB is required.
 
-15. “All Included” Plan includes: 1000 GB of data processing per month, unlimited
-image processing, unlimited time, unlimited transformations, 
-1000 workflow API calls, 5 custom domain names, and use of the CDN. 
-This Plan requires credit card information from the user.
-Payment of \$380 a month is required.
+15. “L” Plan includes: 200 Gb of data processing per month, unlimited
+image processing, unlimited time, unlimited transactions, and use of the
+CDN. This Plan requires credit card information from the user. Payment
+of \$80 a month with \$0.40 per additional GB is required.
 
 16. “Enterprise” Plan: this is a custom plan offered by Pixboost to
 meet special customer needs. For further information on this Plan please
 contact our friendly staff:
-[customer.service@pixboost.com](mailto:customer.service@pixboost.com)
+[customer.support@pixboost.com](mailto:customer.support@pixboost.com)
 
 17. You might be eligible for a Free trial if you are considering the
 Enterprise Plan. For more details please contact our friendly staff:
-[customer.service@pixboost.com](mailto:customer.service@pixboost.com)
+[customer.support@pixboost.com](mailto:customer.support@pixboost.com)
 
 18. If you fail to make payment we will send you a notification with a
-one-week waiting notice. If payment is not made by the due date from
-the notice, Pixboost reserves the right to terminate your account without
+one week waiting notice. If payment is not made by the due date from
+notice, Pixboost reserves the right to terminate your account without
 further notice.
 
 19. If you wish to change your Plan you can do so at any time. The
 payment invoice will include only the last chosen Plan. For instance, if
-you have chosen the “Advanced” Plan, but then decide to switch to the “Basic” Plan,
-at the end of the month you will be billed only the fee of the “Basic” Plan.
+you have chosen the “L” Plan, but then decide to switch to the “S” Plan,
+at the end of the month you will be billed only the fee of the “S” Plan.
 
 ## Service Level Agreement
 
@@ -255,7 +243,7 @@ Pixboost to provide the Service.
 ## License
 
 1. On the condition that you comply with this Terms of Service,
-Pixboost grants you a non-exclusive, non-transferable, revocable license
+Pixboost grants you a non-exclusive, non-transferable, revocable licence
 to access the Services of Pixboost solely for the purpose of enabling
 you to use the Service in the manner permitted by these Terms of
 Service.
@@ -277,7 +265,7 @@ will be terminated immediately and legal actions could be initiated.
 4. To terminate the Service please stop using the Service and delete
 any referral links to the Pixboost Website. If you wish to delete your
 User Account from the Service please contact our friendly staff:
-[customer.service@pixboost.com](mailto:customer.service@pixboost.com).
+[customer.support@pixboost.com](mailto:customer.support@pixboost.com).
 
 ## Intellectual Property
 
@@ -286,7 +274,7 @@ information, materials, and content including text, graphics, Pixboost
 Website data, formatting, designs, HTML, scripts, photographic content,
 images, source code, algorithms, and other content, excluding the User
 Content or unless you have the written permission from Pixboost. Except
-for the license stated in these Terms you are not granted any rights in
+for the licence stated in these Terms you are not granted any rights in
 or to the Service including patents, copyrights, trademarks (both
 registered and unregistered), trade names, trade secrets, domain names,
 or any other rights, functions or licenses with respect to the Service.
@@ -302,7 +290,7 @@ providing, supporting and/or developing the Service. You grant Pixboost
 the right to use your official company logo and name on Pixboost’s
 Website and/or publications. If you wish to decline the use of your logo
 and name please contact our friendly staff:
-[customer.service@pixboost.com](mailto:customer.service@pixboost.com).
+[customer.support@pixboost.com](mailto:customer.support@pixboost.com).
 
 ## User content
 
@@ -313,7 +301,7 @@ the Service.
 which may include any notes, ideas, images, suggestions in writing or
 orally.
 
-3. You hereby grant Pixboost a non-exclusive, revocable license to use,
+3. You hereby grant Pixboost a non-exclusive, revocable licence to use,
 store, display, reproduce, re-post, modify, create derivative works of,
 use the User Content solely in the course of providing the Services and
 for its internal business purposes.
@@ -321,7 +309,7 @@ for its internal business purposes.
 4. You will not use any unlawful content or perform any unlawful
 actions through or in association with Pixboost. Pixboost reserves the
 right, but does not have the obligation to monitor User Content and to
-block any User whose content or actions violate those Terms of Service.
+block any User whos content or actions violate those Terms of Service.
 
 5. If you decide to remove your User Account from our Service, some
 information may remain in the System for a certain period of time. We
@@ -384,6 +372,6 @@ POSSIBILITY OF SUCH DAMAGE, LOSS, COSTS, EXPENSES OR PAYMENTS.
 
 If you have any questions concerning these Terms of Service please
 contact us:
-[customer.service@pixboost.com](mailto:customer.service@pixboost.com)
+[customer.support@pixboost.com](mailto:customer.support@pixboost.com)
 
 
