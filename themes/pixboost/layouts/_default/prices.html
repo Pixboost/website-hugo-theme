@@ -8,16 +8,19 @@
         <div class="price">
           <div class="top">
             <p class="amount"><sup>$</sup>0</p>
-            <p class="period">Month</p>
+            <p class="period">Monthly</p>
           </div>
-          <p class="name">Free</p>
+          <div class="name">
+            <p>Free</p>
+          </div>
         </div>
         <div class="terms">
           <p class="traffic">2 Gb</p>
           <ul class="features">
+            <li><strong>No credit card required</strong></li>
             <li>Full functionality</li>
             <li>No time limit</li>
-            <li>No credit card required</li>
+            <li>HTTP/3 CDN included</li>
           </ul>
         </div>
         <div class="cta">
@@ -27,38 +30,27 @@
         </div>
       </div>
 
-
-      <div class="plan">
-        <div class="price">
-          <div class="top">
-            <p class="amount"><sup>$</sup>5</p>
-            <p class="period">Month</p>
-          </div>
-          <p class="name">Startup</p>
-        </div>
-        <div class="terms">
-          <p class="traffic">10 Gb</p>
-        </div>
-        <div class="cta">
-          <a class="btn  btn-light" href="/customer/#/signup" onclick="window.trackSignup('Prices: Startup')">
-            SIGN UP
-          </a>
-        </div>
-      </div>
-
       <div class="plan">
         <div class="price">
           <div class="top">
             <p class="amount"><sup>$</sup>25</p>
-            <p class="period">Month</p>
+            <p class="period">Monthly</p>
           </div>
-          <p class="name">Business</p>
+          <div class="name">
+            <p>Basic</p>
+          </div>
         </div>
         <div class="terms">
           <p class="traffic">50 Gb</p>
+          <ul class="features">
+            <li>Full functionality</li>
+            <li>No time limit</li>
+            <li>HTTP/3 CDN included</li>
+            <li>200 Workflow API calls</li>
+          </ul>
         </div>
         <div class="cta">
-          <a class="btn btn-light" href="/customer/#/signup" onclick="window.trackSignup('Prices: Business')">
+          <a class="btn btn-light" href="/customer/#/signup" onclick="window.trackSignup('Prices: Basic')">
             SIGN UP
           </a>
         </div>
@@ -68,15 +60,51 @@
         <div class="price">
           <div class="top">
             <p class="amount"><sup>$</sup>80</p>
-            <p class="period">Month</p>
+            <p class="period">Monthly</p>
           </div>
-          <p class="name">Advanced</p>
+          <div class="name">
+            <p>Advanced</p>
+          </div>
         </div>
         <div class="terms">
           <p class="traffic">200 Gb</p>
+          <ul class="features">
+            <li>Full functionality</li>
+            <li>No time limit</li>
+            <li>HTTP/3 CDN included</li>
+            <li>500 Workflow API calls</li>
+            <li>1 Custom Domain Name</li>
+          </ul>
         </div>
         <div class="cta">
           <a class="btn  btn-light" href="/customer/#/signup" onclick="window.trackSignup('Prices: Advanced')">
+            SIGN UP
+          </a>
+        </div>
+      </div>
+
+      <div class="plan">
+        <div class="price">
+          <div class="top">
+            <p class="amount"><sup>$</sup>380</p>
+            <p class="period">Monthly</p>
+          </div>
+          <div class="name">
+            <p>All Included</p>
+          </div>
+        </div>
+        <div class="terms">
+          <p class="traffic">1000 Gb</p>
+          <ul class="features">
+            <li>Full functionality</li>
+            <li>No time limit</li>
+            <li>HTTP/3 CDN included</li>
+            <li>1000 Workflow API calls</li>
+            <li>5 Custom Domain Name</li>
+          </ul>
+        </div>
+        <div class="cta">
+          <a class="btn  btn-light" href="/customer/#/signup" onclick="window.trackSignup('Prices: All Included')">
             SIGN UP
           </a>
         </div>
@@ -89,7 +117,9 @@
               <img src="/img/v2/prices/prices/enterprise-plan.svg" alt="enterprise plan"/>
             </p>
           </div>
-          <p class="name">Enterprise</p>
+          <div class="name">
+            <p>Enterprise</p>
+          </div>
         </div>
         <div class="terms">
           <ul class="features">
@@ -122,9 +152,9 @@
             <tr>
               <th></th>
               <th class="green title">Free</th>
-              <th class="blue title">Startup</th>
-              <th class="green title">Business</th>
-              <th class="blue title">Advanced</th>
+              <th class="blue title">Basic</th>
+              <th class="green title">Advanced</th>
+              <th class="blue title">All Included</th>
               <th class="green title">Enterprise</th>
               <th class="blue title">Open Source</th>
             </tr>
@@ -133,19 +163,19 @@
             <tr class="price">
               <th>Pricing</th>
               <td>$0</td>
-              <td>$5 / month</td>
-              <td>$25 / month</td>
-              <td>$80 / month</td>
+              <td>$25  / month</td>
+              <td>$80  / month</td>
+              <td>$380 / month</td>
               <td>Custom Pricing</td>
               <td>$0</td>
             </tr>
 
             <tr>
               <th>Bandwidth</th>
-              <td>2Gb</td>
               <td>10Gb</td>
               <td>50Gb</td>
               <td>200Gb</td>
+              <td>1000Gb</td>
               <td>Unlimited</td>
               <td>Not Supported</td>
             </tr>
@@ -182,10 +212,10 @@
 
             <tr>
               <th>Custom Domain Name</th>
-              <td>Supported</td>
-              <td>Supported</td>
-              <td>Supported</td>
-              <td>Supported</td>
+              <td>Not Supported</td>
+              <td>Not Supported</td>
+              <td>1</td>
+              <td>5</td>
               <td>Supported</td>
               <td>Not Supported</td>
             </tr>
@@ -203,9 +233,9 @@
             <tr>
               <th>Automated Workflow API Calls</th>
               <td>10</td>
-              <td>100</td>
               <td>200</td>
               <td>500</td>
+              <td>1000</td>
               <td>Unlimited</td>
               <td>Not Supported</td>
             </tr>
@@ -213,10 +243,10 @@
             <tr>
               <th>Integration Support</th>
               <td>Contact Us</td>
-              <td>Free</td>
-              <td>Free</td>
-              <td>Free</td>
-              <td>Free</td>
+              <td>Contact Us</td>
+              <td>Contact Us</td>
+              <td>Contact Us</td>
+              <td>Contact Us</td>
               <td>Contact Us</td>
             </tr>
 
@@ -236,13 +266,13 @@
                 <a class="btn btn-sm btn-light" href="/customer/#/signup" onclick="window.trackSignup('Compare plans: Free')">SIGN UP</a>
               </td>
               <td>
-                <a class="btn btn-sm btn-light" href="/customer/#/signup" onclick="window.trackSignup('Compare plans: Startup')">SIGN UP</a>
-              </td>
-              <td>
-                <a class="btn btn-sm btn-light" href="/customer/#/signup" onclick="window.trackSignup('Compare plans: Business')">SIGN UP</a>
+                <a class="btn btn-sm btn-light" href="/customer/#/signup" onclick="window.trackSignup('Compare plans: Basic')">SIGN UP</a>
               </td>
               <td>
                 <a class="btn btn-sm btn-light" href="/customer/#/signup" onclick="window.trackSignup('Compare plans: Advanced')">SIGN UP</a>
+              </td>
+              <td>
+                <a class="btn btn-sm btn-light" href="/customer/#/signup" onclick="window.trackSignup('Compare plans: All Included')">SIGN UP</a>
               </td>
               <td>
                 <a class="btn btn-sm btn-light" href="#" onclick="window.openChat()">CONTACT US</a>

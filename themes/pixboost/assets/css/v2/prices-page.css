@@ -58,7 +58,7 @@
 }
 
 #prices .plan .price .top {
-    min-height: 70px;
+    min-height: 90px;
 }
 
 #prices .plan .price .amount {
@@ -77,11 +77,15 @@
 #prices .plan .price .name {
     font-size: 1.6em;
     font-weight: bold;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 #prices .plan .terms {
     background-color: rgb(var(--grey-color));
-    min-height: 200px;
+    min-height: 350px;
 }
 
 #prices .plan .terms .traffic {
