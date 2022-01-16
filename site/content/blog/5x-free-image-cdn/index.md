@@ -1,6 +1,6 @@
 ---
 title: "5x Free Image CDN and new All Included plan"
-date: 2022-01-08T12:04:21Z
+date: 2022-01-16T11:33:21Z
 description: We updated prices on our Image CDN and made our Free plan 5 times bigger.
 image: surprise.jpg
 draft: false
