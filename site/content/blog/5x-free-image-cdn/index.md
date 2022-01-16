@@ -1,7 +1,7 @@
 ---
-title: "Changes to pricing and plans"
+title: "5x Free Image CDN and new All Included plan"
 date: 2022-01-08T12:04:21Z
-description: We updated prices on our Image CDN, and made our Free plan 5 times bigger.
+description: We updated prices on our Image CDN and made our Free plan 5 times bigger.
 image: surprise.jpg
 draft: false
 v2: true
@@ -9,7 +9,7 @@ v2: true
 
 It's 2022, and we are back with some amazing news! 
 
-We made two big changes to our pricing: 
+We made two big changes to our Image CDN offering: 
 
 * 🎉 Made our Free plan 5 times bigger 🎉
 * 😎 Added a brand new one packed with awesome features 😎
