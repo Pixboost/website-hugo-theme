@@ -1,11 +1,45 @@
 <div class="full-width">
-    <div
-        data-pb-picture=""
-        data-url="{{.Page.File.Dir}}{{.Get "image"}}"
-        data-lg="resize?size=1000"
-        data-md="resize?size=1000"
-        data-sm="resize?size=640"
-        data-alt="{{.Get "alt"}}"
-        data-lazy=""
-    ></div>
+    <picture>
+        <source
+            media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 3)"
+            srcset="
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1000&auth=NzM5MTYwMjAy&dppx=2 1000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=2000&auth=NzM5MTYwMjAy&dppx=2 2000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=3000&auth=NzM5MTYwMjAy&dppx=2 3000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=640&auth=NzM5MTYwMjAy&dppx=2 640w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1280&auth=NzM5MTYwMjAy&dppx=2 1280w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1920&auth=NzM5MTYwMjAy&dppx=2 1920w"
+            sizes="(min-width: 990px) 1000px,
+                    (min-width: 640px) 1000px
+                    640px"
+        >
+        <source
+            media="(-webkit-min-device-pixel-ratio: 3)"
+            srcset="
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1000&auth=NzM5MTYwMjAy&dppx=3 1000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=2000&auth=NzM5MTYwMjAy&dppx=3 2000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=3000&auth=NzM5MTYwMjAy&dppx=3 3000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=640&auth=NzM5MTYwMjAy&dppx=3 640w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1280&auth=NzM5MTYwMjAy&dppx=3 1280w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1920&auth=NzM5MTYwMjAy&dppx=3 1920w"
+            sizes="(min-width: 990px) 1000px,
+                    (min-width: 640px) 1000px
+                    640px"
+        >
+        <img
+            src="/https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/optimise?auth=NzM5MTYwMjAy"
+            srcset="
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1000&auth=NzM5MTYwMjAy 1000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=2000&auth=NzM5MTYwMjAy 2000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=3000&auth=NzM5MTYwMjAy 3000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=640&auth=NzM5MTYwMjAy 640w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1280&auth=NzM5MTYwMjAy 1280w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1920&auth=NzM5MTYwMjAy 1920w"
+            sizes="(min-width: 990px) 1000px,
+                    (min-width: 640px) 1000px
+                    640px"
+            alt="{{.Get "alt"}}"
+            loading="lazy"
+        >
+    </picture>
 </div>
