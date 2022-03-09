@@ -1,8 +1,6 @@
 <div class="center">
   <img
-      data-pb-image=""
-      data-src="https://pixboost.com/{{.Page.File.Dir}}{{.Get "image"}}"
-      data-op="optimise"
-      data-lazy=""
+      src="https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/optimise?auth=NzM5MTYwMjAy"
+      loading="lazy"
       alt="{{.Get "alt"}}"/>
 </div>

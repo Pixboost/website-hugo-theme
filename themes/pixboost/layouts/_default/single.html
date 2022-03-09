@@ -43,7 +43,46 @@
     {{$imageExt := path.Ext .Params.image}}
     {{$imageAlt := strings.TrimSuffix $imageExt .Params.image | humanize }}
 
-    <img
+    <picture>
+        <source
+            media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
+            srcset="
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=400&dppx=2&save-data=hide&auth=NzM5MTYwMjAy 400w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=800&dppx=2&save-data=hide&auth=NzM5MTYwMjAy 800w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=500&dppx=2&save-data=hide&auth=NzM5MTYwMjAy 500w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1000&dppx=2&save-data=hide&auth=NzM5MTYwMjAy 1000w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=640&dppx=2&save-data=hide&auth=NzM5MTYwMjAy 640w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1280&dppx=2&save-data=hide&auth=NzM5MTYwMjAy 1280w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=768&dppx=2&save-data=hide&auth=NzM5MTYwMjAy 768w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1536&dppx=2&save-data=hide&auth=NzM5MTYwMjAy 1536w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1000&dppx=2&save-data=hide&auth=NzM5MTYwMjAy 1000w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=2000&dppx=2&save-data=hide&auth=NzM5MTYwMjAy 2000w
+            "
+        sizes="
+            (min-width: 768px) 1000px,
+            100vw
+        "
+        >
+        <source
+            media="(-webkit-min-device-pixel-ratio: 3)"
+            srcset="
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=400&dppx=3&save-data=hide&auth=NzM5MTYwMjAy 400w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=800&dppx=3&save-data=hide&auth=NzM5MTYwMjAy 800w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=500&dppx=3&save-data=hide&auth=NzM5MTYwMjAy 500w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1000&dppx=3&save-data=hide&auth=NzM5MTYwMjAy 1000w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=640&dppx=3&save-data=hide&auth=NzM5MTYwMjAy 640w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1280&dppx=3&save-data=hide&auth=NzM5MTYwMjAy 1280w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=768&dppx=3&save-data=hide&auth=NzM5MTYwMjAy 768w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1536&dppx=3&save-data=hide&auth=NzM5MTYwMjAy 1536w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1000&dppx=3&save-data=hide&auth=NzM5MTYwMjAy 1000w,
+                https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=2000&dppx=3&save-data=hide&auth=NzM5MTYwMjAy 2000w
+            "
+        sizes="
+            (min-width: 768px) 1000px,
+            100vw
+        "
+        >
+        <img
             srcset="
                 https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=400&save-data=hide&auth=NzM5MTYwMjAy 400w,
                 https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=800&save-data=hide&auth=NzM5MTYwMjAy 800w,
@@ -57,12 +96,13 @@
                 https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=2000&save-data=hide&auth=NzM5MTYwMjAy 2000w
             "
             sizes="
-                            (min-width: 768px) 1000px,
-                            100vw
-                        "
+                (min-width: 768px) 1000px,
+                100vw
+            "
             src="https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1000&auth=NzM5MTYwMjAy"
             alt="{{$imageAlt}}"
-    />
+        />
+    </picture>
     {{end}}
 
     {{ .Content }}
