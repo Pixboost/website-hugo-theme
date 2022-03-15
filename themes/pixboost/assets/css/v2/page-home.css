@@ -230,7 +230,7 @@ p.title {
     margin-right: var(--space-6);
 }
 
-#tools>div>img {
+#tools .screenshot img {
     max-width: 100%;
     height: auto;
 }
