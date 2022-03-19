@@ -15,27 +15,29 @@
 
         {{- block "meta" . }}{{- end }}
 
-        <link rel="icon" href="/favicon.ico" sizes="any"><!-- 32×32 -->
-        <link rel="icon" href="/icon.svg" type="image/svg+xml">
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180×180 -->
+        {{$style :=  printf "css/v2/%s-%s.css" .Type .Kind | resources.Get}}
+        {{ if not .Params.v2 }}
+        <link rel="stylesheet" href="/css/common.css"/>
+        {{$style =  printf "css/%s-%s.css" .Type .Kind | resources.Get}}
+        {{end}}
+
+        <link rel="stylesheet" href="/css/v2/common.css">
+        {{if $style}}
+        <link rel="stylesheet" href="{{$style.RelPermalink}}">
+        {{end}}
 
         {{ if not .Params.v2 }}
         <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto|Coustard&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-        <link rel="stylesheet" href="/css/common.css"/>
         {{ else }}
         <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
         <link rel='preload' as='style' href='https://fonts.googleapis.com/css?family=Poppins&display=swap'>
         <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-        <link rel="stylesheet" href="/css/v2/common.css"/>
         {{ end }}
 
-        {{$style :=  printf "css/v2/%s-%s.css" .Type .Kind | resources.Get}}
-        {{ if not .Params.v2 }}
-        {{$style =  printf "css/%s-%s.css" .Type .Kind | resources.Get}}
-        {{end}}
-        {{if $style}}
-        <link rel="stylesheet" href="{{$style.RelPermalink}}"/>
-        {{end}}
+
+        <link rel="icon" href="/favicon.ico" sizes="any"><!-- 32×32 -->
+        <link rel="icon" href="/icon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180×180 -->
 
         {{ if not .Params.v2 }}
         <!--[if lt IE 9]>
