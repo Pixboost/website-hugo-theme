@@ -32,9 +32,49 @@ TODO: add images of retina and non retina displays.
 
 Examples from the popular devices
 
+TODO: Maybe some more examples
+
 ## Support of DPI in HTML
 
-<img> tag with 2x srcset. What is limitations and the problem
+The two standard ways of accommodating your HTML markup for high DPI screens is to use <img> tag with `srcset` attribute.
+
+The first option is to use DPI descriptor when specifying URL:
+
+```
+<img srcset="
+    https://website.com/images/logo.png,
+    https://website.com/images/logo-2x.png 2x,
+    https://website.com/images/logo-3x.png 3x
+"
+    src="https://website.com/images/logo.png"
+    alt="Company logo"/>
+```
+
+In the example above the image will have the same screen size on all devices, however a browser will pick the one closest to 
+the screen's DPI.
+
+But what if we need an image to have different size on different screens. Let's say 200px on mobile and 300px on the desktop.
+In that case we would need to go with width descriptor in `srcset` attribute:
+
+```
+<img srcset="
+    https://website.com/images/logo.png 200w,
+    https://website.com/images/logo-300w.png 300w,
+    https://website.com/images/logo-400w.png 400w,
+    https://website.com/images/logo-500w.png 500w,
+    https://website.com/images/logo-600w.png 600w,
+    https://website.com/images/logo-700w.png 700w,
+    https://website.com/images/logo-800w.png 800w,
+"
+    src="https://website.com/images/logo.png"
+    sizes="
+        (max-width: 768px) 200px,
+        300px
+    "
+    alt="Company logo"/>
+```
+
+
 
 ## Deliver smaller images for High DPI screens
 
