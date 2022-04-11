@@ -2,6 +2,9 @@
 title: "High DPI Display Support in API"
 date: 2022-03-15T19:49:31Z
 draft: true
+description: "TODO"
+image: cheetah.jpg
+v2: true
 ---
 
 ## Intro
@@ -19,6 +22,11 @@ version.
 
 But, that's not the end of the story with the different screens. In addition to different size they also have another
 characteristic called DPI.
+
+Throughout the article, we will use photo of this gorgeous cheetah just to remind us how quick we'd like our images to load.
+
+TODO: Insert image
+Photo by <a href="https://unsplash.com/@ahmadgalal?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ahmed Galal</a> on <a href="https://unsplash.com/s/photos/cheetah?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 ## What is DPI 
 
@@ -42,43 +50,42 @@ The first option is to use DPI descriptor when specifying URL:
 
 ```
 <img srcset="
-    https://website.com/images/logo.png,
-    https://website.com/images/logo-2x.png 2x,
-    https://website.com/images/logo-3x.png 3x
+    cheetah.jpg,
+    cheetah-2x.jpg 2x,
+    cheetah-3x.jpg 3x,
 "
-    src="https://website.com/images/logo.png"
-    alt="Company logo"/>
+    src="cheetah.jpg"
+    alt="Cheetah"/>
 ```
 
 In the example above the image will have the same screen size on all devices, however a browser will pick the one closest to 
 the screen's DPI.
 
-But what if we need an image to have different size on different screens. Let's say 200px on mobile and 300px on the desktop.
+But what if we need an image to have different size on different screens. Let's say 200px on mobile and 400px on the desktop.
 In that case we would need to go with width descriptor in `srcset` attribute:
 
-```
+```html
 <img srcset="
-    https://website.com/images/logo.png 200w,
-    https://website.com/images/logo-300w.png 300w,
-    https://website.com/images/logo-400w.png 400w,
-    https://website.com/images/logo-500w.png 500w,
-    https://website.com/images/logo-600w.png 600w,
-    https://website.com/images/logo-700w.png 700w,
-    https://website.com/images/logo-800w.png 800w,
-    https://website.com/images/logo-900w.png 900w,
-"
-    src="https://website.com/images/logo.png"
-    sizes="
-        (max-width: 768px) 200px,
-        300px
+        cheetah-200w.jpg 200w,
+        cheetah-400w.jpg 400w,
+        cheetah-400w.jpg 500w,
+        cheetah-600w.jpg 600w,
+        cheetah-800w.jpg 800w,
+        cheetah-800w.jpg 1000w,
+        cheetah-1200w.jpg 1200w,
     "
-    alt="Company logo"/>
+     src="cheetah.jpg"
+     sizes="
+        (max-width: 768px) 100vw,
+        400px
+    "
+     alt="Cheetah"/>
 ```
 
 That's where browsers will do the magic! Based on the visible image size, display characteristics, and other factors the image
 to download will be chosen.
 
-If we open Chrome web browser and select Samsung XX (TODO) then will see that the browser will load 900 pixels version
+If we open Chrome web browser and select Samsung XX (TODO) then we will see that the browser will load 600 pixels version
 due to the screen having 3 dppx.
 
 Now, let's have a look at sizes of the image
@@ -162,7 +169,7 @@ that supported everywhere. So, let's have a look how we can combine that one wit
 
 Now, that looks better, as we load lower quality image for screens with DPI 2 to 3 and even lower quality from 3 onwards 
 
-However, I wouldn't recommend using this example in the production because it's not leveraging [the next generation](TODO) like WebP and AVIF.
+However, I wouldn't recommend using this example in the production because it's not leveraging [the next generation](https://pixboost.com/blog/next-gen-avif-format/) like WebP and AVIF.
 
 ```
 TODO: <picture tag with type="image/jpeg" type="image/avif"
