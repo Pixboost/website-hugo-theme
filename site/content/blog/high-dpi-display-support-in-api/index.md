@@ -58,10 +58,9 @@ The first option is to use DPI descriptor when specifying URL:
     alt="Cheetah"/>
 ```
 
-In the example above the image will have the same screen size on all devices, however a browser will pick the one closest to 
-the screen's DPI.
+In the example above the image will have the same screen size on all devices, however a browser will pick the one that match user's screen DPI.
 
-But what if we need an image to have different size on different screens. Let's say 200px on mobile and 400px on the desktop.
+But what if we need an image to have different size on different screens. Let's say full width on mobile and 400px on the desktop.
 In that case we would need to go with width descriptor in `srcset` attribute:
 
 ```html
@@ -82,19 +81,24 @@ In that case we would need to go with width descriptor in `srcset` attribute:
      alt="Cheetah"/>
 ```
 
-That's where browsers will do the magic! Based on the visible image size, display characteristics, and other factors the image
-to download will be chosen.
+Note how many sizes we included - that's because mobile devices are different not only in size but in DPI as well. 
+So, for 400 pixels wide screen we would need to have 3 images - 400, 800, 1200 pixels. A browsers will do the magic and based on the visible image size, display characteristics, and other factors will pick the most appropriate image.
 
-If we open Chrome web browser and select Samsung XX (TODO) then we will see that the browser will load 600 pixels version
-due to the screen having 3 dppx.
+If we open Chrome web browser with Developer console and select Samsung IPhone 12 Pro  then we will see that the browser will load 1200 pixels version
+due to the screen DPI equals 3. If we change the device to IPhone SE then the browser will prefer 800 pixels version.
 
-Now, let's have a look at sizes of the image
+{{< rawhtml >}}
+<video src="devices-dpi.webm" autoplay mute controls></video>
+{{< /rawhtml >}}
 
-* 1x - 240 Kb
-* 3x - 800 Kb
+Now, let's have a look at sizes of the image for 1, 2, and 3 DPI:
+
+* 1x - 42 Kb
+* 2x - 141 Kb
+* 3x - 298 Kb
 
 So, when we load an image on the display with higher DPI the size of the image will grow as well. This become critical
-when we understand that high DPI display are often mobile devices where network might not as good as home broadband.
+when we understand that high DPI display are often mobile devices where network might be not as good as a home broadband.
 
 Can we do anything to make images load faster in that case?
 
@@ -103,10 +107,11 @@ Can we do anything to make images load faster in that case?
 Yes, we can!
 
 When we are talking about images, sizes, and used bandwidth the one important thing to understand is what happens
-when we show the bigger image (900px) in the smaller physical space (300 screen pixels). The quality is getting better
+when we show the bigger image (1200px) into the smaller physical screen (400 screen pixels). The quality is getting better
 (see the example from the intro). However, when we are considering photos the humans eye can only see that much details. 
-Therefore we can use more aggressive compression for display with higher DPIs. Let's look at our example, but use lower 
-quality for 3x version:
+Therefore, we can use more aggressive compression for displays with higher DPIs. 
+
+So, let's encode our 3x variant with lower quality:
 
 TODO:
 
@@ -187,3 +192,72 @@ On the downside we would need to prepare 63 variants of the source image. And th
 ?dppx query option and why not client hints
 
 ## Conclusion
+
+
+## Examples
+
+## Using DPI descriptor
+
+```html
+<img srcset="
+    cheetah.jpg,
+    cheetah-2x.jpg 2x,
+    cheetah-3x.jpg 3x,
+"
+    src="cheetah.jpg"
+    alt="Cheetah"/>
+```
+
+{{< rawhtml >}}
+<img srcset="
+    cheetah.jpg,
+    cheetah-2x.jpg 2x,
+    cheetah-3x.jpg 3x,
+"
+    src="cheetah.jpg"
+    alt="Cheetah"/>
+{{< /rawhtml >}}
+
+## Using width descriptors
+
+```html
+<img srcset="
+        cheetah-200w.jpg 200w,
+        cheetah-400w.jpg 400w,
+        cheetah-400w.jpg 500w,
+        cheetah-600w.jpg 600w,
+        cheetah-800w.jpg 800w,
+        cheetah-800w.jpg 1000w,
+        cheetah-1200w.jpg 1200w,
+    "
+     src="cheetah.jpg"
+     sizes="
+        (max-width: 768px) 100vw,
+        400px
+    "
+     alt="Cheetah"
+/>
+```
+
+{{< rawhtml >}}
+<img srcset="
+        cheetah-200w.jpg 200w,
+        cheetah-400w.jpg 400w,
+        cheetah-400w.jpg 500w,
+        cheetah-600w.jpg 600w,
+        cheetah-800w.jpg 800w,
+        cheetah-800w.jpg 1000w,
+        cheetah-1200w.jpg 1200w,
+    "
+     src="cheetah.jpg"
+     sizes="
+        (max-width: 768px) 100vw,
+        400px
+    "
+     alt="Cheetah"
+    onload="document.getElementById('width-descriptor-src').innerHTML=event.target.currentSrc.substring(event.target.currentSrc.lastIndexOf('/') + 1)"
+/>
+<p>
+    Source: <span id="width-descriptor-src"></span>
+</p>
+{{< /rawhtml >}}
