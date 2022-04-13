@@ -67,17 +67,14 @@ In that case we would need to go with width descriptor in `srcset` attribute:
 <img srcset="
         cheetah-200w.jpg 200w,
         cheetah-400w.jpg 400w,
-        cheetah-400w.jpg 500w,
+        cheetah-500w.jpg 500w,
         cheetah-600w.jpg 600w,
         cheetah-800w.jpg 800w,
-        cheetah-800w.jpg 1000w,
+        cheetah-1000w.jpg 1000w,
         cheetah-1200w.jpg 1200w,
     "
      src="cheetah.jpg"
-     sizes="
-        (max-width: 768px) 100vw,
-        400px
-    "
+     sizes="(max-width: 768px) 100vw, 400px"
      alt="Cheetah"/>
 ```
 
@@ -91,11 +88,11 @@ due to the screen DPI equals 3. If we change the device to IPhone SE then the br
 <video src="devices-dpi.webm" autoplay mute controls></video>
 {{< /rawhtml >}}
 
-Now, let's have a look at sizes of the image for 1, 2, and 3 DPI:
+Now, let's have a look at sizes of the images loaded for 1, 2, and 3 DPI:
 
-* 1x - 42 Kb
-* 2x - 141 Kb
-* 3x - 298 Kb
+* cheetah-400w.jpg - 42 Kb
+* cheetah-800w.jpg - 141 Kb
+* cheetah-1200w.jpg - 298 Kb
 
 So, when we load an image on the display with higher DPI the size of the image will grow as well. This become critical
 when we understand that high DPI display are often mobile devices where network might be not as good as a home broadband.
@@ -113,9 +110,9 @@ Therefore, we can use more aggressive compression for displays with higher DPIs.
 
 So, let's encode our 3x variant with lower quality:
 
-TODO:
+Now, 3x version is 154KbKb which is still bigger than 1x but twice as smaller than original version.
 
-Now, 3x version is 350Kb which is still bigger than 1x but 30% lighter than original version.
+
 
 Now we know what we'd like to achieve:
 
@@ -134,40 +131,42 @@ that supported everywhere. So, let's have a look how we can combine that one wit
       <source
           media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
           srcset="
-                /cdn/http://webserver/img/parrot.jpg/resize?size=300&dppx=2 300w,
-                /cdn/http://webserver/img/parrot.jpg/resize?size=400&dppx=2 400w,
-                /cdn/http://webserver/img/parrot.jpg/resize?size=500&dppx=2 500w,
-                /cdn/http://webserver/img/parrot.jpg/resize?size=600&dppx=2 600w,
-                /cdn/http://webserver/img/parrot.jpg/resize?size=1200&dppx=2 1200w,
-                /cdn/http://webserver/img/parrot.jpg/resize?size=1800&dppx=2 1800w,
-                /cdn/http://webserver/img/parrot.jpg/optimise?dppx=2 2400w"
-          sizes="(min-width: 768px) 600px, 100vw"
+            cheetah-200w.jpg 200w,
+            cheetah-400w.jpg 400w,
+            cheetah-500w.jpg 500w,
+            cheetah-600w.jpg 600w,
+            cheetah-800w.jpg 800w,
+            cheetah-1000w.jpg 1000w,
+            cheetah-1200w.jpg 1200w
+          "
+          sizes="(max-width: 768px) 100vw, 400px"
       >
       <source
           media="(-webkit-min-device-pixel-ratio: 3)"
           srcset="
-                /cdn/http://webserver/img/parrot.jpg/resize?size=300&dppx=3 300w,
-                /cdn/http://webserver/img/parrot.jpg/resize?size=400&dppx=3 400w,
-                /cdn/http://webserver/img/parrot.jpg/resize?size=500&dppx=3 500w,
-                /cdn/http://webserver/img/parrot.jpg/resize?size=600&dppx=3 600w,
-                /cdn/http://webserver/img/parrot.jpg/resize?size=1200&dppx=3 1200w,
-                /cdn/http://webserver/img/parrot.jpg/resize?size=1800&dppx=3 1800w,
-                /cdn/http://webserver/img/parrot.jpg/optimise?dppx=3 2400w"
-          sizes="(min-width: 768px) 600px, 100vw"
+            cheetah-200w.jpg 200w,
+            cheetah-400w.jpg 400w,
+            cheetah-500w.jpg 500w,
+            cheetah-600w.jpg 600w,
+            cheetah-800w.jpg 800w,
+            cheetah-1000w.jpg 1000w,
+            cheetah-1200w.jpg 1200w
+          "
+          sizes="(max-width: 768px) 100vw, 400px"
       >
       <img
           src="/cdn/http://webserver/img/parrot.jpg/optimise"
           srcset="
-                /cdn/http://webserver/img/parrot.jpg/resize?size=300 300w,
-                /cdn/http://webserver/img/parrot.jpg/resize?size=400 400w,
-                /cdn/http://webserver/img/parrot.jpg/resize?size=500 500w,
-                /cdn/http://webserver/img/parrot.jpg/resize?size=600 600w,
-                /cdn/http://webserver/img/parrot.jpg/resize?size=1200 1200w,
-                /cdn/http://webserver/img/parrot.jpg/resize?size=1800 1800w,
-                /cdn/http://webserver/img/parrot.jpg/optimise 2400w"
-          alt="image"
-          sizes="(min-width: 768px) 600px, 100vw"
-          class="mobile-100"
+            cheetah-200w.jpg 200w,
+            cheetah-400w.jpg 400w,
+            cheetah-500w.jpg 500w,
+            cheetah-600w.jpg 600w,
+            cheetah-800w.jpg 800w,
+            cheetah-1000w.jpg 1000w,
+            cheetah-1200w.jpg 1200w
+          "
+          alt="Cheetah"
+          sizes="sizes="(max-width: 768px) 100vw, 400px""
       >
     </picture>
 ```
@@ -180,13 +179,11 @@ However, I wouldn't recommend using this example in the production because it's 
 TODO: <picture tag with type="image/jpeg" type="image/avif"
 ```
 
-And here it is! The snippet that will give us the best mix of quality and performance. It's also worth mentioining that 
-it's 0 (zero!) javascript involved. 
+And here it is! The snippet that will give us the best mix of quality and performance. It's also worth mentioning that it's 0 (zero!) javascript involved. 
 
 On the downside we would need to prepare 63 variants of the source image. And that's where Image CDN can help you!
 
 ## New ?dppx option in Pixboost API
-
 
 
 ?dppx query option and why not client hints
@@ -196,7 +193,23 @@ On the downside we would need to prepare 63 variants of the source image. And th
 
 ## Examples
 
-## Using DPI descriptor
+{{< rawhtml >}}
+<script type="text/javascript">
+function showImageSource(event, outputId, includeFolder) {
+    const currentSrc = event.target.currentSrc;
+    const el = document.getElementById(outputId);
+    
+    if (includeFolder) {
+        const pathElements = currentSrc.split('/');
+        el.innerHTML = pathElements[pathElements.length - 2] + '/' + pathElements[pathElements.length - 1];
+    } else {
+        el.innerHTML = currentSrc.substring(currentSrc.lastIndexOf('/') + 1);
+    }
+}
+</script>
+{{< /rawhtml >}}
+
+### Using DPI descriptor
 
 ```html
 <img srcset="
@@ -215,10 +228,17 @@ On the downside we would need to prepare 63 variants of the source image. And th
     cheetah-3x.jpg 3x,
 "
     src="cheetah.jpg"
-    alt="Cheetah"/>
+    alt="Cheetah"
+    onload="showImageSource(event, 'example-dpi-descriptor')"
+/>
+
+<p>
+    Source: <span id="example-dpi-descriptor"></span>
+</p>
+
 {{< /rawhtml >}}
 
-## Using width descriptors
+### Using width descriptors
 
 ```html
 <img srcset="
@@ -255,9 +275,107 @@ On the downside we would need to prepare 63 variants of the source image. And th
         400px
     "
      alt="Cheetah"
-    onload="document.getElementById('width-descriptor-src').innerHTML=event.target.currentSrc.substring(event.target.currentSrc.lastIndexOf('/') + 1)"
+    onload="showImageSource(event, 'example-width-descriptor')"
 />
 <p>
-    Source: <span id="width-descriptor-src"></span>
+    Source: <span id="example-width-descriptor"></span>
 </p>
 {{< /rawhtml >}}
+
+### Picture tag
+
+```html
+
+<picture>
+  <source
+      media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
+      srcset="
+            q50/cheetah-200w.jpg 200w,
+            q50/cheetah-400w.jpg 400w,
+            q50/cheetah-500w.jpg 500w,
+            q50/cheetah-600w.jpg 600w,
+            q50/cheetah-800w.jpg 800w,
+            q50/cheetah-1000w.jpg 1000w,
+            q50/cheetah-1200w.jpg 1200w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 3)"
+      srcset="
+            q40/cheetah-200w.jpg 200w,
+            q40/cheetah-400w.jpg 400w,
+            q40/cheetah-500w.jpg 500w,
+            q40/cheetah-600w.jpg 600w,
+            q40/cheetah-800w.jpg 800w,
+            q40/cheetah-1000w.jpg 1000w,
+            q40/cheetah-1200w.jpg 1200w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <img
+      src="cheetah.jpg"
+      srcset="
+            cheetah-200w.jpg 200w,
+            cheetah-400w.jpg 400w,
+            cheetah-500w.jpg 500w,
+            cheetah-600w.jpg 600w,
+            cheetah-800w.jpg 800w,
+            cheetah-1000w.jpg 1000w,
+            cheetah-1200w.jpg 1200w
+          "
+      alt="Cheetah"
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+</picture>
+```
+
+{{< rawhtml >}}
+<picture>
+  <source
+      media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
+      srcset="
+            q50/cheetah-200w.jpg 200w,
+            q50/cheetah-400w.jpg 400w,
+            q50/cheetah-500w.jpg 500w,
+            q50/cheetah-600w.jpg 600w,
+            q50/cheetah-800w.jpg 800w,
+            q50/cheetah-1000w.jpg 1000w,
+            q50/cheetah-1200w.jpg 1200w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 3)"
+      srcset="
+            q40/cheetah-200w.jpg 200w,
+            q40/cheetah-400w.jpg 400w,
+            q40/cheetah-500w.jpg 500w,
+            q40/cheetah-600w.jpg 600w,
+            q40/cheetah-800w.jpg 800w,
+            q40/cheetah-1000w.jpg 1000w,
+            q40/cheetah-1200w.jpg 1200w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <img
+      src="cheetah.jpg"
+      srcset="
+            cheetah-200w.jpg 200w,
+            cheetah-400w.jpg 400w,
+            cheetah-500w.jpg 500w,
+            cheetah-600w.jpg 600w,
+            cheetah-800w.jpg 800w,
+            cheetah-1000w.jpg 1000w,
+            cheetah-1200w.jpg 1200w
+          "
+      alt="Cheetah"
+      sizes="(max-width: 768px) 100vw, 400px"
+      onload="showImageSource(event, 'example-picture', true)"
+  >
+</picture>
+
+<p>
+    Source: <span id="example-picture"></span>
+</p>
+{{< rawhtml >}}
