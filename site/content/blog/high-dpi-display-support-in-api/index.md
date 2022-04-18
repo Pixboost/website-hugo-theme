@@ -175,13 +175,118 @@ Now, that looks better, as we load lower quality image for screens with DPI 2 to
 
 However, I wouldn't recommend using this example in the production because it's not leveraging [the next generation](https://pixboost.com/blog/next-gen-avif-format/) like WebP and AVIF.
 
-```
-TODO: <picture tag with type="image/jpeg" type="image/avif"
+To add next-gen formats to the mix we do need to use `type` attribute of `<source>` tag and add a separate source for every format. It's important to remember that first source that browser can load will be used, so we should start with AVIF, then goes Webp and JPEG should be last.
+
+```html
+<picture>
+  <source
+      media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
+      type="image/avif"
+      srcset="
+            q50-avif/cheetah-400w.avif 400w,
+            q50-avif/cheetah-500w.avif 500w,
+            q50-avif/cheetah-600w.avif 600w,
+            q50-avif/cheetah-800w.avif 800w,
+            q50-avif/cheetah-1000w.avif 1000w,
+            q50-avif/cheetah-1200w.avif 1200w,
+            q50-avif/cheetah-1500w.avif 1500w,
+            q50-avif/cheetah-1800w.avif 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
+      type="image/webp"
+      srcset="
+            q50-webp/cheetah-400w.webp 400w,
+            q50-webp/cheetah-500w.webp 500w,
+            q50-webp/cheetah-600w.webp 600w,
+            q50-webp/cheetah-800w.webp 800w,
+            q50-webp/cheetah-1000w.webp 1000w,
+            q50-webp/cheetah-1200w.webp 1200w,
+            q50-webp/cheetah-1500w.webp 1500w,
+            q50-webp/cheetah-1800w.webp 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
+      srcset="
+            q50/cheetah-400w.jpg 400w,
+            q50/cheetah-500w.jpg 500w,
+            q50/cheetah-600w.jpg 600w,
+            q50/cheetah-800w.jpg 800w,
+            q50/cheetah-1000w.jpg 1000w,
+            q50/cheetah-1200w.jpg 1200w,
+            q50/cheetah-1500w.jpg 1500w,
+            q50/cheetah-1800w.jpg 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 3)"
+      type="image/avif"
+      srcset="
+            q40-avif/cheetah-400w.avif 400w,
+            q40-avif/cheetah-500w.avif 500w,
+            q40-avif/cheetah-600w.avif 600w,
+            q40-avif/cheetah-800w.avif 800w,
+            q40-avif/cheetah-1000w.avif 1000w,
+            q40-avif/cheetah-1200w.avif 1200w,
+            q40-avif/cheetah-1500w.avif 1500w,
+            q40-avif/cheetah-1800w.avif 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 3)"
+      type="image/webp"
+      srcset="
+            q40-webp/cheetah-400w.webp 400w,
+            q40-webp/cheetah-500w.webp 500w,
+            q40-webp/cheetah-600w.webp 600w,
+            q40-webp/cheetah-800w.webp 800w,
+            q40-webp/cheetah-1000w.webp 1000w,
+            q40-webp/cheetah-1200w.webp 1200w,
+            q40-webp/cheetah-1500w.webp 1500w,
+            q40-webp/cheetah-1800w.webp 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 3)"
+      srcset="
+            q40/cheetah-400w.jpg 400w,
+            q40/cheetah-500w.jpg 500w,
+            q40/cheetah-600w.jpg 600w,
+            q40/cheetah-800w.jpg 800w,
+            q40/cheetah-1000w.jpg 1000w,
+            q40/cheetah-1200w.jpg 1200w,
+            q40/cheetah-1500w.jpg 1500w,
+            q40/cheetah-1800w.jpg 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <img
+      src="cheetah.jpg"
+      srcset="
+            cheetah-400w.jpg 400w,
+            cheetah-500w.jpg 500w,
+            cheetah-600w.jpg 600w,
+            cheetah-800w.jpg 800w,
+            cheetah-1000w.jpg 1000w,
+            cheetah-1200w.jpg 1500w,
+            cheetah-1200w.jpg 1800w
+          "
+      alt="Cheetah"
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+</picture>
 ```
 
 And here it is! The snippet that will give us the best mix of quality and performance. It's also worth mentioning that it's 0 (zero!) javascript involved. 
 
-On the downside we would need to prepare 63 variants of the source image. And that's where Image CDN can help you!
+On the downside we would need to prepare 48 variants of the source image. And that's where Image CDN can help you!
 
 ## New ?dppx option in Pixboost API
 
@@ -246,7 +351,7 @@ function showImageSource(event, outputId, includeFolder) {
         cheetah-500w.jpg 500w,
         cheetah-600w.jpg 600w,
         cheetah-800w.jpg 800w,
-        cheetah-800w.jpg 1000w,
+        cheetah-1000w.jpg 1000w,
         cheetah-1200w.jpg 1200w,
         cheetah-1500w.jpg 1500w,
         cheetah-1800w.jpg 1800w,
@@ -266,10 +371,10 @@ function showImageSource(event, outputId, includeFolder) {
         cheetah-500w.jpg 500w,
         cheetah-600w.jpg 600w,
         cheetah-800w.jpg 800w,
-        cheetah-800w.jpg 1000w,
+        cheetah-1000w.jpg 1000w,
         cheetah-1200w.jpg 1200w,
         cheetah-1500w.jpg 1500w,
-        cheetah-1800w.jpg 1800w,
+        cheetah-1800w.jpg 1800w
     "
      src="cheetah.jpg"
      sizes="
@@ -287,12 +392,10 @@ function showImageSource(event, outputId, includeFolder) {
 ### Picture tag
 
 ```html
-
 <picture>
   <source
       media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
       srcset="
-            q50/cheetah-200w.jpg 200w,
             q50/cheetah-400w.jpg 400w,
             q50/cheetah-500w.jpg 500w,
             q50/cheetah-600w.jpg 600w,
@@ -307,26 +410,28 @@ function showImageSource(event, outputId, includeFolder) {
   <source
       media="(-webkit-min-device-pixel-ratio: 3)"
       srcset="
-            q40/cheetah-200w.jpg 200w,
             q40/cheetah-400w.jpg 400w,
             q40/cheetah-500w.jpg 500w,
             q40/cheetah-600w.jpg 600w,
             q40/cheetah-800w.jpg 800w,
             q40/cheetah-1000w.jpg 1000w,
-            q40/cheetah-1200w.jpg 1200w
+            q40/cheetah-1200w.jpg 1200w,
+            q40/cheetah-1500w.jpg 1500w,
+            q40/cheetah-1800w.jpg 1800w
           "
       sizes="(max-width: 768px) 100vw, 400px"
   >
   <img
       src="cheetah.jpg"
       srcset="
-            cheetah-200w.jpg 200w,
             cheetah-400w.jpg 400w,
             cheetah-500w.jpg 500w,
             cheetah-600w.jpg 600w,
             cheetah-800w.jpg 800w,
             cheetah-1000w.jpg 1000w,
-            cheetah-1200w.jpg 1200w
+            cheetah-1200w.jpg 1200w,
+            cheetah-1500w.jpg 1500w,
+            cheetah-1800w.jpg 1800w
           "
       alt="Cheetah"
       sizes="(max-width: 768px) 100vw, 400px"
@@ -339,39 +444,42 @@ function showImageSource(event, outputId, includeFolder) {
   <source
       media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
       srcset="
-            q50/cheetah-200w.jpg 300w,
             q50/cheetah-400w.jpg 400w,
             q50/cheetah-500w.jpg 500w,
             q50/cheetah-600w.jpg 600w,
             q50/cheetah-800w.jpg 800w,
             q50/cheetah-1000w.jpg 1000w,
-            q50/cheetah-1200w.jpg 1200w
+            q50/cheetah-1200w.jpg 1200w,
+            q50/cheetah-1500w.jpg 1500w,
+            q50/cheetah-1800w.jpg 1800w
           "
       sizes="(max-width: 768px) 100vw, 400px"
   >
   <source
       media="(-webkit-min-device-pixel-ratio: 3)"
       srcset="
-            q40/cheetah-200w.jpg 200w,
             q40/cheetah-400w.jpg 400w,
             q40/cheetah-500w.jpg 500w,
             q40/cheetah-600w.jpg 600w,
             q40/cheetah-800w.jpg 800w,
             q40/cheetah-1000w.jpg 1000w,
-            q40/cheetah-1200w.jpg 1200w
+            q40/cheetah-1200w.jpg 1200w,
+            q40/cheetah-1500w.jpg 1500w,
+            q40/cheetah-1800w.jpg 1800w
           "
       sizes="(max-width: 768px) 100vw, 400px"
   >
   <img
       src="cheetah.jpg"
       srcset="
-            cheetah-200w.jpg 200w,
             cheetah-400w.jpg 400w,
             cheetah-500w.jpg 500w,
             cheetah-600w.jpg 600w,
             cheetah-800w.jpg 800w,
             cheetah-1000w.jpg 1000w,
-            cheetah-1200w.jpg 1200w
+            cheetah-1200w.jpg 1200w,
+            cheetah-1500w.jpg 1500w,
+            cheetah-1800w.jpg 1800w
           "
       alt="Cheetah"
       sizes="(max-width: 768px) 100vw, 400px"
@@ -382,7 +490,7 @@ function showImageSource(event, outputId, includeFolder) {
 <p>
     Source: <span id="example-picture"></span>
 </p>
-{{< rawhtml >}}
+{{< /rawhtml >}}
 
 ### Picture with next-gen formats
 
@@ -390,69 +498,45 @@ function showImageSource(event, outputId, includeFolder) {
 <picture>
   <source
       media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
-      srcset="
-            q50/cheetah-200w.jpg 200w,
-            q50/cheetah-400w.jpg 400w,
-            q50/cheetah-500w.jpg 500w,
-            q50/cheetah-600w.jpg 600w,
-            q50/cheetah-800w.jpg 800w,
-            q50/cheetah-1000w.jpg 1000w,
-            q50/cheetah-1200w.jpg 1200w
-          "
-      sizes="(max-width: 768px) 100vw, 400px"
-  >
-  <source
-      media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
-      type="image/webp"
-      srcset="
-            q50-wepb/cheetah-200w.webp 200w,
-            q50-wepb/cheetah-400w.webp 400w,
-            q50-wepb/cheetah-500w.webp 500w,
-            q50-wepb/cheetah-600w.webp 600w,
-            q50-wepb/cheetah-800w.webp 800w,
-            q50-wepb/cheetah-1000w.webp 1000w,
-            q50-wepb/cheetah-1200w.webp 1200w
-          "
-      sizes="(max-width: 768px) 100vw, 400px"
-  >
-  <source
-      media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
       type="image/avif"
       srcset="
-            q50-avif/cheetah-200w.avif 200w,
             q50-avif/cheetah-400w.avif 400w,
             q50-avif/cheetah-500w.avif 500w,
             q50-avif/cheetah-600w.avif 600w,
             q50-avif/cheetah-800w.avif 800w,
             q50-avif/cheetah-1000w.avif 1000w,
-            q50-avif/cheetah-1200w.avif 1200w
+            q50-avif/cheetah-1200w.avif 1200w,
+            q50-avif/cheetah-1500w.avif 1500w,
+            q50-avif/cheetah-1800w.avif 1800w
           "
       sizes="(max-width: 768px) 100vw, 400px"
   >
   <source
-      media="(-webkit-min-device-pixel-ratio: 3)"
-      srcset="
-            q40/cheetah-200w.jpg 200w,
-            q40/cheetah-400w.jpg 400w,
-            q40/cheetah-500w.jpg 500w,
-            q40/cheetah-600w.jpg 600w,
-            q40/cheetah-800w.jpg 800w,
-            q40/cheetah-1000w.jpg 1000w,
-            q40/cheetah-1200w.jpg 1200w
-          "
-      sizes="(max-width: 768px) 100vw, 400px"
-  >
-  <source
-      media="(-webkit-min-device-pixel-ratio: 3)"
+      media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
       type="image/webp"
       srcset="
-            q40-wepb/cheetah-200w.webp 200w,
-            q40-wepb/cheetah-400w.webp 400w,
-            q40-wepb/cheetah-500w.webp 500w,
-            q40-wepb/cheetah-600w.webp 600w,
-            q40-wepb/cheetah-800w.webp 800w,
-            q40-wepb/cheetah-1000w.webp 1000w,
-            q40-wepb/cheetah-1200w.webp 1200w
+            q50-webp/cheetah-400w.webp 400w,
+            q50-webp/cheetah-500w.webp 500w,
+            q50-webp/cheetah-600w.webp 600w,
+            q50-webp/cheetah-800w.webp 800w,
+            q50-webp/cheetah-1000w.webp 1000w,
+            q50-webp/cheetah-1200w.webp 1200w,
+            q50-webp/cheetah-1500w.webp 1500w,
+            q50-webp/cheetah-1800w.webp 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
+      srcset="
+            q50/cheetah-400w.jpg 400w,
+            q50/cheetah-500w.jpg 500w,
+            q50/cheetah-600w.jpg 600w,
+            q50/cheetah-800w.jpg 800w,
+            q50/cheetah-1000w.jpg 1000w,
+            q50/cheetah-1200w.jpg 1200w,
+            q50/cheetah-1500w.jpg 1500w,
+            q50/cheetah-1800w.jpg 1800w
           "
       sizes="(max-width: 768px) 100vw, 400px"
   >
@@ -460,32 +544,176 @@ function showImageSource(event, outputId, includeFolder) {
       media="(-webkit-min-device-pixel-ratio: 3)"
       type="image/avif"
       srcset="
-            q40-avif/cheetah-200w.avif 200w,
             q40-avif/cheetah-400w.avif 400w,
             q40-avif/cheetah-500w.avif 500w,
             q40-avif/cheetah-600w.avif 600w,
             q40-avif/cheetah-800w.avif 800w,
             q40-avif/cheetah-1000w.avif 1000w,
-            q40-avif/cheetah-1200w.avif 1200w
+            q40-avif/cheetah-1200w.avif 1200w,
+            q40-avif/cheetah-1500w.avif 1500w,
+            q40-avif/cheetah-1800w.avif 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 3)"
+      type="image/webp"
+      srcset="
+            q40-webp/cheetah-400w.webp 400w,
+            q40-webp/cheetah-500w.webp 500w,
+            q40-webp/cheetah-600w.webp 600w,
+            q40-webp/cheetah-800w.webp 800w,
+            q40-webp/cheetah-1000w.webp 1000w,
+            q40-webp/cheetah-1200w.webp 1200w,
+            q40-webp/cheetah-1500w.webp 1500w,
+            q40-webp/cheetah-1800w.webp 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 3)"
+      srcset="
+            q40/cheetah-400w.jpg 400w,
+            q40/cheetah-500w.jpg 500w,
+            q40/cheetah-600w.jpg 600w,
+            q40/cheetah-800w.jpg 800w,
+            q40/cheetah-1000w.jpg 1000w,
+            q40/cheetah-1200w.jpg 1200w,
+            q40/cheetah-1500w.jpg 1500w,
+            q40/cheetah-1800w.jpg 1800w
           "
       sizes="(max-width: 768px) 100vw, 400px"
   >
   <img
       src="cheetah.jpg"
       srcset="
-            cheetah-200w.jpg 200w,
             cheetah-400w.jpg 400w,
             cheetah-500w.jpg 500w,
             cheetah-600w.jpg 600w,
             cheetah-800w.jpg 800w,
             cheetah-1000w.jpg 1000w,
-            cheetah-1200w.jpg 1200w
+            cheetah-1200w.jpg 1500w,
+            cheetah-1200w.jpg 1800w
           "
       alt="Cheetah"
       sizes="(max-width: 768px) 100vw, 400px"
   >
 </picture>
 ```
+
+{{< rawhtml >}}
+<picture>
+  <source
+      media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
+      type="image/avif"
+      srcset="
+            q50-avif/cheetah-400w.avif 400w,
+            q50-avif/cheetah-500w.avif 500w,
+            q50-avif/cheetah-600w.avif 600w,
+            q50-avif/cheetah-800w.avif 800w,
+            q50-avif/cheetah-1000w.avif 1000w,
+            q50-avif/cheetah-1200w.avif 1200w,
+            q50-avif/cheetah-1500w.avif 1500w,
+            q50-avif/cheetah-1800w.avif 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
+      type="image/webp"
+      srcset="
+            q50-webp/cheetah-400w.webp 400w,
+            q50-webp/cheetah-500w.webp 500w,
+            q50-webp/cheetah-600w.webp 600w,
+            q50-webp/cheetah-800w.webp 800w,
+            q50-webp/cheetah-1000w.webp 1000w,
+            q50-webp/cheetah-1200w.webp 1200w,
+            q50-webp/cheetah-1500w.webp 1500w,
+            q50-webp/cheetah-1800w.webp 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
+      srcset="
+            q50/cheetah-400w.jpg 400w,
+            q50/cheetah-500w.jpg 500w,
+            q50/cheetah-600w.jpg 600w,
+            q50/cheetah-800w.jpg 800w,
+            q50/cheetah-1000w.jpg 1000w,
+            q50/cheetah-1200w.jpg 1200w,
+            q50/cheetah-1500w.jpg 1500w,
+            q50/cheetah-1800w.jpg 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+
+  <source
+      media="(-webkit-min-device-pixel-ratio: 3)"
+      type="image/avif"
+      srcset="
+            q40-avif/cheetah-400w.avif 400w,
+            q40-avif/cheetah-500w.avif 500w,
+            q40-avif/cheetah-600w.avif 600w,
+            q40-avif/cheetah-800w.avif 800w,
+            q40-avif/cheetah-1000w.avif 1000w,
+            q40-avif/cheetah-1200w.avif 1200w,
+            q40-avif/cheetah-1500w.avif 1500w,
+            q40-avif/cheetah-1800w.avif 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 3)"
+      type="image/webp"
+      srcset="
+            q40-webp/cheetah-400w.webp 400w,
+            q40-webp/cheetah-500w.webp 500w,
+            q40-webp/cheetah-600w.webp 600w,
+            q40-webp/cheetah-800w.webp 800w,
+            q40-webp/cheetah-1000w.webp 1000w,
+            q40-webp/cheetah-1200w.webp 1200w,
+            q40-webp/cheetah-1500w.webp 1500w,
+            q40-webp/cheetah-1800w.webp 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 3)"
+      srcset="
+            q40/cheetah-400w.jpg 400w,
+            q40/cheetah-500w.jpg 500w,
+            q40/cheetah-600w.jpg 600w,
+            q40/cheetah-800w.jpg 800w,
+            q40/cheetah-1000w.jpg 1000w,
+            q40/cheetah-1200w.jpg 1200w,
+            q40/cheetah-1500w.jpg 1500w,
+            q40/cheetah-1800w.jpg 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+
+  <img
+      src="cheetah.jpg"
+      srcset="
+            cheetah-400w.jpg 400w,
+            cheetah-500w.jpg 500w,
+            cheetah-600w.jpg 600w,
+            cheetah-800w.jpg 800w,
+            cheetah-1000w.jpg 1000w,
+            cheetah-1200w.jpg 1500w,
+            cheetah-1200w.jpg 1800w
+          "
+      alt="Cheetah"
+      onload="showImageSource(event, 'example-picture-next-gen', true)"
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+</picture>
+
+<p>
+    Source: <span id="example-picture-next-gen"></span>
+</p>
+{{< /rawhtml >}}
 
 ### Commands to resize
 
