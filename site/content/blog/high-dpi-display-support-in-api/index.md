@@ -288,8 +288,19 @@ And here it is! The snippet that will give us the best mix of quality and perfor
 
 On the downside we would need to prepare 48 variants of the source image. And that's where Image CDN can help you!
 
-## New ?dppx option in Pixboost API
+## Reducing number of source images using Image CDN
 
+Now, let's see how Pixboost can help us to produce all the variants using Image Processing API. To start you would need to create a free account at [pixboost.com](TODO), once you login first time you'd need to add a new image source like on the video below.
+
+{{< rawhtml >}}
+<video src="add-source-domain.webm" autoplay mute controls></video>
+{{< /rawhtml >}}
+
+And now you can use `/resize` API to produce all needed sizes and next-generation formats.
+
+
+
+## New ?dppx option in Pixboost API
 
 ?dppx query option and why not client hints
 
@@ -714,6 +725,53 @@ function showImageSource(event, outputId, includeFolder) {
     Source: <span id="example-picture-next-gen"></span>
 </p>
 {{< /rawhtml >}}
+
+### Responsive `<img>` using pixboost 
+
+```html
+<img srcset="
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTI0MjkwMTgzMA__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTI0MjkwMTgzMA__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTI0MjkwMTgzMA__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTI0MjkwMTgzMA__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTI0MjkwMTgzMA__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTI0MjkwMTgzMA__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTI0MjkwMTgzMA__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTI0MjkwMTgzMA__ 1800w
+    "
+     src="cheetah.jpg"
+     sizes="
+        (max-width: 768px) 100vw,
+        400px
+    "
+     alt="Cheetah"
+/>
+```
+
+{{< rawhtml >}}
+<img srcset="
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTI0MjkwMTgzMA__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTI0MjkwMTgzMA__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTI0MjkwMTgzMA__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTI0MjkwMTgzMA__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTI0MjkwMTgzMA__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTI0MjkwMTgzMA__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTI0MjkwMTgzMA__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTI0MjkwMTgzMA__ 1800w
+    "
+     src="cheetah.jpg"
+     sizes="
+        (max-width: 768px) 100vw,
+        400px
+    "
+     alt="Cheetah"
+    onload="showImageSource(event, 'example-pixboost-img')"
+/>
+<p>
+    Source: <span id="example-pixboost-img"></span>
+</p>
+{{< /rawhtml >}}
+
 
 ### Commands to resize
 
