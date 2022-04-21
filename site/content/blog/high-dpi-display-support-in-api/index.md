@@ -65,21 +65,28 @@ In that case we would need to go with width descriptor in `srcset` attribute:
 
 ```html
 <img srcset="
-        cheetah-200w.jpg 200w,
         cheetah-400w.jpg 400w,
         cheetah-500w.jpg 500w,
         cheetah-600w.jpg 600w,
         cheetah-800w.jpg 800w,
         cheetah-1000w.jpg 1000w,
         cheetah-1200w.jpg 1200w,
+        cheetah-1500w.jpg 1500w,
+        cheetah-1800w.jpg 1800w,
     "
      src="cheetah.jpg"
-     sizes="(max-width: 768px) 100vw, 400px"
-     alt="Cheetah"/>
+     sizes="
+        (max-width: 768px) 100vw,
+        400px
+    "
+     alt="Cheetah"
+/>
 ```
 
 Note how many sizes we included - that's because mobile devices are different not only in size but in DPI as well. 
 So, for 400 pixels wide screen we would need to have 3 images - 400, 800, 1200 pixels. A browsers will do the magic and based on the visible image size, display characteristics, and other factors will pick the most appropriate image.
+
+TODO: How to pick sizes
 
 If we open Chrome web browser with Developer console and select Samsung IPhone 12 Pro  then we will see that the browser will load 1200 pixels version
 due to the screen DPI equals 3. If we change the device to IPhone SE then the browser will prefer 800 pixels version.
@@ -127,48 +134,51 @@ that could be used for that. But, nothing is easy and Safari still doesn't suppo
 that supported everywhere. So, let's have a look how we can combine that one with `srcset` attribute:
 
 ```html
-    <picture>
-      <source
-          media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
-          srcset="
-            cheetah-200w.jpg 200w,
+<picture>
+  <source
+      media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
+      srcset="
+            q50/cheetah-400w.jpg 400w,
+            q50/cheetah-500w.jpg 500w,
+            q50/cheetah-600w.jpg 600w,
+            q50/cheetah-800w.jpg 800w,
+            q50/cheetah-1000w.jpg 1000w,
+            q50/cheetah-1200w.jpg 1200w,
+            q50/cheetah-1500w.jpg 1500w,
+            q50/cheetah-1800w.jpg 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 3)"
+      srcset="
+            q40/cheetah-400w.jpg 400w,
+            q40/cheetah-500w.jpg 500w,
+            q40/cheetah-600w.jpg 600w,
+            q40/cheetah-800w.jpg 800w,
+            q40/cheetah-1000w.jpg 1000w,
+            q40/cheetah-1200w.jpg 1200w,
+            q40/cheetah-1500w.jpg 1500w,
+            q40/cheetah-1800w.jpg 1800w
+          "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <img
+      src="cheetah.jpg"
+      srcset="
             cheetah-400w.jpg 400w,
             cheetah-500w.jpg 500w,
             cheetah-600w.jpg 600w,
             cheetah-800w.jpg 800w,
             cheetah-1000w.jpg 1000w,
-            cheetah-1200w.jpg 1200w
+            cheetah-1200w.jpg 1200w,
+            cheetah-1500w.jpg 1500w,
+            cheetah-1800w.jpg 1800w
           "
-          sizes="(max-width: 768px) 100vw, 400px"
-      >
-      <source
-          media="(-webkit-min-device-pixel-ratio: 3)"
-          srcset="
-            cheetah-200w.jpg 200w,
-            cheetah-400w.jpg 400w,
-            cheetah-500w.jpg 500w,
-            cheetah-600w.jpg 600w,
-            cheetah-800w.jpg 800w,
-            cheetah-1000w.jpg 1000w,
-            cheetah-1200w.jpg 1200w
-          "
-          sizes="(max-width: 768px) 100vw, 400px"
-      >
-      <img
-          src="/cdn/http://webserver/img/parrot.jpg/optimise"
-          srcset="
-            cheetah-200w.jpg 200w,
-            cheetah-400w.jpg 400w,
-            cheetah-500w.jpg 500w,
-            cheetah-600w.jpg 600w,
-            cheetah-800w.jpg 800w,
-            cheetah-1000w.jpg 1000w,
-            cheetah-1200w.jpg 1200w
-          "
-          alt="Cheetah"
-          sizes="sizes="(max-width: 768px) 100vw, 400px""
-      >
-    </picture>
+      alt="Cheetah"
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+</picture>
 ```
 
 Now, that looks better, as we load lower quality image for screens with DPI 2 to 3 and even lower quality from 3 onwards 
@@ -298,14 +308,109 @@ Now, let's see how Pixboost can help us to produce all the variants using Image 
 
 And now you can use `/resize` API to produce all needed sizes and next-generation formats.
 
+```html
+<img srcset="
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTI0MjkwMTgzMA__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTI0MjkwMTgzMA__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTI0MjkwMTgzMA__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTI0MjkwMTgzMA__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTI0MjkwMTgzMA__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTI0MjkwMTgzMA__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTI0MjkwMTgzMA__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTI0MjkwMTgzMA__ 1800w
+    "
+     src="cheetah.jpg"
+     sizes="
+        (max-width: 768px) 100vw,
+        400px
+    "
+     alt="Cheetah"
+/>
+```
 
+The above code will cater for different sizes and also next-generation formats by using `Accept` header. A browser will send 
+list of supported formats to the API and Pixboost will pick the best one to use.
 
-## New ?dppx option in Pixboost API
+So, now the only missing part is adding additional compression on screens with DPI `>= 2`. And we finally got to our new
+API feature - `?dppx` query parameter! 
 
-?dppx query option and why not client hints
+## Support of high DPI screens in API
+
+We introduced a new `?dppx` hint for passing screen DPI to the API, so we can do optimisations based on its value. Having
+a `?dppx` and not a direct `quality` gives us a lot of room to add additional enhancements, and we believe the end-user
+doesn't need access to those cause otherwise it becomes harder to support in the long run. The most recent example is `AVIF`
+format that has been introduced last year. We could use much higher compression with it keeping the same level of visual 
+perception. We could also use different quality and types of compression for different type of images, e.g. photos, illustrations.
+
+To introduce support of `?dppx` into our `HTML` code we still need to use `<picture>` tag with media queries, but as with
+`<img>` example we don't need to specify separate `<source>` for next-generation formats.
+
+```html
+<picture>
+  <source
+      media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
+      srcset="
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=2&auth=MTI0MjkwMTgzMA__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=2&auth=MTI0MjkwMTgzMA__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=2&auth=MTI0MjkwMTgzMA__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=2&auth=MTI0MjkwMTgzMA__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=2&auth=MTI0MjkwMTgzMA__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=2&auth=MTI0MjkwMTgzMA__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=2&auth=MTI0MjkwMTgzMA__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=2&auth=MTI0MjkwMTgzMA__ 1800w
+      "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 3)"
+      srcset="
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=3&auth=MTI0MjkwMTgzMA__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=3&auth=MTI0MjkwMTgzMA__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=3&auth=MTI0MjkwMTgzMA__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=3&auth=MTI0MjkwMTgzMA__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=3&auth=MTI0MjkwMTgzMA__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=3&auth=MTI0MjkwMTgzMA__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=3&auth=MTI0MjkwMTgzMA__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=3&auth=MTI0MjkwMTgzMA__ 1800w
+      "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <img
+      src="cheetah.jpg"
+      srcset="
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTI0MjkwMTgzMA__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTI0MjkwMTgzMA__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTI0MjkwMTgzMA__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTI0MjkwMTgzMA__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTI0MjkwMTgzMA__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTI0MjkwMTgzMA__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTI0MjkwMTgzMA__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTI0MjkwMTgzMA__ 1800w
+      "
+      alt="Cheetah"
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+</picture>
+```
+
+And now we have the perfect snippet to show responsive images on the website, hooray!!! 
+
+TODO: Client hints
 
 ## Conclusion
 
+The Web changed a lot once we could use our phones, tablets, fridges to access the Internet. To deliver images with higher 
+visual fidelity we need to support screens with DPI > 2. However, o make the Internet accessible 
+place we'd need cater for people with not-so-fast Internet and only send data they needed. 
+
+Using higher compression on High DPI screens enable us to achieve both goals!
+
+Using Image CDN gives some practical long-term benefits:
+
+* Making your processes more lightweight when storing only one source image
+* Making markup cleaner without need to add a separate source for the next-gen formats
+* Makes your image delivery future-proof with automatic support of the new formats and features 
+* 
 
 ## Examples
 
@@ -765,11 +870,115 @@ function showImageSource(event, outputId, includeFolder) {
         400px
     "
      alt="Cheetah"
-    onload="showImageSource(event, 'example-pixboost-img')"
+    onload="showImageSource(event, 'example-pixboost-img', true)"
 />
 <p>
     Source: <span id="example-pixboost-img"></span>
 </p>
+{{< /rawhtml >}}
+
+### Responsive image with DPI support using Pixboost
+
+```html
+<picture>
+  <source
+      media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
+      srcset="
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=2&auth=MTI0MjkwMTgzMA__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=2&auth=MTI0MjkwMTgzMA__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=2&auth=MTI0MjkwMTgzMA__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=2&auth=MTI0MjkwMTgzMA__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=2&auth=MTI0MjkwMTgzMA__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=2&auth=MTI0MjkwMTgzMA__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=2&auth=MTI0MjkwMTgzMA__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=2&auth=MTI0MjkwMTgzMA__ 1800w
+      "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 3)"
+      srcset="
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=3&auth=MTI0MjkwMTgzMA__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=3&auth=MTI0MjkwMTgzMA__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=3&auth=MTI0MjkwMTgzMA__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=3&auth=MTI0MjkwMTgzMA__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=3&auth=MTI0MjkwMTgzMA__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=3&auth=MTI0MjkwMTgzMA__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=3&auth=MTI0MjkwMTgzMA__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=3&auth=MTI0MjkwMTgzMA__ 1800w
+      "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <img
+      src="cheetah.jpg"
+      srcset="
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTI0MjkwMTgzMA__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTI0MjkwMTgzMA__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTI0MjkwMTgzMA__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTI0MjkwMTgzMA__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTI0MjkwMTgzMA__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTI0MjkwMTgzMA__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTI0MjkwMTgzMA__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTI0MjkwMTgzMA__ 1800w
+      "
+      alt="Cheetah"
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+</picture>
+```
+
+{{< rawhtml >}}
+<picture>
+  <source
+      media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
+      srcset="
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=2&auth=MTI0MjkwMTgzMA__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=2&auth=MTI0MjkwMTgzMA__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=2&auth=MTI0MjkwMTgzMA__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=2&auth=MTI0MjkwMTgzMA__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=2&auth=MTI0MjkwMTgzMA__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=2&auth=MTI0MjkwMTgzMA__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=2&auth=MTI0MjkwMTgzMA__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=2&auth=MTI0MjkwMTgzMA__ 1800w
+      "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <source
+      media="(-webkit-min-device-pixel-ratio: 3)"
+      srcset="
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=3&auth=MTI0MjkwMTgzMA__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=3&auth=MTI0MjkwMTgzMA__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=3&auth=MTI0MjkwMTgzMA__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=3&auth=MTI0MjkwMTgzMA__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=3&auth=MTI0MjkwMTgzMA__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=3&auth=MTI0MjkwMTgzMA__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=3&auth=MTI0MjkwMTgzMA__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=3&auth=MTI0MjkwMTgzMA__ 1800w
+      "
+      sizes="(max-width: 768px) 100vw, 400px"
+  >
+  <img
+      src="cheetah.jpg"
+      srcset="
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTI0MjkwMTgzMA__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTI0MjkwMTgzMA__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTI0MjkwMTgzMA__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTI0MjkwMTgzMA__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTI0MjkwMTgzMA__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTI0MjkwMTgzMA__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTI0MjkwMTgzMA__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTI0MjkwMTgzMA__ 1800w
+      "
+      alt="Cheetah"
+      sizes="(max-width: 768px) 100vw, 400px"
+      onload="showImageSource(event, 'example-pixboost-picture', true)"
+  >
+</picture>
+
+<p>
+    Source: <span id="example-pixboost-picture"></span>
+</p>
+
 {{< /rawhtml >}}
 
 
