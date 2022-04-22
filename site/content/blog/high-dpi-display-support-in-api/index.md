@@ -86,7 +86,11 @@ In that case we would need to go with width descriptor in `srcset` attribute:
 Note how many sizes we included - that's because mobile devices are different not only in size but in DPI as well. 
 So, for 400 pixels wide screen we would need to have 3 images - 400, 800, 1200 pixels. A browsers will do the magic and based on the visible image size, display characteristics, and other factors will pick the most appropriate image.
 
-TODO: How to pick sizes
+By the way, picking the sizes for srcset is quite a riddle. On the one hand, you could look up devices or screen sizes in your
+analytics and target directly them. For instance, IPhone 12 is 390 pixels wide, Pixel 5 - 393, IPhone SE - 375, and so on. However,
+there are couple of drawbacks in that case. Firstly, you would need to update sizes everytime new popular device released which 
+quite a bit of hustle. Secondly, having too many variants could decrease your CDN cache hit ratio, and you won't be leveraging full
+power of network edges. So, rather than going with specific devices we recommend sticking with ranges like 400, 500, 600 pixels. 
 
 If we open Chrome web browser with Developer console and select Samsung IPhone 12 Pro  then we will see that the browser will load 1200 pixels version
 due to the screen DPI equals 3. If we change the device to IPhone SE then the browser will prefer 800 pixels version.
