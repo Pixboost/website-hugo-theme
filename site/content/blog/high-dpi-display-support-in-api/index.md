@@ -9,12 +9,10 @@ v2: true
 
 ## Intro
 
-What is this blog about
-
-Over the last decade we went from having PC and mobile phone to PC in the pocket and the Internet everywhere. It gave us
-so much freedom! However, it's also gave us new problems to solve. One of them is how we present content on the different 
+Over the last decade we went from having a home PC to PC in the pocket and the Internet everywhere. It gave us
+so much freedom; and new problems to solve! One of them is how we present content on the different 
 screens. In the early days, websites would have separate versions for mobile and desktops. Then responsive design came into
-play, so we could have one codebase with adaptive layout. One of the thing that you do need to look at is how you 
+play, so we could have one codebase with adaptive layouts. One of the thing that you do need to look at is how you 
 display your images across the devices. Given you have one website, but you don't want to load a big image that used
 on the desktop into mobile device with a tiny screen. That's how we got srcset attribute on image tag and seperate 
 picture tag in HTML standard. We can now provide the same image in the different sizes and a browser will pick the right
@@ -25,7 +23,8 @@ characteristic called DPI.
 
 Throughout the article, we will use photo of this gorgeous cheetah just to remind us how quick we'd like our images to load.
 
-TODO: Insert image
+{{< full-width-image image="cheetah.jpg" alt="gorgeous cheetah" >}}
+
 Photo by <a href="https://unsplash.com/@ahmadgalal?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ahmed Galal</a> on <a href="https://unsplash.com/s/photos/cheetah?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 ## What is DPI 
@@ -36,11 +35,15 @@ and vice versa. Two most popular examples are scanners and printers. So there wa
 However, in 2010 Apple released a new IPhone 4 with "Retina" display. The main goal of that display was to make a screen closer
 to photo and remove pixelation. The image from Wikipedia below explains it better than any words
 
-TODO: add images of retina and non retina displays.
+{{< row >}}
 
-Examples from the popular devices
+{{< simple-image image="retina-display.jpg" alt="example of retina display" title="Retina display on IPhone 4">}}
 
-TODO: Maybe some more examples
+{{< simple-image image="non-retina-display.jpg" alt="example of non-retina display" title="Non-retina display on IPhone 3GS">}}
+
+{{< /row >}}
+
+TODO: More explanations here about CSS/Display pixels...
 
 ## Support of DPI in HTML
 
@@ -48,12 +51,12 @@ The two standard ways of accommodating your HTML markup for high DPI screens is 
 
 The first option is to use DPI descriptor when specifying URL:
 
-```
+```html
 <img srcset="
-    cheetah.jpg,
-    cheetah-2x.jpg 2x,
-    cheetah-3x.jpg 3x,
-"
+        cheetah.jpg,
+        cheetah-2x.jpg 2x,
+        cheetah-3x.jpg 3x,
+    "
     src="cheetah.jpg"
     alt="Cheetah"/>
 ```
@@ -78,7 +81,7 @@ In that case we would need to go with width descriptor in `srcset` attribute:
      sizes="
         (max-width: 768px) 100vw,
         400px
-    "
+     "
      alt="Cheetah"
 />
 ```

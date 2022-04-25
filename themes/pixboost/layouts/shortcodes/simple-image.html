@@ -1,6 +1,17 @@
 <div class="center">
+
+  {{ if .Get "title" }}
+  <figure>
+    <img
+        src="https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/optimise?auth=NzM5MTYwMjAy"
+    loading="lazy"
+    alt="{{.Get "alt"}}"/>
+    <figcaption>{{.Get "title"}}</figcaption>
+  </figure>
+  {{ else }}
   <img
       src="https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/optimise?auth=NzM5MTYwMjAy"
       loading="lazy"
       alt="{{.Get "alt"}}"/>
+  {{ end }}
 </div>
