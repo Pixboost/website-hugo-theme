@@ -484,6 +484,9 @@ diminish overall website speed, you can use Google PageSpeed insights and zoom i
 
 ## Examples
 
+These are the examples with code snippets we used through the article. Every image shows the source it
+loaded underneath, so you can change a device in Developer Tools and see how source of the image changes.
+
 {{< rawhtml >}}
 <script type="text/javascript">
 function showImageSource(event, outputId, includeFolder) {
