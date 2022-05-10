@@ -1,7 +1,7 @@
 ---
 title: "Optimising images for High DPI displays"
 date: 2022-05-09T19:49:31Z
-draft: true
+draft: false
 description: "In this article, we show you how to employ web standards like HTML, Image CDNs and APIs so web browsers
 can efficiently deliver the most suitable image to the end-user."
 image: optimising-images-for-high-dpi-displays.jpg
