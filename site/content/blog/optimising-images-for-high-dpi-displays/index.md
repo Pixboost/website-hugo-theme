@@ -1,14 +1,12 @@
 ---
-title: "High DPI Display Support in Web"
-date: 2022-03-15T19:49:31Z
+title: "Optimising images for High DPI displays"
+date: 2022-05-09T19:49:31Z
 draft: true
 description: "In this article, we show you how to employ web standards like HTML, Image CDNs and APIs so web browsers
 can efficiently deliver the most suitable image to the end-user."
-image: cheetah.jpg
+image: optimising-images-for-high-dpi-displays.jpg
 v2: true
 ---
-
-## Intro
 
 Over the last decade, we’ve gone from having a home PC to having a pocket PC that can access the internet everywhere. It
 came with plenty of freedom and new problems to solve. For example, we had to figure out how to present content on
@@ -482,10 +480,14 @@ some practical long-term benefits such as:
 If you would like to discover the shortfalls in your web project’s image optimization and the extent to which they
 diminish overall website speed, you can use Google PageSpeed insights and zoom in on PageDetox.
 
+## Credits
+
+The method and API design is base on [the article written by the web performance god - Jake Archibald](https://jakearchibald.com/2021/serving-sharp-images-to-high-density-screens/).
+
 ## Examples
 
 These are the examples with code snippets we used through the article. Every image shows the source it
-loaded underneath, so you can change a device in Developer Tools and see how source of the image changes.
+loaded under it, so you can change a device in the Chrome Developer Tools emulator and see how source of the image changes when you update it.
 
 {{< rawhtml >}}
 <script type="text/javascript">
