@@ -131,7 +131,7 @@ the Chrome web browser with the Developer console and select Samsung or iPhone 1
 load the 1200 pixels version because the screen DPI is 3.
 
 {{< rawhtml >}}
-<video src="devices-dpi.webm" autoplay mute controls></video>
+<video src="devices-dpi.webm" autoplay muted loop controls style="max-height: 800px;"></video>
 {{< /rawhtml >}}
 
 If we change the device to iPhone SE, the browser will opt for the 800 pixels version. On that note, let’s have a look
@@ -349,21 +349,21 @@ you’ll need to create a free account at Pixboost.com. Then, when you log in fo
 as in the video below.
 
 {{< rawhtml >}}
-<video src="add-source-domain.webm" autoplay mute controls></video>
+<video src="add-source-domain.webm" autoplay muted loop controls></video>
 {{< /rawhtml >}}
 
 Now, you can use the /resize API to produce all the needed sizes and next-generation formats.
 
 ```html
 <img srcset="
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTI0MjkwMTgzMA__ 400w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTI0MjkwMTgzMA__ 500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTI0MjkwMTgzMA__ 600w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTI0MjkwMTgzMA__ 800w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTI0MjkwMTgzMA__ 1000w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTI0MjkwMTgzMA__ 1200w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTI0MjkwMTgzMA__ 1500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTI0MjkwMTgzMA__ 1800w
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTA0ODU5NDA0NQ__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTA0ODU5NDA0NQ__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTA0ODU5NDA0NQ__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTA0ODU5NDA0NQ__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTA0ODU5NDA0NQ__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTA0ODU5NDA0NQ__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTA0ODU5NDA0NQ__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTA0ODU5NDA0NQ__ 1800w
     "
      src="cheetah.jpg"
      sizes="
@@ -397,42 +397,42 @@ like with the `<img>` example, we don’t need to specify a separate `<source>` 
   <source
       media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
       srcset="
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=2&auth=MTI0MjkwMTgzMA__ 400w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=2&auth=MTI0MjkwMTgzMA__ 500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=2&auth=MTI0MjkwMTgzMA__ 600w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=2&auth=MTI0MjkwMTgzMA__ 800w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=2&auth=MTI0MjkwMTgzMA__ 1000w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=2&auth=MTI0MjkwMTgzMA__ 1200w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=2&auth=MTI0MjkwMTgzMA__ 1500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=2&auth=MTI0MjkwMTgzMA__ 1800w
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=2&auth=MTA0ODU5NDA0NQ__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=2&auth=MTA0ODU5NDA0NQ__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=2&auth=MTA0ODU5NDA0NQ__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=2&auth=MTA0ODU5NDA0NQ__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=2&auth=MTA0ODU5NDA0NQ__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=2&auth=MTA0ODU5NDA0NQ__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=2&auth=MTA0ODU5NDA0NQ__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=2&auth=MTA0ODU5NDA0NQ__ 1800w
       "
       sizes="(max-width: 768px) 100vw, 400px"
   >
   <source
       media="(-webkit-min-device-pixel-ratio: 3)"
       srcset="
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=3&auth=MTI0MjkwMTgzMA__ 400w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=3&auth=MTI0MjkwMTgzMA__ 500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=3&auth=MTI0MjkwMTgzMA__ 600w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=3&auth=MTI0MjkwMTgzMA__ 800w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=3&auth=MTI0MjkwMTgzMA__ 1000w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=3&auth=MTI0MjkwMTgzMA__ 1200w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=3&auth=MTI0MjkwMTgzMA__ 1500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=3&auth=MTI0MjkwMTgzMA__ 1800w
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=3&auth=MTA0ODU5NDA0NQ__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=3&auth=MTA0ODU5NDA0NQ__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=3&auth=MTA0ODU5NDA0NQ__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=3&auth=MTA0ODU5NDA0NQ__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=3&auth=MTA0ODU5NDA0NQ__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=3&auth=MTA0ODU5NDA0NQ__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=3&auth=MTA0ODU5NDA0NQ__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=3&auth=MTA0ODU5NDA0NQ__ 1800w
       "
       sizes="(max-width: 768px) 100vw, 400px"
   >
   <img
       src="cheetah.jpg"
       srcset="
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTI0MjkwMTgzMA__ 400w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTI0MjkwMTgzMA__ 500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTI0MjkwMTgzMA__ 600w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTI0MjkwMTgzMA__ 800w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTI0MjkwMTgzMA__ 1000w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTI0MjkwMTgzMA__ 1200w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTI0MjkwMTgzMA__ 1500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTI0MjkwMTgzMA__ 1800w
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTA0ODU5NDA0NQ__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTA0ODU5NDA0NQ__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTA0ODU5NDA0NQ__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTA0ODU5NDA0NQ__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTA0ODU5NDA0NQ__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTA0ODU5NDA0NQ__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTA0ODU5NDA0NQ__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTA0ODU5NDA0NQ__ 1800w
       "
       alt="Cheetah"
       sizes="(max-width: 768px) 100vw, 400px"
@@ -912,14 +912,14 @@ function showImageSource(event, outputId, includeFolder) {
 
 ```html
 <img srcset="
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTI0MjkwMTgzMA__ 400w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTI0MjkwMTgzMA__ 500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTI0MjkwMTgzMA__ 600w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTI0MjkwMTgzMA__ 800w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTI0MjkwMTgzMA__ 1000w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTI0MjkwMTgzMA__ 1200w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTI0MjkwMTgzMA__ 1500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTI0MjkwMTgzMA__ 1800w
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTA0ODU5NDA0NQ__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTA0ODU5NDA0NQ__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTA0ODU5NDA0NQ__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTA0ODU5NDA0NQ__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTA0ODU5NDA0NQ__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTA0ODU5NDA0NQ__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTA0ODU5NDA0NQ__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTA0ODU5NDA0NQ__ 1800w
     "
      src="cheetah.jpg"
      sizes="
@@ -932,14 +932,14 @@ function showImageSource(event, outputId, includeFolder) {
 
 {{< rawhtml >}}
 <img srcset="
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTI0MjkwMTgzMA__ 400w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTI0MjkwMTgzMA__ 500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTI0MjkwMTgzMA__ 600w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTI0MjkwMTgzMA__ 800w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTI0MjkwMTgzMA__ 1000w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTI0MjkwMTgzMA__ 1200w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTI0MjkwMTgzMA__ 1500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTI0MjkwMTgzMA__ 1800w
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTA0ODU5NDA0NQ__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTA0ODU5NDA0NQ__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTA0ODU5NDA0NQ__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTA0ODU5NDA0NQ__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTA0ODU5NDA0NQ__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTA0ODU5NDA0NQ__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTA0ODU5NDA0NQ__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTA0ODU5NDA0NQ__ 1800w
     "
      src="cheetah.jpg"
      sizes="
@@ -962,42 +962,42 @@ function showImageSource(event, outputId, includeFolder) {
   <source
       media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
       srcset="
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=2&auth=MTI0MjkwMTgzMA__ 400w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=2&auth=MTI0MjkwMTgzMA__ 500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=2&auth=MTI0MjkwMTgzMA__ 600w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=2&auth=MTI0MjkwMTgzMA__ 800w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=2&auth=MTI0MjkwMTgzMA__ 1000w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=2&auth=MTI0MjkwMTgzMA__ 1200w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=2&auth=MTI0MjkwMTgzMA__ 1500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=2&auth=MTI0MjkwMTgzMA__ 1800w
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=2&auth=MTA0ODU5NDA0NQ__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=2&auth=MTA0ODU5NDA0NQ__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=2&auth=MTA0ODU5NDA0NQ__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=2&auth=MTA0ODU5NDA0NQ__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=2&auth=MTA0ODU5NDA0NQ__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=2&auth=MTA0ODU5NDA0NQ__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=2&auth=MTA0ODU5NDA0NQ__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=2&auth=MTA0ODU5NDA0NQ__ 1800w
       "
       sizes="(max-width: 768px) 100vw, 400px"
   >
   <source
       media="(-webkit-min-device-pixel-ratio: 3)"
       srcset="
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=3&auth=MTI0MjkwMTgzMA__ 400w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=3&auth=MTI0MjkwMTgzMA__ 500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=3&auth=MTI0MjkwMTgzMA__ 600w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=3&auth=MTI0MjkwMTgzMA__ 800w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=3&auth=MTI0MjkwMTgzMA__ 1000w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=3&auth=MTI0MjkwMTgzMA__ 1200w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=3&auth=MTI0MjkwMTgzMA__ 1500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=3&auth=MTI0MjkwMTgzMA__ 1800w
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=3&auth=MTA0ODU5NDA0NQ__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=3&auth=MTA0ODU5NDA0NQ__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=3&auth=MTA0ODU5NDA0NQ__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=3&auth=MTA0ODU5NDA0NQ__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=3&auth=MTA0ODU5NDA0NQ__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=3&auth=MTA0ODU5NDA0NQ__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=3&auth=MTA0ODU5NDA0NQ__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=3&auth=MTA0ODU5NDA0NQ__ 1800w
       "
       sizes="(max-width: 768px) 100vw, 400px"
   >
   <img
       src="cheetah.jpg"
       srcset="
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTI0MjkwMTgzMA__ 400w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTI0MjkwMTgzMA__ 500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTI0MjkwMTgzMA__ 600w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTI0MjkwMTgzMA__ 800w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTI0MjkwMTgzMA__ 1000w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTI0MjkwMTgzMA__ 1200w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTI0MjkwMTgzMA__ 1500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTI0MjkwMTgzMA__ 1800w
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTA0ODU5NDA0NQ__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTA0ODU5NDA0NQ__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTA0ODU5NDA0NQ__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTA0ODU5NDA0NQ__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTA0ODU5NDA0NQ__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTA0ODU5NDA0NQ__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTA0ODU5NDA0NQ__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTA0ODU5NDA0NQ__ 1800w
       "
       alt="Cheetah"
       sizes="(max-width: 768px) 100vw, 400px"
@@ -1010,42 +1010,42 @@ function showImageSource(event, outputId, includeFolder) {
   <source
       media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
       srcset="
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=2&auth=MTI0MjkwMTgzMA__ 400w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=2&auth=MTI0MjkwMTgzMA__ 500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=2&auth=MTI0MjkwMTgzMA__ 600w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=2&auth=MTI0MjkwMTgzMA__ 800w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=2&auth=MTI0MjkwMTgzMA__ 1000w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=2&auth=MTI0MjkwMTgzMA__ 1200w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=2&auth=MTI0MjkwMTgzMA__ 1500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=2&auth=MTI0MjkwMTgzMA__ 1800w
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=2&auth=MTA0ODU5NDA0NQ__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=2&auth=MTA0ODU5NDA0NQ__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=2&auth=MTA0ODU5NDA0NQ__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=2&auth=MTA0ODU5NDA0NQ__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=2&auth=MTA0ODU5NDA0NQ__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=2&auth=MTA0ODU5NDA0NQ__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=2&auth=MTA0ODU5NDA0NQ__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=2&auth=MTA0ODU5NDA0NQ__ 1800w
       "
       sizes="(max-width: 768px) 100vw, 400px"
   >
   <source
       media="(-webkit-min-device-pixel-ratio: 3)"
       srcset="
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=3&auth=MTI0MjkwMTgzMA__ 400w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=3&auth=MTI0MjkwMTgzMA__ 500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=3&auth=MTI0MjkwMTgzMA__ 600w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=3&auth=MTI0MjkwMTgzMA__ 800w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=3&auth=MTI0MjkwMTgzMA__ 1000w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=3&auth=MTI0MjkwMTgzMA__ 1200w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=3&auth=MTI0MjkwMTgzMA__ 1500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=3&auth=MTI0MjkwMTgzMA__ 1800w
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&dppx=3&auth=MTA0ODU5NDA0NQ__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&dppx=3&auth=MTA0ODU5NDA0NQ__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&dppx=3&auth=MTA0ODU5NDA0NQ__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&dppx=3&auth=MTA0ODU5NDA0NQ__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&dppx=3&auth=MTA0ODU5NDA0NQ__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&dppx=3&auth=MTA0ODU5NDA0NQ__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&dppx=3&auth=MTA0ODU5NDA0NQ__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&dppx=3&auth=MTA0ODU5NDA0NQ__ 1800w
       "
       sizes="(max-width: 768px) 100vw, 400px"
   >
   <img
       src="cheetah.jpg"
       srcset="
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTI0MjkwMTgzMA__ 400w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTI0MjkwMTgzMA__ 500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTI0MjkwMTgzMA__ 600w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTI0MjkwMTgzMA__ 800w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTI0MjkwMTgzMA__ 1000w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTI0MjkwMTgzMA__ 1200w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTI0MjkwMTgzMA__ 1500w,
-        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTI0MjkwMTgzMA__ 1800w
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=400&auth=MTA0ODU5NDA0NQ__ 400w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=500&auth=MTA0ODU5NDA0NQ__ 500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=600&auth=MTA0ODU5NDA0NQ__ 600w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=800&auth=MTA0ODU5NDA0NQ__ 800w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1000&auth=MTA0ODU5NDA0NQ__ 1000w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1200&auth=MTA0ODU5NDA0NQ__ 1200w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1500&auth=MTA0ODU5NDA0NQ__ 1500w,
+        https://pixboost.com/api/2/img/http://www.midday.coffee/dppx-demo/cheetah.jpg/resize?size=1800&auth=MTA0ODU5NDA0NQ__ 1800w
       "
       alt="Cheetah"
       sizes="(max-width: 768px) 100vw, 400px"
