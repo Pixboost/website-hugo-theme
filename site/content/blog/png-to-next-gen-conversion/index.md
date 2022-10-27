@@ -14,7 +14,7 @@ In this article, I'll explain why converting PNG to the next-gen format is not a
 
 It's also the 1st of November, and very appropriate to talk about images!
 
-{{< tweet 1455172402405679106 >}}
+{{< tweet user="HenriHelvetica" id="1455172402405679106" >}}
 
 We use Go and [MagickWand](https://imagemagick.org/script/magick-wand.php) library in the code snippets.  You can get the latest version of the library using [ImageMagick docker image](https://github.com/dooman87/imagemagick-docker) that I maintain.
 
