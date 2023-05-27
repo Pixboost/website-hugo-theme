@@ -8,6 +8,11 @@ p.title {
     margin: var(--space-4) 0 !important;
 }
 
+h1 > small {
+    font-size: 0.7em !important;
+}
+
+
 /* Hero Section*/
 #hero {
     display: flex;
