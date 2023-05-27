@@ -101,6 +101,7 @@
             "
             src="https://pixboost.com/api/2/img/{{.File.Dir}}{{.Params.image}}/resize?size=1000&auth=NzM5MTYwMjAy"
             alt="{{$imageAlt}}"
+            fetchpriority="high"
         />
     </picture>
     {{end}}
