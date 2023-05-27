@@ -67,7 +67,9 @@ Image optimization is resource heavy workload that creates a lot of complexity w
 
 ### Easy Win 
 
-Image Optimisation with Image CDN becomes a low-cost-high-value improvement because it's very easy to start using it. You can start optimizing images on your website in 10 minutes using this simple [5-steps guide](https://help.pixboost.com/quickstart)
+Image Optimisation with Image CDN becomes a low-cost-high-value improvement because it's very easy to start using it. You can start optimizing images on your website in 10 minutes using this simple 5-step guide:
+
+{{< cta href="https://help.pixboost.com/quickstart" text="Start optimising images in 10 minutes" >}}
 
 ## Conclusion
 
