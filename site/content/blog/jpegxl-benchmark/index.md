@@ -12,11 +12,23 @@ Pixboost Team is happy to report that we added the support to our Image CDN, so 
 for Safari users.
 
 In this post, I'll go a bit into the details of the implementation and support our decisions by 
-some benchmark results we ran.
+benchmarks results we ran.
+
+But before we dive into the technical details, let me summarize an outcome.
+
+## TLDR
+
+We ran tests for both lossless and lossy compressions for our use case - ecommerce image CDN. It's important to 
+understand that for different use case the results could be different. However, you could use the same technique 
+and commands from this post to run on your image set.
+
+So, how did JpegXL fit in our formats algorithm?
+
+For lossless compression we compared JpegXL to WebP lossless cause that's what we use when decided to [use lossless compression](). On average, JpegXL produced **7% smaller images**, in some cases going **up to 20%**. These results were achieved using the highest encoder effort (9) and that led to high consumption of memory and CPU. So, we made the decision to only use JPEGXL for images up to 1000x1000 pixels. Just as a note, we used similar strategy with AVIF which improved resource utilisation in the later version. We hope to do the same with JXL.
+
+
 
 ## JPEG XL support in Pixboost Image CDN
-
-
 
 Pixboost URLs:
 
