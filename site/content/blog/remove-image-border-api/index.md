@@ -30,7 +30,19 @@ Doing so manually is boring and not much fun, so we added a new API to do so!
 
 ## Automating using Pixboost API
 
-how to start using and examples
+So how do we remove borders? We take the color of the first pixel and assume it's a border color. Then we start checking next pixel and do so till we find the pixel with a different color. We remove all rows and columns of pixels that have only background color in them.
+
+The power of Pixboost API is its simplicity. We make sure that we don't overload it, it's always easy to use, but covers all the use cases needed for Web Development. 
+
+There are 3 endpoints that modify the image:
+
+* optimise - optimising source image
+* resize - resizing source image preserving aspect ratio
+* fit - resizing source image but fit the result into the given dimension (crop)
+
+We added a new query parameter `?trim-border` for all of the above. When it's specified in the URL the API will remove border from the source image.
+
+
 
 ## Conclusion
 
