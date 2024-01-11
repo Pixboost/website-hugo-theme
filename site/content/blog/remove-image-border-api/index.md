@@ -14,11 +14,19 @@ So, let's start with the use case. We were helping with website setup for the ic
 
 Sponsors are tiered so the idea is to make different tiers having different sizes. And that's what it looked like once we added all the sponsors:
 
-![](./original-with-borders.png)
+![](./original-logos.png)
 
 I put widths of the images on the right and line with gaps between rows on the left. It didn't look right as some logos looks much bigger than their peers in higher tiers! Also, spacing between rows is all over the place.
 
+The width of all the images is set, so why they some of the images from lower tier look bigger then others from higher tier? The answer is borders! 
 
+Here is the same screenshot but with borders around images:
+
+![](./original-logos-with-borders.png)
+
+Once we saw that the solution was obvious - let's get rid of borders on the images before resizing them.
+
+Doing so manually is boring and not much fun, so we added a new API to do so!
 
 ## Automating using Pixboost API
 
