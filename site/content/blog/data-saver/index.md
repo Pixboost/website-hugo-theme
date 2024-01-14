@@ -100,7 +100,7 @@ At Pixboost, we support Save-Data header out of the box, and you don't need to w
 
 We’ll use this API call in all our examples below:
 
-https://pixboost.com/api/2/img/http://www.midday.coffee/assets/banner.jpg/optimise?auth=MTA0ODU5NDA0NQ__
+[https://pixboost.com/api/2/img/http://www.midday.coffee/assets/banner.jpg/optimise?auth=MTA0ODU5NDA0NQ__](https://pixboost.com/api/2/img/http://www.midday.coffee/assets/banner.jpg/optimise?auth=MTA0ODU5NDA0NQ__)
 
 Let's see what the image will look like with data saver turned on and off:
 
