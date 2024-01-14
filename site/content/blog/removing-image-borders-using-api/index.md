@@ -1,15 +1,15 @@
 ---
-title: "Remove Image Borders using API"
+title: "Removing Image Borders using API"
 date: 2024-01-14T02:19:49Z
-description: "Learn how to remove image borders using simple API. Automate and deliver images to your users using next- gen formats from the closest geo-location."
-image: remove-image-borders-using-api-hero.jpg
+description: "Learn how to remove image borders using simple API. Automate and deliver images to your users using next-gen formats from the closest geo-location."
+image: removing-image-borders-using-api-hero.jpg
 draft: false
 v2: true
 ---
 
 In this blog post we'll talk about a new feature recently added to the Pixboost API - image border trimming.
 
-## Why Remove Image Borders?
+## Why Removing Image Borders?
 
 Image borders are the edges of images that share the same color. Turned out that sometimes you'd want to remove them. You might know that we are [meticulous](https://pixboost.com/blog/why-pixboost-is-the-best-image-cdn/) about adding new features to the API to make sure it's easy to use and not overloaded with features.
 
