@@ -20,7 +20,7 @@ endif
 
 .PHONY: build
 build:
-	$(RUN) -w /src/site hugo $(IMAGE)
+	$(RUN) -w /src/site $(IMAGE) hugo --minify
 
 .PHONY:
 lighthouse-test:
