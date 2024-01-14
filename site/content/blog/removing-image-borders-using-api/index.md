@@ -17,7 +17,7 @@ So, let's look at the use case. We were helping with the website set up for the 
 
 The other requirement is sponsors are grouped by levels, so their logos should have a different size depending on the tier. Here is the original markup that I put together:
 
-{{< full-width-image image="original-logos.png" alt="Screenshot of logos with their widths" >}}
+{{< simple-image image="original-logos.png" alt="Screenshot of logos with their widths" >}}
 
 I put the widths of the images on the right and added lines with gaps between rows on the left. It didn't look right as some logos look much bigger despite being on below levels! Spacing between rows is another problem.
 
@@ -25,7 +25,7 @@ The width of all the images is set, so why do some of the images look visually b
 
 This screenshot with a thin border around the images gives us an answer:
 
-{{< full-width-image image="original-logos-with-borders.png" alt="Screenshot of logos with red borders around each logo" >}}
+{{< simple-image image="original-logos-with-borders.png" alt="Screenshot of logos with red borders around each logo" >}}
 
 
 Once we identified the problem, the solution came not long after - let's get rid of borders on the images before resizing them.
@@ -50,10 +50,10 @@ You can see more examples and how to use the API in the [documentation here](htt
 
 And here is the screenshot of the DDD Melbourne website once updated with borders removed:
 
-{{< full-width-image image="trimmed-borders.png" alt="Screenshot of logos with trimmed borders" >}}
+{{< simple-image image="trimmed-borders.png" alt="Screenshot of logos with trimmed borders" >}}
 
 
-Regular note that you'll find the change in our [open source image service on GitHub](https://github.com/Pixboost/transformimgs)
+Regular note that you'll find the change in our [open source image service on GitHub](https://github.com/Pixboost/transformimgs).
 
 ## Conclusion
 
