@@ -1,5 +1,5 @@
 RUN = docker run --rm -v $(shell pwd):/src --user "$(shell id -u):$(shell id -g)"
-IMAGE = hugomods/hugo:reg-0.121.1
+IMAGE = hugomods/hugo:reg-0.123.6
 
 .PHONY: dev
 dev:
