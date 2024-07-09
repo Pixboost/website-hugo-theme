@@ -4,7 +4,7 @@ date: 2024-07-07T21:11:17Z
 draft: true
 ---
 
-Generative AI went rampant in recent years, becoming very popular and trying itself in every part of our lifes. Here, at Pixboost, we were watching the trend curiously and exeperinmenting Large Language Models and what could be their application in Image CDN.
+Generative AI went rampant in recent years, becoming very popular and trying itself in every part of our lifes. Here, at Pixboost, we were watching the trend curiously and exeperimenting Large Language Models and what could be their application in Image CDN.
 
 We'd like to walk you through the first GenAI API we are launching and would love to hear your feedback and thoughts.
 
@@ -26,7 +26,11 @@ So, we created an API that you can use to generate any background you want for y
 
 Let's look at the examples:
 
-The API is still in beta status, so...
+The API is still in beta status, and that's a first AI usecase we implemented. We'd love to hear your feedback and thoughts, so we can keep building the best product in the world.
+
+## How Much
+
+
 
 ## How to prompt
 
@@ -43,6 +47,8 @@ Using the text prompt, describe your target. Consider, for example:
 
 Example:
 
-
+TODO
 
 ## Conclusion
+
+Adding GenAI capability into Image CDN is a good idea and adds value to customer. We can't wait to make next steps in that direction and release more cool features.
