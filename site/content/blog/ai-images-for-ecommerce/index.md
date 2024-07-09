@@ -20,12 +20,29 @@ Ethics and GenAI (look it up)
 
 ## Background in-paint using Pixboost API
 
-In ecommerce, product images would usually have a plain background which is work best when visitors want to look at the product in details. However, they are not doing the best job in showcasing product in-use. Running a photoshoot for every product could be very time consuming and expensive.
+In ecommerce, product images would usually have a plain background which is work best when visitors want to look at the product in details. However, they are not doing the best job in showcasing product in-use. Running a photoshoot for every product could be very time-consuming and expensive.
 
 So, we created an API that you can use to generate any background you want for your product images. It's very simple and all you need to do is to add `?prompt` query parameter to your image URLs. 
 
 Let's look at the examples:
 
 The API is still in beta status, so...
+
+## How to prompt
+
+Recommended — Plainly describe the change you would like to see. For example "a blue bucket bag".
+
+Not recommended — Avoid instructive language or words like "no" or "don't". For example, avoid phrases like "make the bag blue" or "don't show walls".
+
+Using the text prompt, describe your target. Consider, for example:
+
+* background (a wooden table)
+* mood or lighting (warm, cool, dramatic)
+* perspective (top, front, close-up, wide-angle)
+* style or feel (artistic, aesthetic, dramatic)
+
+Example:
+
+
 
 ## Conclusion
