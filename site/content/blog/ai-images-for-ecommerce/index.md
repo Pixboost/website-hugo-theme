@@ -34,9 +34,19 @@ Camera
 
 Photo by <a href="https://unsplash.com/@enikoo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">eniko kis</a> on <a href="https://unsplash.com/photos/white-and-black-polaroid-one-step-2-instant-camera-on-white-board-KsLPTsYaqIQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
+https://pixboost.com/api/2/img/https://pixboost.com/img/demos/camera.jpg/optimise?auth=Nzg0MDM2MDYx&prompt=matching%20wall%20on%20the%20background%20with%20polaroid%20photos%20of%20fruits%20and%20vegetables
+
+https://pixboost.com/api/2/img/https://pixboost.com/img/demos/camera.jpg/optimise?auth=Nzg0MDM2MDYx&prompt=on%20a%20beach%20with%20a%20sea%20on%20the%20horizon
+
+
+
 Runners
 
 Photo by <a href="https://unsplash.com/@dominostudio?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Domino Studio</a> on <a href="https://unsplash.com/photos/unpaired-red-nike-sneaker-164_6wVEHfI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+
+https://pixboost.com/api/2/img/https://pixboost.com/img/demos/runners.jpg/optimise?auth=Nzg0MDM2MDYx&prompt=running%20track
+
 
 
 ## Background in-paint using Pixboost API
