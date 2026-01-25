@@ -2,6 +2,7 @@
 title: "Ai Images for Ecommerce"
 date: 2024-07-07T21:11:17Z
 draft: true
+v2: true
 ---
 
 Generative AI has exploded in popularity over recent years, finding its way into almost every aspect of our digital lives. Here at Pixboost, we’ve been watching the trend closely, experimenting with how Large Language Models (LLMs) and Image Generation models can be practically applied to an Image CDN.
@@ -63,7 +64,7 @@ Runners
 Photo by <a href="https://unsplash.com/@dominostudio?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Domino Studio</a> on <a href="https://unsplash.com/photos/unpaired-red-nike-sneaker-164_6wVEHfI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 
-https://pixboost.com/api/2/img/https://pixboost.com/img/demos/runners.jpg/optimise?auth=Nzg0MDM2MDYx&prompt=running%20track
+![](https://pixboost.com/api/2/img/https://pixboost.com/img/demos/runners.jpg/optimise?auth=Nzg0MDM2MDYx&prompt=on%20asphalt%20with%20sparks%20and%20smoke%20aroud%20the%20shoe)
 
 
 
