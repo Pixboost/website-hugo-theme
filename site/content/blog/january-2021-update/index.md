@@ -11,6 +11,8 @@ Hi there,
 
 It's 2021, and we've already shipped some new exciting features around several components. Here is a quick recap of what we've been working on!
 
+<!--more-->
+
 ## Enhancements in AVIF support
 
 As you might know [we've released AVIF](https://pixboost.com/blog/next-gen-avif-format/index.html) support last year and there were limitations on the source file size and support of PNG images with transparency.

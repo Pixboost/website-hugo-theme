@@ -9,6 +9,8 @@ image: images-business-metrics.jpg
 
 In today's digital landscape, website speed plays a crucial role in user experience and business success. One way to optimize website performance is by using an Image CDN (Content Delivery Network) to ensure fast image loading. In this article, we will explore the non-technical business benefits of fast-loading images and why integrating an Image CDN can be a game-changer for your website.
 
+<!--more-->
+
 ## Business Metrics
 
 Reducing the time of image loading is part of the web performance of the website. So, let's look at the specific metrics and how they would be affected.

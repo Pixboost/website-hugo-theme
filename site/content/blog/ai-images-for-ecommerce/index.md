@@ -37,6 +37,32 @@ In e-commerce, product images usually have a plain background. This works best w
 
 We created an API that allows you to generate any background you want for your product images instantly. It's incredibly simple: all you need to do is add the ?prompt query parameter to your image URLs.
 
+### Getting Started: How to use the GenAI API
+
+Whether you are a long-time Pixboost user or just joining us today, we’ve made the integration as simple as a single query parameter.
+
+#### For New Users
+
+If you don't have a Pixboost account yet, follow these three quick steps:
+
+* Sign Up: Create a free account at Pixboost.com.
+* Configure Your Source: Add your image domain or cloud storage (like S3) in the dashboard so Pixboost knows where to find your original photos.
+* Get Your API Key: You’ll find your auth key in the dashboard—you'll need this for every request.
+
+#### For Existing Users
+
+You’re already halfway there! To use the GenAI feature, simply append the prompt parameter to your existing API calls.
+
+The URL Structure
+
+The API follows a standard pattern. Simply take your existing transformation URL and add the prompt at the end:
+
+https://pixboost.com/api/2/img/[IMAGE_URL]/optimise?auth=[YOUR_KEY]&prompt=[YOUR_DESCRIPTION_OF_THE_BACKGROUND]
+
+{{< emphasise >}}
+Pro Tip: Make sure your prompt is URL-encoded. For example, "wooden table" becomes wooden%20table.
+{{< /emphasise >}}
+
 ### See it in action
 
 Below are examples of raw product photos transformed by the Pixboost API.
@@ -54,9 +80,7 @@ Camera
 ![](./camera.jpg)
 Photo by <a href="https://unsplash.com/@enikoo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">eniko kis</a> on <a href="https://unsplash.com/photos/white-and-black-polaroid-one-step-2-instant-camera-on-white-board-KsLPTsYaqIQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
-![](https://pixboost.com/api/2/img/https://pixboost.com/img/demos/camera.jpg/optimise?auth=Nzg0MDM2MDYx&prompt=matching%20wall%20on%20the%20background%20with%20polaroid%20family%20photos)
-
-
+![](https://pixboost.com/api/2/img/https://pixboost.com/img/demos/camera.jpg/optimise?auth=Nzg0MDM2MDYx&prompt=matching%20wall%20on%20the%20background%20with%20polaroid%20photos%20from%20family%20holidays)
 
 Runners
 
@@ -65,18 +89,6 @@ Photo by <a href="https://unsplash.com/@dominostudio?utm_content=creditCopyText&
 
 
 ![](https://pixboost.com/api/2/img/https://pixboost.com/img/demos/runners.jpg/optimise?auth=Nzg0MDM2MDYx&prompt=on%20asphalt%20with%20sparks%20and%20smoke%20aroud%20the%20shoe)
-
-
-
-## Background in-paint using Pixboost API
-
-In ecommerce, product images would usually have a plain background which is work best when visitors want to look at the product in details. However, they are not doing the best job in showcasing product in-use. Running a photoshoot for every product could be very time-consuming and expensive.
-
-So, we created an API that you can use to generate any background you want for your product images. It's very simple and all you need to do is to add `?prompt` query parameter to your image URLs. 
-
-Let's look at the examples:
-
-The API is still in beta status, and that's a first AI usecase we implemented. We'd love to hear your feedback and thoughts, so we can keep building the best product in the world.
 
 ## How to Prompt Effectively
 

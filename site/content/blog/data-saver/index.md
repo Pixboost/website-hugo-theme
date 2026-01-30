@@ -10,6 +10,8 @@ v2: true
 We are happy to announce that we added support of "Save-Data" client hint in Pixboost and to celebrate we decided to write
 a blog about it!
 
+<!--more-->
+
 The internet was created more than 30 years ago and has been getting faster and faster ever since. Every 2-3 years, mobile and home networks see an advancement in technologies and standards. More recently, the 5G rollout has gained traction in the mobile space, as Mesh WiFi and fibre make their way into homes. However, internet speeds are still slow in a lot of cases.
 
 I’m from Australia where we have the National Broadband Network (NBN) that covers the entire continent, including rural areas. It is a great government initiative especially since there were plenty of ADSL lines and no internet in distant places.

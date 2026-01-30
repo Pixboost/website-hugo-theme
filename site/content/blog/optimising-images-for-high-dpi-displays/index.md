@@ -12,6 +12,8 @@ Over the last decade, we’ve gone from having a home PC to having a pocket PC t
 came with plenty of freedom and new problems to solve. For example, we had to figure out how to present content on
 different screens.
 
+<!--more-->
+
 This was answered through responsive design, meaning that we could rely on one codebase with adaptive layouts depending
 on the output device. Say you had a website with a large image for desktop computers that you wanted to display on
 mobile devices with smaller screens.

@@ -16,6 +16,8 @@ We made two big changes to our Image CDN offering:
 
 In this blog, we'll show and tell you about both.
 
+<!--more-->
+
 ## What do you pay for
 
 The main pricing component of an Image CDN is bandwidth. Let's see what it is for a start:
