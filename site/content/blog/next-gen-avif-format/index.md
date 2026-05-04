@@ -12,6 +12,8 @@ Images have come to dominate the Internet. Most of today’s websites are compri
 Here at Pixboost, our mission is to optimize images, 
 making them as small as possible so that we can serve them to our users as fast as possible. 
 
+<!--more-->
+
 So we were excited to begin implementing the new image format, AVIF, which is supported in the latest version of Chrome (86), and which 
 will be supported in the next version of Firefox. AVIF also has significant corporate support, in fact it’s championed 
 specifically by Netflix. In this post, I’ll briefly cover the current state of web image formats and then I’ll do a 

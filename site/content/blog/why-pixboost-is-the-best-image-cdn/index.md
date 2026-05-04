@@ -9,6 +9,8 @@ v2: true
 
 When it comes to web projects, it is crucial for the final result to be top-notch in the aspect of speed. Images make up one of the areas that can have a significant effect on how fast a website loads. However, fine-tuning this area is a little more complex than merely adjusting image sizes.
 
+<!--more-->
+
 It involves applying different technologies to make marginal gains in how images in web projects are delivered to the end user. Image CDNs have emerged as one of the go-to technologies in solving image optimization and delivery issues. In that regard, we are going to explain our philosophy and what sets it apart from those of other similar tools.
 
 We shall also go into detail about value in our SaaS offering and what makes it better than others on the market.

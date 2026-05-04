@@ -9,6 +9,8 @@ v2: true
 
 In this blog post we'll talk about a new feature recently added to the Pixboost API - image border trimming.
 
+<!--more-->
+
 ## Why Removing Image Borders?
 
 Image borders are the edges of images that share the same color. Turned out that sometimes you'd want to remove them. You might know that we are [meticulous](https://pixboost.com/blog/why-pixboost-is-the-best-image-cdn/) about adding new features to the API to make sure it's easy to use and not overloaded with features.

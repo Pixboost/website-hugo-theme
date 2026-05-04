@@ -3,12 +3,12 @@
         <source
             media="(-webkit-min-device-pixel-ratio: 2) and (-webkit-max-device-pixel-ratio: 2.9999)"
             srcset="
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1000&auth=NzM5MTYwMjAy&dppx=2 1000w,
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=2000&auth=NzM5MTYwMjAy&dppx=2 2000w,
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=3000&auth=NzM5MTYwMjAy&dppx=2 3000w,
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=640&auth=NzM5MTYwMjAy&dppx=2 640w,
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1280&auth=NzM5MTYwMjAy&dppx=2 1280w,
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1920&auth=NzM5MTYwMjAy&dppx=2 1920w"
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1000&auth=NzM5MTYwMjAy&dppx=2{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 1000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=2000&auth=NzM5MTYwMjAy&dppx=2{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 2000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=3000&auth=NzM5MTYwMjAy&dppx=2{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 3000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=640&auth=NzM5MTYwMjAy&dppx=2{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 640w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1280&auth=NzM5MTYwMjAy&dppx=2{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 1280w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1920&auth=NzM5MTYwMjAy&dppx=2{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 1920w"
             sizes="(min-width: 990px) 1000px,
                     (min-width: 640px) 1000px,
                     640px"
@@ -16,25 +16,25 @@
         <source
             media="(-webkit-min-device-pixel-ratio: 3)"
             srcset="
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1000&auth=NzM5MTYwMjAy&dppx=3 1000w,
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=2000&auth=NzM5MTYwMjAy&dppx=3 2000w,
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=3000&auth=NzM5MTYwMjAy&dppx=3 3000w,
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=640&auth=NzM5MTYwMjAy&dppx=3 640w,
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1280&auth=NzM5MTYwMjAy&dppx=3 1280w,
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1920&auth=NzM5MTYwMjAy&dppx=3 1920w"
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1000&auth=NzM5MTYwMjAy&dppx=3{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 1000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=2000&auth=NzM5MTYwMjAy&dppx=3{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 2000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=3000&auth=NzM5MTYwMjAy&dppx=3{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 3000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=640&auth=NzM5MTYwMjAy&dppx=3{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 640w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1280&auth=NzM5MTYwMjAy&dppx=3{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 1280w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1920&auth=NzM5MTYwMjAy&dppx=3{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 1920w"
             sizes="(min-width: 990px) 1000px,
                     (min-width: 640px) 1000px,
                     640px"
         >
         <img
-            src="https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/optimise?auth=NzM5MTYwMjAy"
+            src="https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/optimise?auth=NzM5MTYwMjAy{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }}"
             srcset="
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1000&auth=NzM5MTYwMjAy 1000w,
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=2000&auth=NzM5MTYwMjAy 2000w,
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=3000&auth=NzM5MTYwMjAy 3000w,
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=640&auth=NzM5MTYwMjAy 640w,
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1280&auth=NzM5MTYwMjAy 1280w,
-                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1920&auth=NzM5MTYwMjAy 1920w"
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1000&auth=NzM5MTYwMjAy{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 1000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=2000&auth=NzM5MTYwMjAy{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 2000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=3000&auth=NzM5MTYwMjAy{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 3000w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=640&auth=NzM5MTYwMjAy{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 640w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1280&auth=NzM5MTYwMjAy{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 1280w,
+                https://pixboost.com/api/2/img/{{.Page.File.Dir}}{{.Get "image"}}/resize?size=1920&auth=NzM5MTYwMjAy{{ with .Get "prompt" }}&prompt={{ . | urlquery }}{{ end }} 1920w"
             sizes="(min-width: 990px) 1000px,
                     (min-width: 640px) 1000px,
                     640px"

@@ -12,6 +12,8 @@ to add graphics to their web pages. Web standards came a long way, and often we 
 
 In this article, I'll explain why converting PNG to the next-gen format is not as straightforward and how we went about it.
 
+<!--more-->
+
 It's also the 1st of November, and very appropriate to talk about images!
 
 {{< tweet user="HenriHelvetica" id="1455172402405679106" >}}

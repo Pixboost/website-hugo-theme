@@ -1,0 +1,138 @@
+---
+title: "Ai Images for Ecommerce"
+date: 2024-07-07T21:11:17Z
+draft: true
+image: ai-images-for-ecommerce-hero.png
+v2: true
+---
+
+Generative AI has exploded in popularity over recent years, finding its way into almost every aspect of our digital lives. Here at Pixboost, we’ve been watching the trend closely, experimenting with how Large Language Models (LLMs) and Image Generation models can be practically applied to an Image CDN.
+
+Today, we are excited to walk you through the first GenAI API feature we are launching. We’d love to hear your feedback and thoughts as we refine this technology.
+
+TLDR:
+
+You can now add a prompt query parameter to your API calls to instantly modify the background of your images using AI.
+
+* The Offer: Every customer gets 100 AI credits (100 unique prompts) per month for free during the Beta.
+* The Status: This API is currently in Beta and subject to change based on your feedback.
+
+## GenAI and Image CDN: Finding the Balance
+
+Running and hosting Generative AI models is computationally expensive. However, the results they produce are incredibly powerful. Our main consideration during development was finding the "sweet spot"—how do we make this technology affordable while delivering high-quality results?
+
+Image models function differently than text-based LLMs. The infrastructure required to process pixels is heavy. By integrating this directly into the Pixboost Image CDN, we handle the heavy lifting. This allows you to leverage enterprise-grade AI image manipulation without managing your own GPU clusters or worrying about complex infrastructure.
+
+## How GenAI Helps eCommerce
+
+Why should an e-commerce store care about AI-generated backgrounds?
+
+* Contextual Selling: A plain white background is great for a catalogue, but it doesn't create an emotional connection. AI allows you to place a hiking boot on a "rocky mountain trail" or a coffee mug on a "cozy wooden table," helping the customer visualize the product in their life.
+* Cost Efficiency: Running a photoshoot for every product in different settings is time-consuming and expensive. GenAI creates these settings virtually for a fraction of the cost.
+* A/B Testing: You can test different backgrounds to see which converts better. Does your summer dress sell better on a "beach background" or a "garden party background"? You can now find out without a reshoot.
+* Seasonal Agility: Instantly update your store for holidays. Turn a standard product image into a Christmas or Halloween-themed asset simply by changing the query string.
+
+## Feature: Background In-paint using Pixboost API
+
+In e-commerce, product images usually have a plain background. This works best when visitors want to inspect product details. However, plain backgrounds don't do the best job of showcasing the product in use.
+
+We created an API that allows you to generate any background you want for your product images instantly. It's incredibly simple: all you need to do is add the ?prompt query parameter to your image URLs.
+
+### Getting Started: How to use the GenAI API
+
+Whether you are a long-time Pixboost user or just joining us today, we’ve made the integration as simple as a single query parameter.
+
+#### For New Users
+
+If you don't have a Pixboost account yet, follow these three quick steps:
+
+* Sign Up: Create a free account at Pixboost.com.
+* Configure Your Source: Add your image domain or cloud storage (like S3) in the dashboard so Pixboost knows where to find your original photos.
+* Get Your API Key: You’ll find your auth key in the dashboard—you'll need this for every request.
+
+#### For Existing Users
+
+You’re already halfway there! To use the GenAI feature, simply append the prompt parameter to your existing API calls.
+
+The URL Structure
+
+The API follows a standard pattern. Simply take your existing transformation URL and add the prompt at the end:
+
+https://pixboost.com/api/2/img/[IMAGE_URL]/optimise?auth=[YOUR_KEY]&prompt=[YOUR_DESCRIPTION_OF_THE_BACKGROUND]
+
+{{< emphasise >}}
+Pro Tip: Make sure your prompt is URL-encoded. For example, "wooden table" becomes wooden%20table.
+{{< /emphasise >}}
+
+### See it in action
+
+Below are examples of raw product photos transformed by the Pixboost API.
+
+
+#### Sunglasses
+
+{{< full-width-image image="sunnys.jpg" alt="vanilla product image of sunglasses" >}}
+{{< note >}}
+Photo by <a href="https://unsplash.com/@giorgiotrovato?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Giorgio Trovato</a> on <a href="https://unsplash.com/photos/shallow-focus-photo-of-black-ray-ban-wayfarer-sunglasses-K62u25Jk6vo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+{{< /note >}}
+
+{{< full-width-image image="sunnys.jpg" alt="AI enhanced product image of sunglasses" prompt="on a bright beach towel at the beach">}}
+
+#### Polaroid Camera 
+
+{{< full-width-image image="camera.jpg" alt="vanilla product image of polaroid camera" >}}
+{{< note >}}
+Photo by <a href="https://unsplash.com/@enikoo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">eniko kis</a> on <a href="https://unsplash.com/photos/white-and-black-polaroid-one-step-2-instant-camera-on-white-board-KsLPTsYaqIQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+{{< /note >}}
+
+{{< full-width-image image="camera.jpg" alt="enhanced product image of polaroid camera" prompt="matching wall on the background with polaroid photos from family holidays" >}}
+![](https://pixboost.com/api/2/img/https://pixboost.com/img/demos/camera.jpg/optimise?auth=Nzg0MDM2MDYx&prompt=matching%20wall%20on%20the%20background%20with%20polaroid%20photos%20from%20family%20holidays)
+
+#### Shoes for Running
+
+{{< full-width-image image="runners.jpg" alt="vanilla product image of shoes for running" >}}
+{{< note >}}
+Photo by <a href="https://unsplash.com/@dominostudio?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Domino Studio</a> on <a href="https://unsplash.com/photos/unpaired-red-nike-sneaker-164_6wVEHfI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+{{< /note >}}
+
+{{< full-width-image image="camera.jpg" alt="enhanced product image of shoes for running" prompt="on asphalt with sparks and smoke from under the shoes" >}}
+
+## How to Prompt Effectively
+
+To get the best results, treat the prompt as a description of the scene you want to build around your object.
+
+Recommended: Plainly describe the scene and the atmosphere.
+
+Example: "A marble kitchen counter with morning sunlight."
+
+Not Recommended: Avoid instructive language or negative constraints.
+
+Avoid: "Make the background a kitchen" or "Don't show any people."
+
+### Prompting Framework
+
+When writing your prompt text, consider defining these four elements:
+
+1. The Surface/Background: (e.g., a wooden table, a rocky cliff, a silk sheet)
+2. Lighting: (e.g., soft cinematic lighting, bright noon sun, neon lights)
+3. Perspective: (e.g., macro shot, wide angle)
+4. Mood: (e.g., cozy, industrial, luxury)
+
+Example:
+
+If you are selling a Bottle of Perfume:
+
+Weak Prompt: "Flowers."
+
+Strong Prompt: "Standing on a glass podium, surrounded by pink cherry blossoms, soft pastel bokeh background, high-end product photography."
+
+## Pricing
+
+At the moment, the API is in Beta. It is free to use for up to 100 unique prompts per month. You can use prompt in production 
+because they will be effectively cached and downloads won't be counted towards 100 prompts quota. 
+
+## Conclusion
+
+Adding GenAI capabilities to an Image CDN adds immense value to e-commerce workflows. It bridges the gap between high-performance delivery and creative content generation.
+
+We can't wait to take the next steps in this direction and release more features to help you sell more. Please give the ?prompt parameter a try and let us know what you think!

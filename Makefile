@@ -1,9 +1,9 @@
 RUN = docker run --rm -v $(shell pwd):/src --user "$(shell id -u):$(shell id -g)"
-IMAGE = hugomods/hugo:reg-0.123.6
+IMAGE = ghcr.io/gohugoio/hugo:v0.154.5
 
 .PHONY: dev
 dev:
-	$(RUN) -p "1313:1313" -w /src/site $(IMAGE) hugo server -D -v --verbose --disableFastRender --bind 0.0.0.0
+	$(RUN) -p "1313:1313" -w /src/site $(IMAGE) server -D -w --disableFastRender --bind 0.0.0.0
 
 .PHONY: cli
 cli:
@@ -12,7 +12,7 @@ cli:
 .PHONY: new-page
 new-blog:
 ifdef page
-	$(RUN) -w /src/site $(IMAGE) hugo new blog/$(page)/index.md
+	$(RUN) -w /src/site $(IMAGE) new blog/$(page)/index.md
 else
 	$(error "Usage: make new-blog page=[PAGE_NAME]")
 
@@ -20,7 +20,7 @@ endif
 
 .PHONY: build
 build:
-	$(RUN) -w /src/site $(IMAGE) hugo --minify
+	$(RUN) -w /src/site $(IMAGE) --minify
 
 .PHONY:
 lighthouse-test:
