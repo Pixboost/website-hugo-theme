@@ -2,6 +2,7 @@
 title: "Ai Images for Ecommerce"
 date: 2024-07-07T21:11:17Z
 draft: true
+image: ai-images-for-ecommerce-hero.png
 v2: true
 ---
 
@@ -68,27 +69,33 @@ Pro Tip: Make sure your prompt is URL-encoded. For example, "wooden table" becom
 Below are examples of raw product photos transformed by the Pixboost API.
 
 
-Sunnys 
+#### Sunglasses
 
-![](./sunnys.jpg)
+{{< full-width-image image="sunnys.jpg" alt="vanilla product image of sunglasses" >}}
+{{< note >}}
 Photo by <a href="https://unsplash.com/@giorgiotrovato?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Giorgio Trovato</a> on <a href="https://unsplash.com/photos/shallow-focus-photo-of-black-ray-ban-wayfarer-sunglasses-K62u25Jk6vo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+{{< /note >}}
 
-![](https://pixboost.com/api/2/img/https://pixboost.com/img/demos/sunnys.jpg/optimise?auth=Nzg0MDM2MDYx&prompt=on%20a%20beach%20towel%20with%20bright%20colors%20at%20the%20beach)
+{{< full-width-image image="sunnys.jpg" alt="AI enhanced product image of sunglasses" prompt="on a bright beach towel at the beach">}}
 
-Camera 
+#### Polaroid Camera 
 
-![](./camera.jpg)
+{{< full-width-image image="camera.jpg" alt="vanilla product image of polaroid camera" >}}
+{{< note >}}
 Photo by <a href="https://unsplash.com/@enikoo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">eniko kis</a> on <a href="https://unsplash.com/photos/white-and-black-polaroid-one-step-2-instant-camera-on-white-board-KsLPTsYaqIQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+{{< /note >}}
 
+{{< full-width-image image="camera.jpg" alt="enhanced product image of polaroid camera" prompt="matching wall on the background with polaroid photos from family holidays" >}}
 ![](https://pixboost.com/api/2/img/https://pixboost.com/img/demos/camera.jpg/optimise?auth=Nzg0MDM2MDYx&prompt=matching%20wall%20on%20the%20background%20with%20polaroid%20photos%20from%20family%20holidays)
 
-Runners
+#### Shoes for Running
 
-![](./runners.jpg)
+{{< full-width-image image="runners.jpg" alt="vanilla product image of shoes for running" >}}
+{{< note >}}
 Photo by <a href="https://unsplash.com/@dominostudio?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Domino Studio</a> on <a href="https://unsplash.com/photos/unpaired-red-nike-sneaker-164_6wVEHfI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+{{< /note >}}
 
-
-![](https://pixboost.com/api/2/img/https://pixboost.com/img/demos/runners.jpg/optimise?auth=Nzg0MDM2MDYx&prompt=on%20asphalt%20with%20sparks%20and%20smoke%20aroud%20the%20shoe)
+{{< full-width-image image="camera.jpg" alt="enhanced product image of shoes for running" prompt="on asphalt with sparks and smoke from under the shoes" >}}
 
 ## How to Prompt Effectively
 
@@ -121,7 +128,8 @@ Strong Prompt: "Standing on a glass podium, surrounded by pink cherry blossoms, 
 
 ## Pricing
 
-At the moment, the API is in Beta. It is free to use for up to 100 unique prompts per month.
+At the moment, the API is in Beta. It is free to use for up to 100 unique prompts per month. You can use prompt in production 
+because they will be effectively cached and downloads won't be counted towards 100 prompts quota. 
 
 ## Conclusion
 
