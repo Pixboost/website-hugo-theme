@@ -76,7 +76,7 @@ Below are examples of raw product photos transformed by the Pixboost API.
 Photo by <a href="https://unsplash.com/@giorgiotrovato?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Giorgio Trovato</a> on <a href="https://unsplash.com/photos/shallow-focus-photo-of-black-ray-ban-wayfarer-sunglasses-K62u25Jk6vo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 {{< /note >}}
 
-{{< full-width-image image="sunnys.jpg" alt="AI enhanced product image of sunglasses" prompt="on a bright beach towel at the beach">}}
+{{< full-width-image image="sunnys.jpg" alt="AI enhanced product image of sunglasses" background="W2a75LUJemeVBetNP9ckzpoQCrYqNSfnVe7PLI5JHFh2KKpkPg9kCwRvxwCIwqZFFoDWnpLQyPlT%2ByoIHdJVN4TvCvSYVzTQ0%2FU%2FkClEfE9BwwvONVm8WKSeaW43XXmEgX1lbFNU6xr2UqBGzNUR0NezTbUeO77BgbokEeItqG3gDPxpA3o95LoQxN4uV7WDDjQK%2FJ%2BrrpJFWTV3YA%3D%3D">}}
 
 #### Polaroid Camera 
 
@@ -85,8 +85,7 @@ Photo by <a href="https://unsplash.com/@giorgiotrovato?utm_content=creditCopyTex
 Photo by <a href="https://unsplash.com/@enikoo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">eniko kis</a> on <a href="https://unsplash.com/photos/white-and-black-polaroid-one-step-2-instant-camera-on-white-board-KsLPTsYaqIQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 {{< /note >}}
 
-{{< full-width-image image="camera.jpg" alt="enhanced product image of polaroid camera" prompt="matching wall on the background with polaroid photos from family holidays" >}}
-![](https://pixboost.com/api/2/img/https://pixboost.com/img/demos/camera.jpg/optimise?auth=Nzg0MDM2MDYx&prompt=matching%20wall%20on%20the%20background%20with%20polaroid%20photos%20from%20family%20holidays)
+{{< full-width-image image="camera.jpg" alt="enhanced product image of polaroid camera" background="9Z3ivqkX2MLhVuUU6MKj43IPOu3nsL4bZ%2Fm68vl%2B1x8%2FWrgFqt7KPhRrgLy7F3ZSIo5C4gI%2FMXwH0QxUF5R2hACR3rKZEbolssV9a49u7Lv1HIO9E0kPf%2FbRjViGIOHdsVVx351ECu0sUu9Cn1VLZo%2BmxWCv3nB8LNasgqZI9syClsblYUfRffbv1qoY%2Fay5fYv34r0pBBXFgIDykY770is42i6b2nl2y%2BTVZ3qWRAL2RYMzGJXp2UtPZfe74Qx4URkdRJ31OgMQFlM%3D" >}}
 
 #### Shoes for Running
 
@@ -95,7 +94,7 @@ Photo by <a href="https://unsplash.com/@enikoo?utm_content=creditCopyText&utm_me
 Photo by <a href="https://unsplash.com/@dominostudio?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Domino Studio</a> on <a href="https://unsplash.com/photos/unpaired-red-nike-sneaker-164_6wVEHfI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 {{< /note >}}
 
-{{< full-width-image image="camera.jpg" alt="enhanced product image of shoes for running" prompt="on asphalt with sparks and smoke from under the shoes" >}}
+{{< full-width-image image="runners.jpg" alt="enhanced product image of shoes for running" background="oO9E6cIZ55UUM4SXfxRw2b10F0EVUn5NLyabD%2FU613zIjmQJf9JwpZ2QK6UR6p4ffX0DU1fTgGIj3kmI65XA6tEWtLe%2BH7lblfoDWUUwUbexH66i4XYXCwC6ld28E1S%2BD%2BnsnqMCLk8dV0hZ8ZfkdWeJ4RV%2FGxOkNpL%2BhjV%2FtwvqR%2BAo8EWL32QDQtwmZARjmvF%2BTam%2Fntg%2FeRNNzpp7pRu2ljP1UZpPr4bmuEyi7Ecnm0nfw5md2M3SpzHA1Ayx3a16qwPGyRXnV86Hb952Xpstjsurx8NQomW0cIK4wcTaCBSrr33qrAJUokJ41YouskByusRRkZgWOLck2GFCeor9jzf24r9JlA%3D%3D" >}}
 
 ## How to Prompt Effectively
 
