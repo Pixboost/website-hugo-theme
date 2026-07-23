@@ -58,9 +58,9 @@ Whether you are a long-time Pixboost user or just joining us today, we’ve made
 If you don't have a Pixboost account yet, follow these quick steps:
 
 1. **Sign Up:** Create a free account at [Pixboost.com](https://pixboost.com).
-2. **Configure Your Source:** Add your image domain or cloud storage (like S3) in the dashboard so Pixboost knows where to find your original photos.
+2. **Configure Your Source:** Add your [image domain or cloud storage (like S3)](https://help.pixboost.com/setup/source-images) in the dashboard so Pixboost knows where to find your original photos.
 3. **Get Your API Key:** You’ll find your auth key in the dashboard—you'll need this for image request URLs.
-4. **Create an API Secret:** Generate an API secret and store it securely. You'll use this secret to generate and encode prompts.
+4. **Create an API Secret:** [Generate an API secret](https://help.pixboost.com/workflows/api-secrets) and store it securely. You'll use this secret to generate and encode prompts.
 
 {{< signup >}}
 
@@ -77,6 +77,8 @@ The endpoint is:
 {{< emphasise >}}
 Use your API secret (not your API key) in the prompt generation API. Secrets should be stored securely and never exposed client-side.
 {{< /emphasise >}}
+
+{{< full-width-image image="generating-prompts-screenshot.png" alt="Screenshot of calling API to generate prompts" >}}
 
 It returns a JSON array of background prompt suggestions. If you provide a custom input in the `theme` parameter, the first result in the returned array will be your own prompt, optimized and encoded.
 
